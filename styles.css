@@ -1,0 +1,129 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;
+    height: 25%;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    background: #eee;
+    box-shadow: 0 1px 5px black;
+    margin: 0;
+    position: relative; /* 使得子元素可以相对于此定位 */
+    z-index: 3;
+}
+
+.nav-item {
+    cursor: pointer;
+    position: relative; /* 为红线和圈提供定位基准 */
+}
+
+.indicators {
+    position: absolute;
+    top: 55px; /* 位于每个nav-item的底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.red-line {
+    background-color: red;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 75px; 
+    z-index: 2;
+}
+
+.red-circle, .black-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.red-circle {
+    border: 1px solid red;
+    background-color: white;
+    top: -5px; /* 使红圈位于红线上方 */
+}
+
+.black-circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    background-color: transparent;
+    top: 10px; /* 使黑圈位于红圈下方 */
+    cursor: pointer;
+}
+
+.black-circle.active {
+    box-shadow: 1px 1px 10px black;
+}
+
+.red-circle.active {
+    background-color: red; 
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-page {
+    width: 80vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    background-color: wheat;
+    /* 其他样式 */
+    
+}
+
+.sub-page {
+    width: 620vw; /* 总宽度足以容纳所有模块 */
+    height: 100vh;
+    position: fixed;
+    right: -600vw; /* 初始时副页面大部分在屏幕右侧外 */
+    top: 60px;
+    background: white;
+    transition: right 0.5s ease;
+    display: flex;
+    overflow-x: hidden; /* 隐藏水平滚动条 */
+}
+
+.module-page {
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: lightblue;
+    /* 其他样式 */
+}
+
+.scroll-indicator {
+    width: 20vw;
+    height: 100%;
+    cursor: pointer;
+    background-color: lightcoral;
+    /* 其他样式 */
+}
