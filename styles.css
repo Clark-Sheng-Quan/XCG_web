@@ -17,7 +17,7 @@ body, html {
     display: flex;
     justify-content: space-around;
     padding: 20px 0;
-    background: #eee;
+    background: #ffffff;
     box-shadow: 0 1px 5px black;
     margin: 0;
     position: relative; /* 使得子元素可以相对于此定位 */
@@ -57,7 +57,7 @@ body, html {
 
 .red-circle {
     border: 1px solid red;
-    background-color: white;
+    background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
 }
 
@@ -95,9 +95,17 @@ body, html {
     position: fixed;
     left: 0;
     top: 60px;
-    background-color: wheat;
+    background-color: #e8e8e8;
+}
+
+.main-content {
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    top: 12.5%;
+    left: 12.5%;
+    background-color: lightblue;
     /* 其他样式 */
-    
 }
 
 .sub-page {
@@ -106,16 +114,17 @@ body, html {
     position: fixed;
     right: -600vw; /* 初始时副页面大部分在屏幕右侧外 */
     top: 60px;
-    background: white;
+    background: #e8e8e8;
     transition: right 0.5s ease;
     display: flex;
     overflow-x: hidden; /* 隐藏水平滚动条 */
 }
 
 .module-page {
-    width: 100vw;
-    height: 100vh;
+    width: 75vw;
+    height: 75vh;
     display: inline-block;
+    margin: auto;
     background-color: lightblue;
     /* 其他样式 */
 }
@@ -124,6 +133,6 @@ body, html {
     width: 20vw;
     height: 100%;
     cursor: pointer;
-    background-color: lightcoral;
+    background-color: #b1534a;
     /* 其他样式 */
 }
