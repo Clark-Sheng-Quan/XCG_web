@@ -4,6 +4,7 @@ const maxOffset = 0; // 副页面完全展开时的偏移量
 const minOffset = -600; // 副页面完全隐藏时的偏移量
 const subPage = document.querySelector('.sub-page');
 const whiteLine = document.querySelector('.white-line');
+const scrollIndicator = document.querySelector('.scroll-indicator');
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -73,17 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
             moveToPage(index);
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const whiteLine = document.querySelector('.white-line');
-
-    window.addEventListener('scroll', () => {
-        // 获取滚动指示器的当前位置
-        const indicatorLeft = scrollIndicator.getBoundingClientRect().left;
-
-        // 更新白线的位置
-        whiteLine.style.left = `${indicatorLeft}px`;
+    scrollIndicator.addEventListener('click', () => {
+        setActive(1);
+        moveToPage(1);
     });
 });
+
+
