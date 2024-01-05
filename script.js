@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (event.deltaY > 0 && currentOffset < maxOffset) {
             // 向下滚动，逐步拉出副页面
-            currentOffset = Math.min(currentOffset + 40, maxOffset);
+            currentOffset = Math.min(currentOffset + 30, maxOffset);
         } else if (event.deltaY < 0 && currentOffset > minOffset) {
             // 向上滚动，逐步收回副页面
-            currentOffset = Math.max(currentOffset - 40, minOffset);
+            currentOffset = Math.max(currentOffset - 30, minOffset);
         }
 
         subPage.style.right = `${currentOffset}vw`;

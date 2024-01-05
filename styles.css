@@ -72,10 +72,12 @@ body, html {
 
 .black-circle.active {
     box-shadow: 1px 1px 10px black;
+    width: 45px;
+    height: 45px;
 }
 
 .red-circle.active {
-    background-color: red; 
+    background-color: black; 
 }
 
 .nav-icon {
@@ -97,6 +99,7 @@ body, html {
     top: 60px;
     background-color: #e8e8e8;
 }
+/* w：1272，h：611 */
 
 .main-content {
     width: 75%;
@@ -115,7 +118,7 @@ body, html {
     right: -600vw; /* 初始时副页面大部分在屏幕右侧外 */
     top: 60px;
     background: #e8e8e8;
-    transition: right 0.5s ease;
+    transition: right 0.75s ease;
     display: flex;
     overflow-x: hidden; /* 隐藏水平滚动条 */
 }
@@ -134,5 +137,61 @@ body, html {
     height: 100%;
     cursor: pointer;
     background-color: #b1534a;
+    color: white;
+    text-align: center;
+    position: relative;
     /* 其他样式 */
+}
+
+.sawtooth-border::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 20px;
+    height: calc(100% - 20px);
+    background: linear-gradient(-225deg,  
+    transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%),
+    linear-gradient(225deg, 
+    transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%);
+    background-size: 90px 45px;
+    background-repeat: repeat-y;
+    transform: rotate(180deg);
+ }
+/* #b1534a 33.33%, transparent 33.33%, transparent 66.666%, #b1534a 66.666%);
+    transparent 33.33%, #b1534a 33.33%, #b1534a 66.666%, transparent 66.666%);
+ #e8e8e8 33.33%, transparent 33.33%, transparent 66.666%, #e8e8e8 66.666%),
+ transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%);
+*/
+.sawtooth-border:before {
+left: -8px;
+}  */
+
+.arrow-right {
+display: inline-block;
+margin: 20px auto;
+border: solid white;
+border-width: 0 3px 3px 0;
+padding: 3px;
+-webkit-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+
+.content p {
+margin: 10px 0;
+font-size: 1.2em; /* Adjust font size as needed */
+}
+
+.icon {
+width: 50px; /* Adjust as needed */
+height: 50px; /* Adjust as needed */
+background-color: white;
+border-radius: 50%;
+display: inline-block;
+margin-top: 10px;
+}
+
+.icon img {
+width: 100%;
+height: auto;
 }
