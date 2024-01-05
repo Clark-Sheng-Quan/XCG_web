@@ -134,22 +134,26 @@ body, html {
 
 .scroll-indicator {
     width: 20vw;
-    height: 100%;
+    height: 100vh;
     cursor: pointer;
     background-color: #b1534a;
     color: white;
-    text-align: center;
     position: relative;
-    /* 其他样式 */
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    padding: 40px; /* Add padding to ensure content doesn't touch the edges */
+    box-sizing: border-box;
 }
 
 .sawtooth-border::before {
     content: '';
     position: absolute;
-    top: 20px;
+    top: 12px;
     left: 0px;
     width: 20px;
-    height: calc(100% - 20px);
+    height: calc(100% - 12px);
     background: linear-gradient(-225deg,  
     transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%),
     linear-gradient(225deg, 
@@ -164,34 +168,47 @@ body, html {
  transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%);
 */
 .sawtooth-border:before {
-left: -8px;
+left: -10px;
 }  */
+    
 
-.arrow-right {
-display: inline-block;
-margin: 20px auto;
-border: solid white;
-border-width: 0 3px 3px 0;
-padding: 3px;
--webkit-transform: rotate(-45deg);
-transform: rotate(-45deg);
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%; /* Adjust based on your design */
+    width: 100%;
+    position: relative
 }
 
-.content p {
-margin: 10px 0;
-font-size: 1.2em; /* Adjust font size as needed */
+.long-arrow {
+    font-size: 4vw; /* 调整箭头的大小 */
+    color: white;
+    position: absolute; /* 绝对定位允许你精准控制箭头的位置 */
+    top: 15%; /* 50% 会把元素的顶部置于容器中心 */
+    left: 50%; /* 50% 会把元素的左边置于容器中心 */
+    transform: translate(-50%, -50%) scaleX(3); /* 使用translate调整精准位置并拉伸箭头 */
+}
+
+.indicator-text {
+    font-size: 4vw; /* Adjust as needed */
+    color: white;
+    margin-top: 20vh;
+    text-align: center;
 }
 
 .icon {
-width: 50px; /* Adjust as needed */
-height: 50px; /* Adjust as needed */
-background-color: white;
+width: 10vw; /* Adjust as needed */
+height: 10vw; /* Adjust as needed */
+/* background-color: white; */
 border-radius: 50%;
 display: inline-block;
-margin-top: 10px;
+position: absolute;
+bottom: 15%;
 }
 
 .icon img {
 width: 100%;
-height: auto;
+height: 100%;
+border-radius: 50%;
 }
