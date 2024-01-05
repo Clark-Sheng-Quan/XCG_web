@@ -41,7 +41,7 @@ body, html {
 }
 
 .red-line {
-    background-color: red;
+    background-color: #b1534a;
     height: 2px;
     width: 100%;
     position: absolute;
@@ -68,7 +68,7 @@ body, html {
 }
 
 .red-circle {
-    border: 1px solid red;
+    border: 1px solid #b1534a;
     background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
     
@@ -240,7 +240,7 @@ border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #FFA500; /* The color of the button background */
+    background-color: #ffbf00; /* The color of the button background */
     color: white; /* The color of the text */
     padding: 10px 30px; /* Adjust the padding to control the size of the button */
     font-weight: bold; /* Bold font */
@@ -253,7 +253,7 @@ border-radius: 50%;
 }
 
 .tickets-button:hover {
-    background-color: #ffbf00; /* Lighter orange color on hover */
+    background-color:  #FFA500;/* Lighter orange color on hover */
     box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15); /* Larger shadow effect on hover */
     cursor: pointer; /* Change mouse to pointer on hover */
 }
