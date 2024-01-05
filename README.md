@@ -1,2 +1,2 @@
 # XCG_web
-Website build for XCG by vue3
+Website build for XCG （will be）by vue3
