@@ -41,7 +41,7 @@ body, html {
 }
 
 .red-line {
-    background-color: #b1534a;
+    background-color: #cc3333;
     height: 2px;
     width: 100%;
     position: absolute;
@@ -68,7 +68,7 @@ body, html {
 }
 
 .red-circle {
-    border: 1px solid #b1534a;
+    border: 1px solid #cc3333;
     background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
     transition: all 0.3s ease-out;
@@ -118,7 +118,7 @@ body, html {
     position: fixed;
     left: 0;
     top: 60px;
-    background-color: #e8e8e8;
+    background-color: #e5e5e5;
     z-index: 0;
 }
 /* w：1272，h：611 */
@@ -140,7 +140,7 @@ body, html {
     position: fixed;
     right: -600vw; /* 初始时副页面大部分在屏幕右侧外 */
     top: 60px;
-    background: #e8e8e8;
+    background: #e5e5e5;
     transition: right 1.5s ease;
     display: flex;
     overflow-x: hidden; /* 隐藏水平滚动条 */ 
@@ -152,7 +152,7 @@ body, html {
     display: inline-block;
     margin: auto;
     background-color: white;
-    border: #b1534a 1px solid;
+    border: #cc3333 1px solid;
     /* 其他样式 */
 }
 
@@ -160,7 +160,7 @@ body, html {
     width: 20vw;
     height: 100vh;
     cursor: pointer;
-    background-color: #b1534a;
+    background-color: #cc3333;
     color: white;
     position: relative;
     display: flex;
@@ -179,17 +179,17 @@ body, html {
     width: 20px;
     height: calc(100% - 12px);
     background: linear-gradient(-225deg,  
-    transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%),
+    transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%),
     linear-gradient(225deg, 
-    transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%);
+    transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%);
     background-size: 90px 45px;
     background-repeat: repeat-y;
     transform: rotate(180deg);
  }
-/* #b1534a 33.33%, transparent 33.33%, transparent 66.666%, #b1534a 66.666%);
-    transparent 33.33%, #b1534a 33.33%, #b1534a 66.666%, transparent 66.666%);
- #e8e8e8 33.33%, transparent 33.33%, transparent 66.666%, #e8e8e8 66.666%),
- transparent 33.33%, #e8e8e8 33.33%, #e8e8e8 66.666%, transparent 66.666%);
+/* #cc3333 33.33%, transparent 33.33%, transparent 66.666%, #cc3333 66.666%);
+    transparent 33.33%, #cc3333 33.33%, #cc3333 66.666%, transparent 66.666%);
+ #e5e5e5 33.33%, transparent 33.33%, transparent 66.666%, #e5e5e5 66.666%),
+ transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%);
 */
 .sawtooth-border:before {
 left: -10px;
