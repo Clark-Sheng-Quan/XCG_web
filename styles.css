@@ -134,19 +134,18 @@ body, html {
 /* w：1272，h：611 */
 
 .home-page {
-    width: 75vw;
+    width: 80vw;
     height: 75vh;
     position: absolute;
-    top: 12.5%;
+    top: 10%;
+    /* bottom: 12.5%; */
     /* left: 12.5%; */
-    
-    /* 其他样式 */
     z-index: 0;
 }
 
 .bg-picture {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     overflow: hidden;
     position: absolute;
     top: 50%;
@@ -259,8 +258,8 @@ border-radius: 50%;
 
 #ticket-container {
     position: relative;
-    margin-right: 10px;
-    /* Other styles for your nav-item */
+    right: 10px;
+    
 }
 
 .tickets-button {
@@ -272,6 +271,7 @@ border-radius: 50%;
     color: white; /* The color of the text */
     padding: 10px 30px; /* Adjust the padding to control the size of the button */
     font-weight: bold; /* Bold font */
+    font-size: 1.3rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
     text-decoration: none; /* Remove underline from the link */
