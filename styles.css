@@ -9,8 +9,7 @@ body, html {
     width: 100%;    
     height: 25%;
     position: relative;
-    z-index: 1;
-    
+    z-index: 1;   
 }
 
 .nav-items {
@@ -28,6 +27,9 @@ body, html {
 .nav-item {
     cursor: pointer;
     position: relative; /* 为红线和圈提供定位基准 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .circle {
@@ -52,8 +54,8 @@ body, html {
 .white-line {
     background-color: white;
     height: 2px;
-    width: 20vw;
-    left: 80vw;
+    width: 18vw;
+    left: 82vw;
     position: absolute;
     top: 75px; 
     z-index: 3;
@@ -68,25 +70,26 @@ body, html {
 }
 
 .red-circle {
-    border: 1px solid #cc3333;
+    border: 1.5px solid #cc3333;
     background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .black-circle {
     width: 35px;
     height: 35px;
-    border: 1px solid gray;
+    border: 1px solid rgba(0, 0, 0, 0.8);
     background-color: transparent;
     top: 10px; /* 使黑圈位于红圈下方 */
     cursor: pointer;
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .black-circle:hover {
     border: 1px solid black;
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
+    box-shadow: 1px 1px 5px black;
 }
 
 .black-circle.active {
@@ -98,7 +101,6 @@ body, html {
 
 .red-circle.active {
     background-color: black; 
-    
 }
 
 .nav-icon {
@@ -112,9 +114,18 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
+#logo-container {
+    flex-grow: 0; /* Do not allow the logo container to grow */
+    margin-left: -1.5vw; /* Adjust this value to move the logo container to the left */
+    display: flex; /* Use flex to align the logo container items */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center the items horizontally */
+}
+
 .logo-icon {
-    width: 100px;
-    height: 50px;
+    margin-top: 2px;
+    width: 5.5vw;
+    height: 5.5vh;
     overflow: hidden;
     position: absolute;
     top: 50%;
@@ -122,8 +133,58 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
+#tickets-container {
+    margin-right: 5vw; /* Adjust the right margin as needed */
+    margin-left: 5vw; /* Adjust the left margin as needed */
+    flex-grow: 0; /* Do not allow the tickets container to grow */
+    display: inline-flex; /* Use inline-flex to align the button properly */
+    align-items: center; /* Center the button vertically */
+}
+
+.tickets-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8vw;
+    height: 3vh;
+    transform: translate(-50%, -50%);
+    background-color: #ffbf00; /* The color of the button background */
+    color: white; /* The color of the text */
+    padding: 10px 30px; /* Adjust the padding to control the size of the button */
+    font-weight: bold; /* Bold font */
+    font-size: 1.3rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Allows us to set padding and other box model properties */
+    
+    /* Remove margin if it's causing layout shifts */
+}
+
+.tickets-button:hover {
+    background-color:  #FFA500;/* Lighter orange color on hover 
+    ; /* Larger shadow effect on hover */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
+    cursor: pointer; /* Change mouse to pointer on hover */
+}
+
+.tickets-button:before,
+.tickets-button:after {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 100%;
+  background-size: 3px 3px; /* 一个repeat的大小 */
+  background-repeat: repeat-y;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
 .main-page {
-    width: 80vw;
+    width: 82vw;
     height: 100vh;
     position: fixed;
     left: 0;
@@ -144,8 +205,8 @@ body, html {
 }
 
 .bg-picture {
-    width: 70%;
-    height: 70%;
+    width: 74%;
+    height: 71%;
     overflow: hidden;
     position: absolute;
     top: 50%;
@@ -154,7 +215,7 @@ body, html {
 }
 
 .sub-page {
-    width: 620vw; /* 总宽度足以容纳所有模块 */
+    width: 618vw; /* 总宽度足以容纳所有模块 */
     height: 100vh;
     position: fixed;
     right: -600vw; /* 初始时副页面大部分在屏幕右侧外 */
@@ -176,7 +237,7 @@ body, html {
 }
 
 .scroll-indicator {
-    width: 20vw;
+    width: 18vw;
     height: 100vh;
     cursor: pointer;
     background-color: #cc3333;
@@ -184,7 +245,6 @@ body, html {
     position: relative;
     display: flex;
     flex-direction: column;
-    
     align-items: center;
     padding: 40px; /* Add padding to ensure content doesn't touch the edges */
     box-sizing: border-box;
@@ -237,7 +297,8 @@ left: -10px;
     font-size: 4vw; /* Adjust as needed */
     color: white;
     margin-top: 20vh;
-    text-align: center;
+    margin-left: 1vw;
+    text-align: left;
 }
 
 .indicator-icon {
@@ -247,7 +308,7 @@ height: 10vw; /* Adjust as needed */
 border-radius: 50%;
 display: inline-block;
 position: absolute;
-bottom: 15%;
+bottom: 12%;
 }
 
 .indicator-icon img {
@@ -256,48 +317,7 @@ height: 100%;
 border-radius: 50%;
 }
 
-#ticket-container {
-    position: relative;
-    right: 10px;
-    
-}
 
-.tickets-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffbf00; /* The color of the button background */
-    color: white; /* The color of the text */
-    padding: 10px 30px; /* Adjust the padding to control the size of the button */
-    font-weight: bold; /* Bold font */
-    font-size: 1.3rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-    text-decoration: none; /* Remove underline from the link */
-    display: inline-block; /* Allows us to set padding and other box model properties */
-    margin: 0 -15px;
-    /* Remove margin if it's causing layout shifts */
-}
 
-.tickets-button:hover {
-    background-color:  #FFA500;/* Lighter orange color on hover */
-    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15); /* Larger shadow effect on hover */
-    cursor: pointer; /* Change mouse to pointer on hover */
-}
-
-.tickets-button:before,
-.tickets-button:after {
-  content: '';
-  display: block;
-  width: 3px;
-  height: 100%;
-  background-size: 3px 3px; /* 一个repeat的大小 */
-  background-repeat: repeat-y;
-  background-image: radial-gradient(#fff 1px, transparent 1px);
-  position: absolute;
-  top: 0;
-  left: 20px;
-}
 
 

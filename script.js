@@ -1,5 +1,5 @@
 let currentOffset = -600; // 副页面初始偏移量，表示副页面主要内容在屏幕外
-let currentWhile = 80;
+let currentWhile = 82;
 const maxOffset = 0; // 副页面完全展开时的偏移量
 const minOffset = -600; // 副页面完全隐藏时的偏移量
 const subPage = document.querySelector('.sub-page');
