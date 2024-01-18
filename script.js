@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function moveToPage(index) {
         // 计算新的right值
         const newRightValue = -600 + (index * 100); // 每个导航项增加100vw
-        const newLeftValue = 80 - (index * 100)
+        const newLeftValue = 82 - (index * 100)
         requestAnimationFrame(() => {
             subPage.style.right = `${newRightValue}vw`;;
             whiteLine.style.left = `${newLeftValue}vw`;

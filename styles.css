@@ -134,7 +134,7 @@ body, html {
 }
 
 #tickets-container {
-    margin-right: 5vw; /* Adjust the right margin as needed */
+    margin-right: 4vw; /* Adjust the right margin as needed */
     margin-left: 5vw; /* Adjust the left margin as needed */
     flex-grow: 0; /* Do not allow the tickets container to grow */
     display: inline-flex; /* Use inline-flex to align the button properly */
@@ -253,15 +253,14 @@ body, html {
 .sawtooth-border::before {
     content: '';
     position: absolute;
-    top: 12px;
-    left: 0px;
+    top: 3%;
     width: 20px;
-    height: calc(100% - 12px);
+    height: 96%;
     background: linear-gradient(-225deg,  
     transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%),
     linear-gradient(225deg, 
     transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%);
-    background-size: 90px 45px;
+    background-size: 76px 38px;
     background-repeat: repeat-y;
     transform: rotate(180deg);
  }
@@ -274,7 +273,6 @@ body, html {
 left: -10px;
 }  */
     
-
 .arrow-container {
     display: flex;
     justify-content: center;
