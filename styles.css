@@ -59,7 +59,7 @@ body, html {
     position: absolute;
     top: 75px; 
     z-index: 3;
-    transition: left 1.5s ease;
+    transition: left 1.5s ease, width 0.3s ease;
 }
 
 .red-circle, .black-circle {
@@ -73,22 +73,22 @@ body, html {
     border: 1.5px solid #cc3333;
     background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
-    transition: all 0.5s ease-out;
+    transition: all 1.5s ease-out;
 }
 
 .black-circle {
     width: 35px;
     height: 35px;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    background-color: transparent;
+    background-color: white;
     top: 10px; /* 使黑圈位于红圈下方 */
     cursor: pointer;
-    transition: all 0.5s ease-out;
+    transition: all 1.5s ease-out;
 }
 
 .black-circle:hover {
     border: 1px solid black;
-    transition: all 0.5s ease-out;
+    transition: all 0.3s ease-out;
     box-shadow: 1px 1px 5px black;
 }
 
@@ -104,6 +104,7 @@ body, html {
 }
 
 .nav-icon {
+    
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -230,7 +231,7 @@ body, html {
     width: 75vw;
     height: 75vh;
     display: inline-block;
-    margin: auto;
+    margin: auto 5vw;
     background-color: white;
     border: #cc3333 1px solid;
     /* 其他样式 */
@@ -248,9 +249,15 @@ body, html {
     align-items: center;
     padding: 40px; /* Add padding to ensure content doesn't touch the edges */
     box-sizing: border-box;
+    transition: width 0.3s ease;
 }
 
+#indicator-variable {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
 .sawtooth-border::before {
+
     content: '';
     position: absolute;
     top: 3%;
@@ -279,7 +286,8 @@ left: -10px;
     align-items: center;
     height: 10%; /* Adjust based on your design */
     width: 100%;
-    position: relative
+    position: relative;
+    
 }
 
 .long-arrow {
@@ -300,13 +308,14 @@ left: -10px;
 }
 
 .indicator-icon {
-width: 10vw; /* Adjust as needed */
-height: 10vw; /* Adjust as needed */
+width: 9vw; /* Adjust as needed */
+height: 9vw; /* Adjust as needed */
 /* background-color: white; */
 border-radius: 50%;
 display: inline-block;
 position: absolute;
 bottom: 12%;
+margin: auto;
 }
 
 .indicator-icon img {

@@ -2,15 +2,20 @@ let currentOffset = -600; // 副页面初始偏移量，表示副页面主要内
 let currentWhile = 82;
 const maxOffset = 0; // 副页面完全展开时的偏移量
 const minOffset = -600; // 副页面完全隐藏时的偏移量
+const minWhite = 82
 const subPage = document.querySelector('.sub-page');
 const whiteLine = document.querySelector('.white-line');
 const scrollIndicator = document.querySelector('.scroll-indicator');
+// 获取所有顶部导航链接、黑圈和红圈
+const navItems = document.querySelectorAll('.nav-item a');
+const blackCircles = document.querySelectorAll('.black-circle');
+const redCircles = document.querySelectorAll('.red-circle');
+const indicatorVariable = document.querySelectorAll('#indicator-variable');
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+    // 更新导航栏激活状态的函数
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
-
         if (event.deltaY > 0 && currentOffset < maxOffset) {
             // 向下滚动，逐步拉出副页面
             currentOffset = Math.min(currentOffset + 25, maxOffset);
@@ -20,18 +25,37 @@ document.addEventListener('DOMContentLoaded', () => {
             currentOffset = Math.max(currentOffset - 25, minOffset);
             currentWhile = Math.max(currentWhile + 25);
         }
-
         requestAnimationFrame(() => {
             subPage.style.right = `${currentOffset}vw`;
             whiteLine.style.left = `${currentWhile}vw`;
+            updateActiveNavItem();
+            updateIndicator()
         });
     });
 });
 
-// 获取所有顶部导航链接、黑圈和红圈
-const navItems = document.querySelectorAll('.nav-item a');
-const blackCircles = document.querySelectorAll('.black-circle');
-const redCircles = document.querySelectorAll('.red-circle');
+function updateIndicator() {
+    if (currentOffset > -590) {
+        indicatorVariable.forEach(item => item.style.opacity = '0');
+        scrollIndicator.style.width = '10vw';
+        whiteLine.style.width = '10vw';
+    } else {
+        indicatorVariable.forEach(item => item.style.opacity = '1');
+        scrollIndicator.style.width = '18vw';
+        whiteLine.style.width = '18vw';
+    }
+}
+
+function updateActiveNavItem() {
+    console.log(currentOffset);
+    if(currentOffset >= -25){setActive(6)}
+    else if(currentOffset >= -125){setActive(5)}
+    else if(currentOffset >= -225){setActive(4)}
+    else if(currentOffset >= -325){setActive(3)}
+    else if(currentOffset >= -425){setActive(2)}
+    else if(currentOffset >= -525){setActive(1)}
+    else{setActive(0)}
+}
 
 // 定义激活导航项、黑圈和红圈的函数
 function setActive(index) {
@@ -42,8 +66,8 @@ function setActive(index) {
 
     // 为点击的元素添加active类
     navItems[index].classList.add('active');
-    blackCircles[index].classList.add('active');
     redCircles[index].classList.add('active');
+    if(blackCircles[index]){blackCircles[index].classList.add('active');}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -51,11 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 定义函数以根据导航项移动副页面
     function moveToPage(index) {
         // 计算新的right值
-        const newRightValue = -600 + (index * 100); // 每个导航项增加100vw
-        const newLeftValue = 82 - (index * 100)
+        currentOffset = minOffset + (index * 100); // 每个导航项增加100vw
+        currentWhile = minWhite - (index * 100)
         requestAnimationFrame(() => {
-            subPage.style.right = `${newRightValue}vw`;;
-            whiteLine.style.left = `${newLeftValue}vw`;
+            subPage.style.right = `${currentOffset}vw`;;
+            whiteLine.style.left = `${currentWhile}vw`;
+            updateIndicator()
         });
     }
 
@@ -80,5 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         moveToPage(1);
     });
 });
+
 
 
