@@ -183,59 +183,6 @@ body, html {
   left: 20px;
 }
 
-.main-page {
-    width: 82vw;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 60px;
-    background-color: #e5e5e5;
-    z-index: 0;
-}
-/* w：1272，h：611 */
-
-.home-page {
-    width: 80vw;
-    height: 75vh;
-    position: absolute;
-    top: 10%;
-    /* bottom: 12.5%; */
-    /* left: 12.5%; */
-    z-index: 0;
-}
-
-.bg-picture {
-    width: 74%;
-    height: 71%;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.sub-page {
-    width: 618vw; /* 总宽度足以容纳所有模块 */
-    height: 100vh;
-    position: fixed;
-    right: -600vw; /* 初始时副页面大部分在屏幕右侧外 */
-    top: 60px;
-    background: #e5e5e5;
-    transition: right 1.5s ease;
-    display: flex;
-    overflow-x: hidden; /* 隐藏水平滚动条 */ 
-}
-
-.module-page {
-    width: 75vw;
-    height: 75vh;
-    display: inline-block;
-    margin: auto 0 auto 5vw;
-    background-color: white;
-    border: #cc3333 1px solid;
-    /* 其他样式 */
-}
-
 .scroll-indicator {
     width: 18vw;
     height: 100vh;
@@ -309,7 +256,6 @@ left: -10px;
 .indicator-icon {
 width: 9vw; /* Adjust as needed */
 height: 9vw; /* Adjust as needed */
-/* background-color: white; */
 border-radius: 50%;
 display: inline-block;
 position: absolute;
@@ -323,7 +269,112 @@ height: 100%;
 border-radius: 50%;
 }
 
+.main-page {
+    width: 82vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    background-color: #e5e5e5;
+    z-index: 0;
+}
+/* w：1272，h：611 */
 
+.home-page {
+    width: 80vw;
+    height: 75vh;
+    position: absolute;
+    top: 10%;
+    /* bottom: 12.5%; */
+    /* left: 12.5%; */
+    z-index: 0;
+}
 
+.bg-picture {
+    width: 74%;
+    height: 71%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sub-page {
+    width: 618vw; /* 总宽度足以容纳所有模块 */
+    height: 100vh;
+    position: fixed;
+    right: -600vw; /* 初始时副页面大部分在屏幕右侧外 */
+    top: 60px;
+    background: #e5e5e5;
+    transition: right 1.5s ease;
+    display: flex;
+    overflow-x: hidden; /* 隐藏水平滚动条 */ 
+}
+
+.module-page {
+    width: 75vw;
+    height: 75vh;
+    display: inline-block;
+    margin: auto 0 auto 5vw;
+    
+    border: #cc3333 1px solid;
+    /* 其他样式 */
+}
+
+#guests-module {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 50vw;
+}
+
+.guests-intro {
+    width: 30%; /* Adjust width as needed */
+    margin: auto 3vw auto 0;
+    text-align: end;
+}
+
+.guests-intro h2 {
+    font-size: 3em; /* Large text for the heading */
+}
+
+.guests-grid {
+    width: 70%; /* Adjust width as needed */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px; /* Space between grid items */
+    margin: auto;
+    height: 100%
+}
+
+.guest {
+    padding: 10px;
+    text-align: center; /* Center the text */
+    background: #fff; /* White background for the guest cards */
+}
+
+.guest-container {
+    width: 100%; /* Full width of the card */
+    height: auto; /* Set a fixed height for the image */
+    overflow: hidden; /* Hide the overflow to maintain aspect ratio */
+}
+  
+.guest-container img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Cover the container without losing aspect ratio */
+    margin-bottom: 10px;
+}
+
+.guest h3 {
+    font-size: 1em; /* Adjust the size as needed */
+    margin-top: 100px;
+}
+
+.guest p {
+    font-size: 0.8em; /* Adjust the size as needed */
+}
+  
 
 
