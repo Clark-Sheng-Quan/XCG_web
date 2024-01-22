@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.deltaY > 0 && currentOffset < maxOffset) {
             // 向下滚动，逐步拉出副页面
             currentOffset = Math.min(currentOffset + 25, maxOffset);
-            currentWhile = Math.min(currentWhile - 25);
+            currentWhile = Math.max(currentWhile - 25, minWhite - 600);
         } else if (event.deltaY < 0 && currentOffset > minOffset) {
             // 向上滚动，逐步收回副页面
             currentOffset = Math.max(currentOffset - 25, minOffset);
-            currentWhile = Math.max(currentWhile + 25);
+            currentWhile = Math.min(currentWhile + 25, minWhite );
         }
         requestAnimationFrame(() => {
             subPage.style.right = `${currentOffset}vw`;
@@ -47,7 +47,6 @@ function updateIndicator() {
 }
 
 function updateActiveNavItem() {
-    console.log(currentOffset);
     if(currentOffset >= -25){setActive(6)}
     else if(currentOffset >= -125){setActive(5)}
     else if(currentOffset >= -225){setActive(4)}
@@ -75,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 定义函数以根据导航项移动副页面
     function moveToPage(index) {
         // 计算新的right值
-        currentOffset = minOffset + (index * 100); // 每个导航项增加100vw
-        currentWhile = minWhite - (index * 100)
+        currentOffset = minOffset + (index * 82); // 每个导航项增加100vw
+        currentWhile = minWhite - (index * 82)
         requestAnimationFrame(() => {
             subPage.style.right = `${currentOffset}vw`;;
             whiteLine.style.left = `${currentWhile}vw`;
