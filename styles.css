@@ -431,5 +431,99 @@ border-radius: 50%;
     z-index: 1;
     border-radius: 5%;
   }
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Above everything else */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.5); /* Black with opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    width: 40%; /* Narrower width */
+    max-width: 500px; /* Maximum width */
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+input[type="text"],
+input[type="email"],
+
+textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: calc(100% - 20px); /* Full width minus padding */
+}
+
+textarea {
+  height: 100px; /* Larger textarea */
+}
+
+/* Button and privacy styles */
+.modal-footer button {
+  padding: 10px 20px;
+  background-color: #ffbf00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-footer p {
+  font-size: 0.8rem;
+}
+  .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  form input,
+  form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+  }
+  
+  form button {
+    padding: 10px;
+    background-color: #ffbf00;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
   
 
