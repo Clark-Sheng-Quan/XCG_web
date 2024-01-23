@@ -340,24 +340,26 @@ border-radius: 50%;
 }
 
 .guests-grid {
-    width: 70%; /* Adjust width as needed */
+    height: 100%;
+    width: 100%; /* Adjust width as needed */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three columns */
-    gap: 20px; /* Space between grid items */
+    gap: 0px; /* Space between grid items */
     margin: auto;
-    height: 100%
+    
 }
-
 .guest {
-    padding: 10px;
+    padding: 40px 20px 0 20px;
     text-align: center; /* Center the text */
-    background: #fff; /* White background for the guest cards */
+    height: 150px;
+    width: 150px;
 }
 
 .guest-container {
     width: 100%; /* Full width of the card */
-    height: auto; /* Set a fixed height for the image */
+    height: 100%; /* Set a fixed height for the image */
     overflow: hidden; /* Hide the overflow to maintain aspect ratio */
+    background: #fff; /* White background for the guest cards */
 }
   
 .guest-container img {
@@ -369,12 +371,65 @@ border-radius: 50%;
 
 .guest h3 {
     font-size: 1em; /* Adjust the size as needed */
-    margin-top: 100px;
+    margin-top: 0;
 }
 
 .guest p {
+    margin-top: 0;
     font-size: 0.8em; /* Adjust the size as needed */
 }
   
-
+#join-us-module {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 25vw;
+  }
+  
+  .join-us-text h2 {
+    font-size: 3em;
+    color: #333;
+    text-align: end;
+  }
+  
+  .join-us-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .option {
+    background-size: cover;
+    background-position: center;
+    width: 270px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    
+  }
+  
+  .option h3 {
+    text-align: center;
+    font-size: 2.5em;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
+  }
+  
+  .option::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    z-index: 1;
+    border-radius: 5%;
+  }
+  
 
