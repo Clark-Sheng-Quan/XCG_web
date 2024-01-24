@@ -223,7 +223,7 @@ body, html {
  transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%);
 */
 .sawtooth-border:before {
-left: -10px;
+    left: -10px;
 }  */
     
 .arrow-container {
@@ -254,19 +254,19 @@ left: -10px;
 }
 
 .indicator-icon {
-width: 9vw; /* Adjust as needed */
-height: 9vw; /* Adjust as needed */
-border-radius: 50%;
-display: inline-block;
-position: absolute;
-bottom: 12%;
-margin: auto;
+    width: 9vw; /* Adjust as needed */
+    height: 9vw; /* Adjust as needed */
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom: 12%;
+    margin: auto;
 }
 
 .indicator-icon img {
-width: 100%;
-height: 100%;
-border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .main-page {
@@ -317,7 +317,6 @@ border-radius: 50%;
     height: 75vh;
     display: inline-block;
     margin: auto 0 auto 5vw;
-    
     border: #cc3333 1px solid;
     /* 其他样式 */
 }
@@ -349,7 +348,7 @@ border-radius: 50%;
     
 }
 .guest {
-    padding: 40px 20px 0 20px;
+    padding: 30px 20px 0 20px;
     text-align: center; /* Center the text */
     height: 150px;
     width: 150px;
@@ -371,10 +370,12 @@ border-radius: 50%;
 
 .guest h3 {
     font-size: 1em; /* Adjust the size as needed */
+    padding-top: 2px;
     margin-top: 0;
 }
 
 .guest p {
+    padding-top: 0;
     margin-top: 0;
     font-size: 0.8em; /* Adjust the size as needed */
 }
@@ -385,21 +386,21 @@ border-radius: 50%;
     justify-content: space-between;
     padding: 0 20px;
     width: 25vw;
-  }
-  
-  .join-us-text h2 {
+}
+
+.join-us-text h2 {
     font-size: 3em;
     color: #333;
     text-align: end;
-  }
-  
-  .join-us-options {
+}
+
+.join-us-options {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  .option {
+}
+
+.option {
     background-size: cover;
     background-position: center;
     width: 270px; /* Adjust width as needed */
@@ -410,17 +411,17 @@ border-radius: 50%;
     color: white;
     cursor: pointer;
     position: relative;
-    
-  }
   
-  .option h3 {
+}
+
+.option h3 {
     text-align: center;
     font-size: 2.5em;
     z-index: 2;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
-  }
-  
-  .option::after {
+}
+
+.option::after {
     content: '';
     position: absolute;
     top: 0;
@@ -430,7 +431,7 @@ border-radius: 50%;
     background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
     z-index: 1;
     border-radius: 5%;
-  }
+}
 
 /* Modal Styles */
 .modal {
@@ -442,88 +443,145 @@ border-radius: 50%;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     background-color: rgba(0,0,0,0.5); /* Black with opacity */
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto; /* 10% from the top and centered */
-    padding: 20px;
-    width: 40%; /* Narrower width */
-    max-width: 500px; /* Maximum width */
-  }
-  .modal-body {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .modal-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  
-input[type="text"],
-input[type="email"],
-
-textarea {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  width: calc(100% - 20px); /* Full width minus padding */
+    /* opacity: 0.7; */
 }
 
-textarea {
-  height: 100px; /* Larger textarea */
+.modal-content {
+  background-color: #e5e5e5;;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  width: 40%; /* Narrower width */
+  max-width: 500px; /* Maximum width */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  text-align: center;
+  
 }
 
-/* Button and privacy styles */
-.modal-footer button {
-  padding: 10px 20px;
-  background-color: #ffbf00;
-  color: white;
-  border: none;
+.close-button {
+  float: right;
+  color: #aaa;
+  font-size: 35px;
+  font-weight: bold;
+  width: 35px; /* Diameter of the circle */
+  height: 35px;
+  line-height: 30px; /* Same as height to vertically center the 'X' */
+  text-align: center; 
+  justify-content: center;
+  border-radius: 50%; /* Makes it circular */
+  background: #fff; /* Circle background color */
   cursor: pointer;
-  transition: background-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
 }
 
-.modal-footer p {
-  font-size: 0.8rem;
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  background: #e5e5e5; /* Light gray background on hover */
+  text-decoration: none;
 }
-  .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close-button:hover,
-  .close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* Form styles */
-  form {
+
+.modal-section h2 {
+  font-family: "等线", sans-serif;/* Assuming 等线 is available */
+  color: #333;
+  font-size: 4em; /* Large text for the modal title */
+  margin: 20px;
+}
+
+.join-us {
+  font-size: 1.5em; /* Adjust size to make it stand out */
+  font-weight: bold; /* Extra bold */
+  margin-right: 40%;
+}
+
+/* Form styles */
+.modal-form{
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-  
-  form input,
-  form textarea {
-    padding: 10px;
+    line-height: 1.6;
+}
+
+
+.modal-form h3,
+.modal-form p,
+.modal-form input,
+.modal-form textarea {
+    font-family: "Helvetica", Arial, sans-serif; /* Use Helvetica for other text */
+}
+
+.modal-form input,
+.modal-form textarea {
     margin: 10px 0;
-    border: 1px solid #ddd;
-  }
-  
-  form button {
     padding: 10px;
+    border: 1px solid #ddd;
+    width: calc(100% - 20px); /* Full width minus padding */
+    border: 1px solid #ddd;
+}
+  
+.form-header {
+    display: flex; /* Use flexbox to layout the title and description */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between title and description */
+    margin: 0 20px; /* Add margin for spacing */
+  }
+
+.form-header h3 {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 20px; /* Add margin to separate title from description */
+    white-space: nowrap
+}
+
+.form-header .modal-description {
+    color: #333;
+    font-size: 1em; /* Adjust as needed */
+    margin-left: 20px; /* Add margin to separate description from title */
+    flex-grow: 1; /* Let the description take up remaining space */
+    text-align: left; /* Align the text to the right */
+  }
+
+.modal-form textarea {
+    height: 100px; /* Larger textarea */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+/* Button and privacy styles */
+.modal-footer button {
+    /* padding: 10px 20px; */
     background-color: #ffbf00;
-    color: white;
+    color: #000;
     border: none;
     cursor: pointer;
-  }
-  
+    transition: background-color 0.3s;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    opacity: 0.7;
+    font-weight: bold;
+}
 
+.modal-section .modal-footer button:hover {
+    opacity: 1;
+}
+
+.modal-footer p {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: bold;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 10%; opacity: 1}
+}

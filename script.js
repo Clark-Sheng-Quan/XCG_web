@@ -105,30 +105,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Get the modal
-var modal = document.getElementById("sponserModal");
+// Get all clickable boxes
+const boxes = document.querySelectorAll(".option");
 
-// Get the button that opens the modal
-var btn = document.querySelector(".sponser");
+// Loop through each box and add click event
+boxes.forEach(function(box) {
+  box.onclick = function() {
+    var modalId = box.getAttribute("data-modal-target");
+    var modal = document.querySelector(modalId);
+    modal.style.display = "block";
+  };
+});
 
-// Get the element that closes the modal
-var close = document.querySelector(".close-button");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on (x), close the modal
-close.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
+// Close modal when clicking on close button or outside of the modal
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+//   if (event.target.classList.contains('modal')) {
+//     event.target.style.display = "none";}
+  if (event.target.classList.contains('close-button')) {
+    event.target.closest('.modal').style.display = "none";
   }
-}
+};
 
 

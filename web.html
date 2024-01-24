@@ -65,16 +65,15 @@
         <div class="main-page">
             <!-- 主页面内容 -->
             <div class="home-page"><img src="3.png" alt="Icon" class="bg-picture"></div>
-        <div class="sub-page" id="sub-page">
-            
+        </div>
+        <div class="sub-page">
+            <!-- Subpage 页面内容 -->
             <div class="scroll-indicator">
                 <div class="sawtooth-border" id="indicator-variable"></div>
-                <div class="arrow-container" id="indicator-variable">
-                    <span class="long-arrow">→</span>
-                  </div>
+                <div class="arrow-container" id="indicator-variable"><span class="long-arrow">→</span></div>
                 <div class="indicator-text" id="indicator-variable">What's new</div>
                 <div class="indicator-icon"><img src="1.png" alt="Icon"></div>
-              </div>
+            </div>
              <!-- Repeat modules -->
             <div class="module-page">
                 1
@@ -93,62 +92,62 @@
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>                    <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>
                     <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>
                     <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>
                     <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>
                     <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>
                     <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>
                     <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>
                     <div class="guest">
                         <div class="guest-container">
                             <img src="path-to-guest-image.jpg" alt="Guest Name">
                         </div>
                         <h3>Name</h3>
-                        <p>Description or other details</p>
+                        <p>Description</p>
                     </div>   
                   <!-- ... end guest blocks ... -->
                 </div>
@@ -158,42 +157,89 @@
                     <h2>JOIN <br> US!</h2>
                 </div>
                 <div class="join-us-options">
-                    <div class="option sponser" data-modal-target="#sponserModal" style="background-image: url('sponser.jpg');">
+                    <div class="option" data-modal-target="#sponserModal" style="background-image: url('sponser.jpg');">
                         <h3>Sponser</h3>
                     </div>
-                    <div class="option" style="background-image: url('exibitor.jpg');">
-                        <h3>Exibitor</h3>
+                    <div class="option" data-modal-target="#exhibitorModal" style="background-image: url('exibitor.jpg');">
+                        <h3>Exhibitor</h3>
                     </div>
-                    <div class="option" style="background-image: url('performer.jpg');">
+                    <div class="option" data-modal-target="#performerModal" style="background-image: url('performer.jpg');">
                         <h3>Performer <br> & <br> Band</h3>
                     </div>
                 </div>
             </div>
-            <div id="sponserModal" class="modal">
-                <div class="modal-content">
-                  <span class="close-button">&times;</span>
-                  <h2>SPONSER</h2>
-                  <div class="modal-body">
-                    <p>JOIN US! | Sign up to get the latest Tumbafest news and updates.</p>
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Your skills..."></textarea>
-                    <textarea placeholder="Let us get to know you quickly!"></textarea>
-                    <div class="modal-footer">
-                      <button type="submit">Send</button>
-                      <p>We respect your privacy.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             <div class="module-page">
                 5
             </div>
             <div class="module-page">
                 6
             </div>
-            <!-- Add more modules here -->
+            <!-- end modules here -->
         </div>
+        <div class="modal-section">
+            <!-- 3 modals -->
+            <div id="sponserModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>SPONSER</h2>
+                    <form class="modal-form">
+                        <div class="form-header">
+                            <h3>JOIN US!</h3>
+                            <p class="modal-description">Sign up to become a pivotal part of XCG and make impactful connections.</p>
+                        </div>
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Let us get to know you quickly!" required></textarea>
+                        <div class="modal-footer">
+                            <button type="submit">Send</button>
+                            <p>We respect your privacy.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="exhibitorModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>EXHIBITOR</h2>
+                    <form class="modal-form">
+                        <div class="form-header">
+                            <h3>JOIN US!</h3>
+                            <p class="modal-description">Register here to showcase your cosplay creativity and enthusiasm.</p>
+                        </div>
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Let us get to know you quickly!" required></textarea>
+                        <div class="modal-footer">
+                            <button type="submit">Send</button>
+                            <p>We respect your privacy.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="performerModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>PERFORMER<br>& BAND</h2>
+                    <form class="modal-form">
+                        <div class="form-header">
+                            <h3>JOIN US!</h3>
+                            <p class="modal-description">Apply now to take the stage at XCG with vibrant audiences.</p>
+                        </div>
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Let us get to know you quickly!" required></textarea>
+                        <div class="modal-footer">
+                            <button type="submit">Send</button>
+                            <p>We respect your privacy.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <script src="script.js"></script>
     </body>
 </body>
