@@ -321,7 +321,7 @@ body, html {
     /* 其他样式 */
 }
 
-#guests-module {
+.guests-module {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
@@ -380,7 +380,7 @@ body, html {
     font-size: 0.8em; /* Adjust the size as needed */
 }
   
-#join-us-module {
+.join-us-module {
     display: flex;
     align-items: center;
     justify-content: space-between;
