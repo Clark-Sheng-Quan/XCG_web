@@ -73,7 +73,7 @@ body, html {
     border: 1.5px solid #cc3333;
     background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
-    transition: all 1.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .red-circle.active {
@@ -81,26 +81,26 @@ body, html {
 }
 
 .black-circle {
-    width: 35px;
-    height: 35px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 45px;
+    height: 45px;
+    /* border: 1px solid rgba(0, 0, 0, 0.3); */
     background-color: white;
     top: 10px; /* 使黑圈位于红圈下方 */
     cursor: pointer;
-    transition: all 1.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .black-circle:hover {
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
     transition: all 0.3s ease-out;
     box-shadow: 1px 1px 5px black;
 }
 
 .black-circle.active {
     box-shadow: 1px 1px 10px black;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    width: 40px;
-    height: 40px;
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    width: 50px;
+    height: 50px;
 }
 
 .nav-icon {
@@ -401,8 +401,6 @@ body, html {
 }
 
 .option {
-    background-size: cover;
-    background-position: center;
     width: 270px; /* Adjust width as needed */
     height: 200px; /* Adjust height as needed */
     display: flex;
@@ -411,27 +409,35 @@ body, html {
     color: white;
     cursor: pointer;
     position: relative;
-  
+    background-image: url("images/j1.jpg");
 }
 
 .option h3 {
     text-align: center;
     font-size: 2.5em;
-    z-index: 2;
+    z-index: 3;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
 }
 
-.option::after {
+.option img {
+    width: 270px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */    
+    border-radius: 5%;
+    z-index: 2;
+    position: absolute;
+}
+
+/* .option::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
     border-radius: 5%;
-}
+} */
 
 /* Modal Styles */
 .modal {
@@ -447,52 +453,52 @@ body, html {
 }
 
 .modal-content {
-  background-color: #e5e5e5;;
-  margin: 5vh auto 5vh; /* 10% from the top and centered */
-  padding: 20px;
-  width: 40%; /* Narrower width */
-  max-width: 500px; /* Maximum width */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-  text-align: center;
+    background-color: #e5e5e5;;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    width: 40%; /* Narrower width */
+    max-width: 500px; /* Maximum width */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    text-align: center;
   
 }
 
 .close-button {
-  float: right;
-  color: #aaa;
-  font-size: 35px;
-  font-weight: bold;
-  width: 35px; /* Diameter of the circle */
-  height: 35px;
-  line-height: 30px; /* Same as height to vertically center the 'X' */
-  text-align: center; 
-  justify-content: center;
-  border-radius: 50%; /* Makes it circular */
-  background: #fff; /* Circle background color */
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+    float: right;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    width: 35px; /* Diameter of the circle */
+    height: 35px;
+    line-height: 30px; /* Same as height to vertically center the 'X' */
+    text-align: center; 
+    justify-content: center;
+    border-radius: 50%; /* Makes it circular */
+    background: #fff; /* Circle background color */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
 }
 
 .close-button:hover,
 .close-button:focus {
-  color: black;
-  background: #e5e5e5; /* Light gray background on hover */
-  text-decoration: none;
+    color: black;
+    background: #e5e5e5; /* Light gray background on hover */
+    text-decoration: none;
 }
 
 .modal-section h2 {
-  font-family: "等线", sans-serif;/* Assuming 等线 is available */
-  color: #333;
-  font-size: 4em; /* Large text for the modal title */
-  margin: 20px;
+    font-family: "等线", sans-serif;/* Assuming 等线 is available */
+    color: #333;
+    font-size: 4em; /* Large text for the modal title */
+    margin: 20px;
 }
 
 .join-us {
-  font-size: 1.5em; /* Adjust size to make it stand out */
-  font-weight: bold; /* Extra bold */
-  margin-right: 40%;
+    font-size: 1.5em; /* Adjust size to make it stand out */
+    font-weight: bold; /* Extra bold */
+    margin-right: 40%;
 }
 
 /* Form styles */
