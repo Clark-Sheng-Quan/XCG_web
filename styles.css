@@ -73,7 +73,7 @@ body, html {
     border: 1.5px solid #cc3333;
     background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
-    transition: all 0.5s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .red-circle.active {
@@ -81,26 +81,38 @@ body, html {
 }
 
 .black-circle {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     /* border: 1px solid rgba(0, 0, 0, 0.3); */
-    background-color: white;
+    background-color: transparent;
     top: 10px; /* 使黑圈位于红圈下方 */
     cursor: pointer;
-    transition: all 0.5s ease-out;
+    transition: all 0.3s ease-out;
+    align-items: center;
+    position: relative;
+}
+
+.black-circle img{
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease-out;
 }
 
 .black-circle:hover {
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
     transition: all 0.3s ease-out;
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 0.5px 0.5px 10px black;
 }
 
 .black-circle.active {
-    box-shadow: 1px 1px 10px black;
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
-    width: 50px;
-    height: 50px;
+    box-shadow: 1px 1px 5px black;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.black-circle.active img{
+    width: 55px;
+    height: 55px;
 }
 
 .nav-icon {
@@ -392,6 +404,7 @@ body, html {
     font-size: 3em;
     color: #333;
     text-align: end;
+    margin: 0 1vw;
 }
 
 .join-us-options {
@@ -454,7 +467,7 @@ body, html {
 
 .modal-content {
     background-color: #e5e5e5;;
-    margin: 10% auto; /* 10% from the top and centered */
+    margin: 5vh auto 5vh; /* 10% from the top and centered */
     padding: 20px;
     width: 40%; /* Narrower width */
     max-width: 500px; /* Maximum width */
