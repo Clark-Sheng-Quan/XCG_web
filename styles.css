@@ -215,7 +215,6 @@ body, html {
     opacity: 1;
 }
 .sawtooth-border::before {
-
     content: '';
     position: absolute;
     top: 3%;
@@ -333,6 +332,20 @@ body, html {
     /* 其他样式 */
 }
 
+#module2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    width: 25vw;
+}
+
+.schedule-picture {
+    width: 25vw;
+    height: 75vh;
+    overflow: hidden;
+    position: absolute;
+}
+
 .guests-module {
     display: flex;
     justify-content: space-between;
@@ -341,7 +354,7 @@ body, html {
 }
 
 .guests-intro {
-    width: 30%; /* Adjust width as needed */
+    width: 50vw; /* Adjust width as needed */
     margin: auto 3vw auto 0;
     text-align: end;
 }
@@ -371,13 +384,14 @@ body, html {
     height: 100%; /* Set a fixed height for the image */
     overflow: hidden; /* Hide the overflow to maintain aspect ratio */
     background: #fff; /* White background for the guest cards */
+    margin-bottom: 10px;
 }
   
 .guest-container img {
     width: 100%; /* Full width of the container */
     height: 100%; /* Full height of the container */
     object-fit: cover; /* Cover the container without losing aspect ratio */
-    margin-bottom: 10px;
+    
 }
 
 .guest h3 {
@@ -392,6 +406,7 @@ body, html {
     font-size: 0.8em; /* Adjust the size as needed */
 }
   
+
 .join-us-module {
     display: flex;
     align-items: center;
@@ -404,7 +419,7 @@ body, html {
     font-size: 3em;
     color: #333;
     text-align: end;
-    margin: 0 1vw;
+    margin: 0 3vw;
 }
 
 .join-us-options {
@@ -473,7 +488,7 @@ body, html {
     max-width: 500px; /* Maximum width */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     animation-name: animatetop;
-    animation-duration: 0.4s;
+    animation-duration: 0.5s;
     text-align: center;
   
 }

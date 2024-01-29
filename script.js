@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         if (event.deltaY > 0 && currentOffset < maxOffset) {
             // 向下滚动，逐步拉出副页面
-            currentOffset = Math.min(currentOffset + 25, maxOffset);
-            currentWhile = Math.max(currentWhile - 25, minWhite - 600);
+            currentOffset = Math.min(currentOffset + 20, maxOffset);
+            currentWhile = Math.max(currentWhile - 20, minWhite - 600);
         } else if (event.deltaY < 0 && currentOffset > minOffset) {
             // 向上滚动，逐步收回副页面
-            currentOffset = Math.max(currentOffset - 25, minOffset);
-            currentWhile = Math.min(currentWhile + 25, minWhite );
+            currentOffset = Math.max(currentOffset - 20, minOffset);
+            currentWhile = Math.min(currentWhile + 20, minWhite );
         }
         requestAnimationFrame(() => {
             subPage.style.right = `${currentOffset}vw`;
