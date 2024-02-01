@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XCG</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
     <body>
@@ -20,44 +20,45 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a>MAP</a>
+                    <a class="nav-text">MAP</a>
                     <div class="circle">
                         <div class="red-circle"></div>
                         <div class="black-circle"><img src="src/assets/images/XCGweb_icon_F-10.png" alt="Icon" class="nav-icon"/></div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a>SCHEDULE</a>
+                    <a class="nav-text">SCHEDULE</a>
                     <div class="circle">
                         <div class="red-circle"></div>
                         <div class="black-circle"><img src="src/assets/images/XCGweb_icon_F-11.png" alt="Icon" class="nav-icon"/></div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a>MORE INFO</a>
+                    <a class="nav-text">MORE INFO</a>
                     <div class="circle">
                         <div class="red-circle"></div>
                         <div class="black-circle"><img src="src/assets/images/XCGweb_icon_F-12.png" alt="Icon" class="nav-icon"/></div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a>JOIN US!</a>
+                    <a class="nav-text">JOIN US!</a>
                     <div class="circle">
                         <div class="red-circle"></div>
                         <div class="black-circle"><img src="src/assets/images/XCGweb_icon_F-14.png" alt="Icon" class="nav-icon"/></div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a>TICKETS</a>
+                    <a class="nav-text ticket-font">TICKETS</a>
                     <div class="circle">
                         <div class="red-circle"></div>
-                        <div class="black-circle"><img src="src/assets/images/other/2.png" alt="Icon" class="nav-icon"/></div>
+                        <div class="black-circle ticket-nav"><img src="src/assets/images/XCGweb_icon_F_b7.png" alt="Icon" class="nav-icon"/></div>
                     </div>
                 </li>
-                <li class="nav-item" id="tickets-container">
-                    <a class="tickets-button">FOLLOW</a>
+                <li class="nav-item" id="follow-container">
+                    <a class="follow-button">FOLLOW</a>
                     <div class="circle">
                         <div class="red-circle"></div>
+                        
                     </div>
                 </li>
             </ul>
@@ -85,7 +86,7 @@
                 <div class="guests-intro">
                   <h2>GUESTS </br> 2024!</h2>
                 </div>
-                <div class="guests-grid">
+                <div class="guests-content">
                   <!-- Repeat this block for each guest -->
                     <div class="guest">
                         <div class="guest-container">
@@ -154,10 +155,10 @@
                 </div>
             </div>
             <div class="module-page join-us-module" id="module4">
-                <div class="join-us-text">
+                <div class="join-us-intro">
                     <h2>JOIN <br> US!</h2>
                 </div>
-                <div class="join-us-options">
+                <div class="join-us-content">
                     <div class="option" data-modal-target="#sponserModal">
                         <h3>Sponser</h3>
                         <img src="src/assets/images/XCGweb_icon_F-16.png" alt="Icon">
@@ -197,9 +198,18 @@
                 </div>
                   
             </div>
-            <div class="module-page" id="module6">
-                6
+
+
+            <!-- Place this at the end of your sub-page content -->
+            <div class="footer-container">
+                <div class="footer-content">
+                <!-- Footer content goes here -->
+                </div>
             </div>
+  
+            <!-- Footer Module -->
+
+
             <!-- end modules here -->
         </div>
         <div class="modal-section">
@@ -266,7 +276,7 @@
             </div>
         </div>
         
-        <script src="script.js"></script>
+        <script src="src/script.js"></script>
     </body>
 </body>
 </html>
