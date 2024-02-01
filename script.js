@@ -3,7 +3,7 @@ let currentWhile = 82;
 const maxOffset = 0; // 副页面完全展开时的偏移量
 const minOffset = -600; // 副页面完全隐藏时的偏移量
 const minWhite = 82
-const moduleIndex = []
+const moduleIndex = [0, 82, 167, 197, 257, 287, 367]
 // 获取所有元素
 const subPage = document.querySelector('.sub-page');
 const whiteLine = document.querySelector('.white-line');
@@ -80,20 +80,20 @@ function setActive(index) {
     if(blackCircles[index]){blackCircles[index].classList.add('active');}
 }
 function updateActiveNavItem() {
-    if(currentOffset >= -25){setActive(6)}
-    else if(currentOffset >= -125){setActive(5)}
-    else if(currentOffset >= -225){setActive(4)}
-    else if(currentOffset >= -325){setActive(3)}
-    else if(currentOffset >= -425){setActive(2)}
-    else if(currentOffset >= -525){setActive(1)}
+    if(currentOffset >= minOffset+moduleIndex[6]){setActive(6)}
+    else if(currentOffset >= minOffset+moduleIndex[5]){setActive(5)}
+    else if(currentOffset >= minOffset+moduleIndex[4]){setActive(4)}
+    else if(currentOffset >= minOffset+moduleIndex[3]){setActive(3)}
+    else if(currentOffset >= minOffset+moduleIndex[2]){setActive(2)}
+    else if(currentOffset >= minOffset+moduleIndex[1]){setActive(1)}
     else{setActive(0)}
 }
 
     // 定义函数以根据导航项移动副页面
 function moveToPage(index) {
     // 计算新的right值
-    currentOffset = minOffset + (index * 82); // 每个导航项增加100vw
-    currentWhile = minWhite - (index * 82)
+    currentOffset = minOffset + (moduleIndex[index]); // 每个导航项增加100vw
+    currentWhile = minWhite - (moduleIndex[index])
     requestAnimationFrame(() => {
         subPage.style.right = `${currentOffset}vw`;;
         whiteLine.style.left = `${currentWhile}vw`;
