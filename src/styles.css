@@ -10,7 +10,7 @@ body, html {
     height: 25%;
     position: relative;
     z-index: 1;   
-    
+    transition: all 0.3s ease;
 }
 
 .nav-items {
@@ -34,8 +34,9 @@ body, html {
 }
 
 .nav-text{
-    font-size: 16px;
+    font-size: 15px;
     transition: all 0.3s ease-out;
+    font-weight: bold;
 }
 
 .nav-text.active {
@@ -218,15 +219,19 @@ body, html {
     /* Remove margin if it's causing layout shifts */
 }
 
+
+.follow-button.active {
+    font-size: 1.5em;
+    background-color:  #FFA500;/* Lighter orange color on hover 
+    ; /* Larger shadow effect on hover */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
+}
+
 .follow-button:hover {
     background-color:  #FFA500;/* Lighter orange color on hover 
     ; /* Larger shadow effect on hover */
     box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
     cursor: pointer; /* Change mouse to pointer on hover */
-}
-
-.follow-button.active {
-    font-size: 1.5em;
 }
 
 .follow-button:before,
