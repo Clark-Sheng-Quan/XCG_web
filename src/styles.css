@@ -98,8 +98,8 @@ body, html {
 .black-circle {
     width: 50px;
     height: 50px;
-    /* border: 1px solid rgba(0, 0, 0, 0.3); */
-    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: white;
     top: 10px; /* 使黑圈位于红圈下方 */
     cursor: pointer;
     transition: all 0.3s ease-out;
@@ -108,25 +108,21 @@ body, html {
 }
 
 .black-circle img{
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
     width: 50px;
     height: 50px;
     transition: all 0.3s ease-out;
 }
 
 .black-circle:hover {
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    border: 1px solid rgba(0, 0, 0, 1);
     transition: all 0.3s ease-out;
-    box-shadow: 0.5px 0.5px 10px black;
+    box-shadow: 1px 1px 7.5px black;
 }
 
 .black-circle.active {
-    box-shadow: 1px 1px 5px black;
-    top: 15 px;
-    /* border: 1px solid rgba(0, 0, 0, 0.5); */
-}
-
-.black-circle.active img{
+    box-shadow: 1px 1px 7.5px black;
+    top: 15px;
+    border: 1px solid rgba(0, 0, 0, 1);
     width: 55px;
     height: 55px;
 }
@@ -135,6 +131,8 @@ body, html {
     width: 110px; /* Width of the circle */
     height: 50px; /* Height of the circle, adjust if needed */
     border-radius: 0;
+    border: none;
+    background-color: transparent;
 }
 
 .ticket-nav img {
@@ -146,19 +144,23 @@ body, html {
 }
 
 .ticket-nav:hover {
-    box-shadow: 0.5px 0.5px 5px black;
+    border: none;
+    box-shadow: none
+}
+
+.ticket-nav:hover img {
+    content: url('assets/images/XCGweb_icon_F-08.png'); /* Path to the active state image */
 }
 
 .ticket-nav.active {
     width: 115px; /* Width of the circle */
     height: 55px; /* Height of the circle, adjust if needed */
-    box-shadow: 0 0 0 black;
+    border: none;
+    box-shadow: none
 }
 
 .ticket-nav.active img {
     content: url('assets/images/XCGweb_icon_F-08.png'); /* Path to the active state image */
-    width: 100%; /* Will take the full width of the .ticket-nav */
-    height: auto; /* Will maintain the aspect ratio */
 }
 
 .nav-icon {
@@ -355,8 +357,8 @@ body, html {
 }
 
 .bg-picture {
-    width: 74%;
-    height: 71%;
+    width: 1000px;
+    height: 400px;
     overflow: hidden;
     position: absolute;
     top: 50%;
