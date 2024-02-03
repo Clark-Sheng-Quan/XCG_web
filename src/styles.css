@@ -754,33 +754,75 @@ body, html {
 
 /* Nav-Moblie */
 
-  .mobile-navbar {
-    display: none; /* 默认隐藏移动导航栏 */
+/* 基础样式，确保在小屏幕上移动导航栏和切换按钮可见 */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: #cc3333;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 100vw;
+    height: 5vh;
 }
 
-.mobile-nav-items {
-    display: none; /* 默认隐藏移动导航项 */
+/* 初始状态下，移动导航栏是隐藏的 */
+.mobile-navbar {
+    display: none;
+    position: fixed;
+    top: 5vh;
+    width: 100%;
+    background-color: gray;
+    z-index: 999;
+    overflow-y: auto;
+    margin-top: 20px;
 }
 
-  @media (max-width: 768px) {
-    
-    .mobile-navbar {
+/* 在小屏幕上展示切换按钮 */
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
         display: block;
     }
-
     .navbar {
         display: none;
     }
+}
 
-    .mobile-nav-toggle {
-        cursor: pointer;
-        /* 可以添加更多样式来美化菜单图标 */
-    }
+/* 当.mobile-navbar有.active类时，它会变得可见 */
+.mobile-navbar.active {
+    display: block;
+    height: 100vh; /* 覆盖整个视口的高度 */
+    overflow-y: auto;
+}
 
-    .mobile-nav-items.active {
-        display: block;
-        
-    }
+/* 移动导航链接的样式 */
+.mobile-nav-items a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.mobile-nav-items a:hover {
+    background-color: #34b7a7;
+}
+
+/* 关闭按钮的样式 */
+.mobile-nav-close {
+    display: block;
+    text-align: right;
+    padding: 15px 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
 
     /* Nav End*/
     .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
@@ -794,12 +836,12 @@ body, html {
         right: 0;
         flex-direction: column;
         overflow-x: visible;
-        top: 75vh;
+        top: 100vh;
     }
 
     .footer-container {
         width: 100vw; /* 调整宽度为视口宽度 */
-        height: 60vh;
+        height: 75vh;
         position: relative; /* 如果需要，可以改为absolute并调整bottom为0 */
         bottom: 0;
         right: 0;
@@ -814,7 +856,9 @@ body, html {
     }
 
     /* 隐藏指示器 */
-
+    .main-page {
+        height: 90vh;
+    }
 
     .module-page {
         width: 100vw; /* 每个模块的宽度调整为视口宽度 */
