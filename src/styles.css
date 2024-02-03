@@ -1,0 +1,840 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;    
+    height: 25%;
+    position: relative;
+    z-index: 1;   
+    transition: all 0.3s ease;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    background: #ffffff;
+    box-shadow: 0 1px 5px black;
+    margin: 0;
+    position: relative; /* 使得子元素可以相对于此定位 */
+    z-index: 4;
+}
+
+.nav-item {
+    cursor: pointer;
+    position: relative; /* 为红线和圈提供定位基准 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-text{
+    font-size: 15px;
+    transition: all 0.3s ease-out;
+    font-weight: bold;
+}
+
+.nav-text.active {
+    font-size: 20px;
+}
+
+.ticket-font {
+    color: #cc3333;
+}
+
+.circle {
+    position: absolute;
+    top: 55px; /* 位于每个nav-item的底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.red-line {
+    background-color: #cc3333;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 75px; 
+    z-index: 2;
+}
+
+.white-line {
+    background-color: white;
+    height: 2px;
+    width: 18vw;
+    left: 82vw;
+    position: absolute;
+    top: 75px; 
+    z-index: 3;
+    transition: left 1.5s ease, width 0.3s ease;
+}
+
+.red-circle, .black-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.red-circle {
+    border: 1.5px solid #cc3333;
+    background-color: #ffffff;
+    top: -5px; /* 使红圈位于红线上方 */
+    transition: all 0.3s ease-out;
+}
+
+.red-circle.active {
+    background-color: black; 
+}
+
+.black-circle {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: white;
+    top: 10px; /* 使黑圈位于红圈下方 */
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    align-items: center;
+    position: relative;
+}
+
+.black-circle img{
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease-out;
+}
+
+.black-circle:hover {
+    border: 1px solid rgba(0, 0, 0, 1);
+    transition: all 0.3s ease-out;
+    box-shadow: 1px 1px 5px black;
+}
+
+.black-circle.active {
+    box-shadow: 1px 1px 10px black;
+    top: 15 px;
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.black-circle.active img{
+    width: 55px;
+    height: 55px;
+}
+
+.ticket-nav {
+    width: 110px; /* Width of the circle */
+    height: 50px; /* Height of the circle, adjust if needed */
+    border-radius: 0;
+    border: 0 0 transparent;
+    box-shadow: 0 0 transparent;
+}
+
+.ticket-nav img {
+    width: 100%; /* Will take the full width of the .ticket-nav */
+    height: auto; /* Will maintain the aspect ratio */
+    transition: all 0.3s ease-out;
+    border-radius: 0;
+    content: url('assets/images/XCGweb_icon_F_b7.png'); /* Path to the active state image */
+}
+
+.ticket-nav:hover {
+    box-shadow: 0.5px 0.5px 5px black;
+    border: 0 0 0;
+}
+
+.ticket-nav.active {
+    width: 115px; /* Width of the circle */
+    height: 55px; /* Height of the circle, adjust if needed */
+    box-shadow: 0 0 0 black;
+    border: 0 0 0;
+}
+
+.ticket-nav.active img {
+    content: url('assets/images/XCGweb_icon_F-08.png'); /* Path to the active state image */
+    width: 100%; /* Will take the full width of the .ticket-nav */
+    height: auto; /* Will maintain the aspect ratio */
+}
+
+.nav-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#logo-container {
+    flex-grow: 0; /* Do not allow the logo container to grow */
+    margin-left: -1.5vw; /* Adjust this value to move the logo container to the left */
+    display: flex; /* Use flex to align the logo container items */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center the items horizontally */
+}
+
+.logo-icon {
+    margin-top: 2px;
+    width: 5.5vw;
+    height: 5.5vh;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#follow-container {
+    margin-right: 4vw; /* Adjust the right margin as needed */
+    margin-left: 5vw; /* Adjust the left margin as needed */
+    flex-grow: 0; /* Do not allow the tickets container to grow */
+    display: inline-flex; /* Use inline-flex to align the button properly */
+    align-items: center; /* Center the button vertically  */
+}
+
+.follow-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8vw;
+    height: 3vh;
+    transform: translate(-50%, -50%);
+    background-color: #ffbf00; /* The color of the button background */
+    color: white; /* The color of the text */
+    padding: 10px 30px; /* Adjust the padding to control the size of the button */
+    font-weight: bold; /* Bold font */
+    font-size: 1.3em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Allows us to set padding and other box model properties */
+    /* Remove margin if it's causing layout shifts */
+}
+
+
+.follow-button.active {
+    font-size: 1.5em;
+    background-color:  #FFA500;/* Lighter orange color on hover 
+    ; /* Larger shadow effect on hover */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
+}
+
+.follow-button:hover {
+    background-color:  #FFA500;/* Lighter orange color on hover 
+    ; /* Larger shadow effect on hover */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
+    cursor: pointer; /* Change mouse to pointer on hover */
+}
+
+.follow-button:before,
+.follow-button:after {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 100%;
+  background-size: 3px 3px; /* 一个repeat的大小 */
+  background-repeat: repeat-y;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.scroll-indicator {
+    width: 18vw;
+    height: 100vh;
+    cursor: pointer;
+    background-color: #cc3333;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px; /* Add padding to ensure content doesn't touch the edges */
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+}
+
+#indicator-variable {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+.sawtooth-border::before {
+    content: '';
+    position: absolute;
+    top: 3%;
+    width: 20px;
+    height: 96%;
+    background: linear-gradient(-225deg,  
+    transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%),
+    linear-gradient(225deg, 
+    transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%);
+    background-size: 76px 38px;
+    background-repeat: repeat-y;
+    transform: rotate(180deg);
+ }
+/* #cc3333 33.33%, transparent 33.33%, transparent 66.666%, #cc3333 66.666%);
+    transparent 33.33%, #cc3333 33.33%, #cc3333 66.666%, transparent 66.666%);
+ #e5e5e5 33.33%, transparent 33.33%, transparent 66.666%, #e5e5e5 66.666%),
+ transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%);
+*/
+.sawtooth-border:before {
+    left: -10px;
+}  */
+    
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%; /* Adjust based on your design */
+    width: 100%;
+    position: relative;
+    
+}
+
+.long-arrow {
+    font-size: 4vw; /* 调整箭头的大小 */
+    color: white;
+    position: absolute; /* 绝对定位允许你精准控制箭头的位置 */
+    top: 15%; /* 50% 会把元素的顶部置于容器中心 */
+    left: 50%; /* 50% 会把元素的左边置于容器中心 */
+    transform: translate(-50%, -50%) scaleX(3); /* 使用translate调整精准位置并拉伸箭头 */
+}
+
+.indicator-text {
+    font-size: 4vw; /* Adjust as needed */
+    color: white;
+    margin-top: 20vh;
+    margin-left: 1vw;
+    text-align: left;
+}
+
+.indicator-icon {
+    width: 9vw; /* Adjust as needed */
+    height: 9vw; /* Adjust as needed */
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom: 12%;
+    margin: auto;
+}
+
+.indicator-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.main-page {
+    width: 82vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    background-color: #e5e5e5;
+    z-index: 0;
+}
+/* w：1272，h：611 */
+
+.home-page {
+    width: 80vw;
+    height: 75vh;
+    position: absolute;
+    top: 10%;
+    /* bottom: 12.5%; */
+    /* left: 12.5%; */
+    z-index: 0;
+}
+
+.bg-picture {
+    width: 74%;
+    height: 71%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sub-page {
+    width: 368vw; /* 总宽度足以容纳所有模块 */
+    height: 100vh;
+    position: fixed;
+    right: -350vw; /* 初始时副页面大部分在屏幕右侧外 */
+    top: 60px;
+    background: #e5e5e5;
+    transition: right 1.5s ease;
+    display: flex;
+    overflow-x: hidden; /* 隐藏水平滚动条 */ 
+}
+
+.module-page {
+    width: 75vw;
+    height: 75vh;
+    display: inline-block;
+    margin: auto 0 auto 5vw;
+    border: #cc3333 1px solid;
+    /* 其他样式 */
+}
+
+#module2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    width: 25vw;
+}
+
+.schedule-picture {
+    width: 25vw;
+    height: 75vh;
+    overflow: hidden;
+    position: absolute;
+}
+
+.guests-module {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 50vw;
+}
+
+.guests-intro h2 {
+    font-size: 3em;
+    color: #333;
+    text-align: end;
+    margin: 0 3vw;
+}
+
+.guests-content {
+    height: 100%;
+    width: 100%; /* Adjust width as needed */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 0px; /* Space between grid items */
+    margin: auto;
+    
+}
+.guest {
+    padding: 30px 20px 0 20px;
+    text-align: center; /* Center the text */
+    height: 150px;
+    width: 150px;
+}
+
+.guest-container {
+    width: 100%; /* Full width of the card */
+    height: 100%; /* Set a fixed height for the image */
+    overflow: hidden; /* Hide the overflow to maintain aspect ratio */
+    background: #fff; /* White background for the guest cards */
+    margin-bottom: 10px;
+}
+  
+.guest-container img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Cover the container without losing aspect ratio */
+    
+}
+
+.guest h3 {
+    font-size: 1em; /* Adjust the size as needed */
+    padding-top: 2px;
+    margin-top: 0;
+}
+
+.guest p {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 0.8em; /* Adjust the size as needed */
+}
+  
+
+.join-us-module {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 30vw;
+}
+
+.join-us-intro h2 {
+    font-size: 3em;
+    color: #333;
+    text-align: end;
+    margin: 0 3vw;
+}
+
+.join-us-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.option {
+    width: 270px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.option h3 {
+    text-align: center;
+    font-size: 2.5em;
+    z-index: 3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
+}
+
+.option img {
+    width: 270px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */    
+    border-radius: 5%;
+    z-index: 2;
+    position: absolute;
+}
+
+/* .option::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 5%;
+} */
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Above everything else */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.5); /* Black with opacity */
+    /* opacity: 0.7; */
+}
+
+.modal-content {
+    background-color: #e5e5e5;;
+    margin: 5vh auto 5vh; /* 10% from the top and centered */
+    padding: 20px;
+    width: 40%; /* Narrower width */
+    max-width: 500px; /* Maximum width */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation-name: animatetop;
+    animation-duration: 0.3s;
+    text-align: center;
+  
+}
+
+.close-button {
+    float: right;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    width: 35px; /* Diameter of the circle */
+    height: 35px;
+    line-height: 30px; /* Same as height to vertically center the 'X' */
+    text-align: center; 
+    justify-content: center;
+    border-radius: 50%; /* Makes it circular */
+    background: #fff; /* Circle background color */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    background: #e5e5e5; /* Light gray background on hover */
+    text-decoration: none;
+}
+
+.modal-section h2 {
+    font-family: "等线", sans-serif;/* Assuming 等线 is available */
+    color: #333;
+    font-size: 4em; /* Large text for the modal title */
+    margin: 20px;
+}
+
+.join-us {
+    font-size: 1.5em; /* Adjust size to make it stand out */
+    font-weight: bold; /* Extra bold */
+    margin-right: 40%;
+}
+
+/* Form styles */
+.modal-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.6;
+}
+
+
+.modal-form h3,
+.modal-form p,
+.modal-form input,
+.modal-form textarea {
+    font-family: "Helvetica", Arial, sans-serif; /* Use Helvetica for other text */
+}
+
+.modal-form input,
+.modal-form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: calc(100% - 20px); /* Full width minus padding */
+    border: 1px solid #ddd;
+}
+  
+.form-header {
+    display: flex; /* Use flexbox to layout the title and description */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between title and description */
+    margin: 0 20px; /* Add margin for spacing */
+  }
+
+.form-header h3 {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 20px; /* Add margin to separate title from description */
+    white-space: nowrap
+}
+
+.form-header .modal-description {
+    color: #333;
+    font-size: 1em; /* Adjust as needed */
+    margin-left: 20px; /* Add margin to separate description from title */
+    flex-grow: 1; /* Let the description take up remaining space */
+    text-align: left; /* Align the text to the right */
+  }
+
+.modal-form textarea {
+    height: 100px; /* Larger textarea */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+/* Button and privacy styles */
+.modal-footer button {
+    /* padding: 10px 20px; */
+    background-color: #ffbf00;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    opacity: 0.7;
+    font-weight: bold;
+}
+
+.modal-section .modal-footer button:hover {
+    opacity: 1;
+}
+
+.modal-footer p {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: bold;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 10%; opacity: 1}
+}
+
+.ticket-module {
+    display: flex;
+    background-color: #f5f5f5; /* 浅色背景 */
+    color: #333; /* 深色文字 */
+  }
+  
+  .left-side {
+    position: relative;
+    width: 40%; /* Adjust as needed */
+  }
+  
+  .background-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .ticket-icon {
+    position: absolute;
+    bottom: 10%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    background: #ffd700; /* Gold color */
+    color: #333;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.5em; /* Adjust as needed */
+    cursor: pointer;
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  }
+  
+  .right-side {
+    width: 60%; /* Adjust as needed */
+    padding: 20px;
+    border-left: 15px solid red; /* Red border on the left */
+    background-color: #ffffff; /* White background for the right side */
+    box-sizing: border-box; /* Includes padding in width */
+  }
+  
+  /* ...rest of your right-side styles... */
+  .footer-container {
+    position: relative;
+    background-color: #007bff; /* Your desired shade of blue */
+    text-align: center;
+    color: white;
+    position: absolute;
+    right: 0;
+    width: 40vw;
+    height: 100%;
+    background-color: #ffbf00; /* The color of the button background */
+    color: white; /* The color of the text */
+    font-weight: bold; /* Bold font */
+    font-size: 1.3rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Allows us to set padding and other box model properties */
+  }
+  
+  .footer-container::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 100%;
+    background-size: 30px 30px; /* 一个repeat的大小 */
+    background-repeat: repeat-y;
+    background-image: radial-gradient(#fff 10px, transparent 10px);
+    position: absolute;
+    top: 0;
+    left: 10%
+  }
+  
+  .footer-content {
+    position: relative; /* Ensures content is above the pseudo-element */
+    /* Add your content styles here */
+  }
+
+/* Nav-Moblie */
+
+  .mobile-navbar {
+    display: none; /* 默认隐藏移动导航栏 */
+}
+
+.mobile-nav-items {
+    display: none; /* 默认隐藏移动导航项 */
+}
+
+  @media (max-width: 768px) {
+    
+    .mobile-navbar {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        cursor: pointer;
+        /* 可以添加更多样式来美化菜单图标 */
+    }
+
+    .mobile-nav-items.active {
+        display: block;
+        
+    }
+
+    /* Nav End*/
+    .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
+        display: none;
+    }
+
+    .sub-page {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        right: 0;
+        flex-direction: column;
+        overflow-x: visible;
+        top: 75vh;
+    }
+
+    .footer-container {
+        width: 100vw; /* 调整宽度为视口宽度 */
+        height: 60vh;
+        position: relative; /* 如果需要，可以改为absolute并调整bottom为0 */
+        bottom: 0;
+        right: 0;
+        margin-top: 20px; /* 根据需要添加适当的间距 */
+        padding: 20px 0; /* 添加一些内边距 */
+    }
+
+    /* 调整页脚内容样式 */
+    .footer-content {
+        padding: 10px;
+        /* 根据需要进一步调整样式 */
+    }
+
+    /* 隐藏指示器 */
+
+
+    .module-page {
+        width: 100vw; /* 每个模块的宽度调整为视口宽度 */
+        padding: 20px; /* 添加内边距以防止内容直接触碰到边框 */
+        margin: 10px 0; /* 添加外边距以增加模块之间的空间 */
+        overflow: auto; /* 允许内容溢出时出现滚动条 */
+        box-sizing: border-box; /* 确保边框和内边距不会增加元素的总宽度或总高度 */
+        height:auto;
+        min-height: 75vh;
+    }
+
+    .guests-intro h2 {
+        font-size: 2em;
+        margin: 0 20px;
+    }
+
+    .join-us-intro h2 {
+        font-size: 2em;
+        margin: 0 20px;
+    }
+}
+
+  
