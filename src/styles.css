@@ -779,7 +779,7 @@ body, html {
     z-index: 9999;
     background-color: #cc3333;
     color: white;
-    padding: 15px;
+    padding: 15px 15px;
     font-size: 24px;
     cursor: pointer;
     width: 100vw;
@@ -796,16 +796,6 @@ body, html {
     z-index: 999;
     overflow-y: auto;
     margin-top: 20px;
-}
-
-/* 在小屏幕上展示切换按钮 */
-@media (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-    .navbar {
-        display: none;
-    }
 }
 
 /* 当.mobile-navbar有.active类时，它会变得可见 */
@@ -839,7 +829,12 @@ body, html {
 }
 
 @media (max-width: 768px) {
-
+    .mobile-nav-toggle {
+        display: block;
+    }
+    .navbar {
+        display: none;
+    }
     /* Nav End*/
     .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
         display: none;
@@ -872,11 +867,30 @@ body, html {
     }
 
     /* 隐藏指示器 */
-    .main-page {
-        height: 90vh;
-        overflow: auto; /* 允许内容溢出时出现滚动条 */
-        box-sizing: border-box; /* 确保边框和内边距不会增加元素的总宽度或总高度 */
+    .main-page{
+        height:100vh;
+        width:100vw;
+        overflow:auto;/*允许内容溢出时出现滚动条*/
+        box-sizing:border-box;/*确保边框和内边距不会增加元素的总宽度或总高度*/
+        
     }
+        
+    .home-page{
+        width:100%;
+        height:85%;
+        position:absolute;
+        top:15%;
+        z-index:0;
+    }
+        
+    .bg-picture{
+        overflow:auto;
+        position:absolute;
+        top:0;
+        left:0;
+        transform:none;
+    }
+        
 
     .module-page {
         width: 100vw; /* 每个模块的宽度调整为视口宽度 */
