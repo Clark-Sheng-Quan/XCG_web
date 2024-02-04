@@ -37,16 +37,14 @@ body, html {
     font-size: 15px;
     transition: all 0.3s ease-out;
     font-weight: bold;
-    height: 20px;
 }
 
 .nav-text.active {
     font-size: 20px;
-    height: 25px;
 }
 
 .ticket-font {
-    color: rgb(199, 71, 72);
+    color: #cc3333;
 }
 
 .circle {
@@ -60,7 +58,7 @@ body, html {
 }
 
 .red-line {
-    background-color: rgb(199, 71, 72);
+    background-color: #cc3333;
     height: 2px;
     width: 100%;
     position: absolute;
@@ -87,7 +85,7 @@ body, html {
 }
 
 .red-circle {
-    border: 1.5px solid rgb(199, 71, 72);
+    border: 1.5px solid #cc3333;
     background-color: #ffffff;
     top: -5px; /* 使红圈位于红线上方 */
     transition: all 0.3s ease-out;
@@ -95,7 +93,6 @@ body, html {
 
 .red-circle.active {
     background-color: black; 
-    border: none;
 }
 
 .black-circle {
@@ -111,6 +108,7 @@ body, html {
 }
 
 .black-circle img{
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
     width: 50px;
     height: 50px;
     transition: all 0.3s ease-out;
@@ -119,13 +117,16 @@ body, html {
 .black-circle:hover {
     border: 1px solid rgba(0, 0, 0, 1);
     transition: all 0.3s ease-out;
-    box-shadow: 1px 1px 7.5px black;
+    box-shadow: 1px 1px 5px black;
 }
 
 .black-circle.active {
-    box-shadow: 1px 1px 7.5px black;
-    top: 15px;
+    box-shadow: 1px 1px 10px black;
+    top: 15 px;
     border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.black-circle.active img{
     width: 55px;
     height: 55px;
 }
@@ -134,12 +135,12 @@ body, html {
     width: 110px; /* Width of the circle */
     height: 50px; /* Height of the circle, adjust if needed */
     border-radius: 0;
-    border: none;
-    background-color: transparent;
+    border: 0 0 transparent;
+    box-shadow: 0 0 transparent;
 }
 
 .ticket-nav img {
-    width: 100%; /* Will take the full width */
+    width: 100%; /* Will take the full width of the .ticket-nav */
     height: auto; /* Will maintain the aspect ratio */
     transition: all 0.3s ease-out;
     border-radius: 0;
@@ -147,25 +148,21 @@ body, html {
 }
 
 .ticket-nav:hover {
-    width: 115px; /* Width of the circle */
-    height: 55px; /* Height of the circle, adjust if needed */
-    border: none;
-    box-shadow: none
-}
-
-.ticket-nav:hover img {
-    content: url('assets/images/XCGweb_icon_F-08.png'); /* Path to the active state image */
+    box-shadow: 0.5px 0.5px 5px black;
+    border: 0 0 0;
 }
 
 .ticket-nav.active {
     width: 115px; /* Width of the circle */
     height: 55px; /* Height of the circle, adjust if needed */
-    border: none;
-    box-shadow: none
+    box-shadow: 0 0 0 black;
+    border: 0 0 0;
 }
 
 .ticket-nav.active img {
     content: url('assets/images/XCGweb_icon_F-08.png'); /* Path to the active state image */
+    width: 100%; /* Will take the full width of the .ticket-nav */
+    height: auto; /* Will maintain the aspect ratio */
 }
 
 .nav-icon {
@@ -189,26 +186,19 @@ body, html {
 
 .logo-icon {
     margin-top: 2px;
-    width: 5vw;
-    height: 5vh;
+    width: 5.5vw;
+    height: 5.5vh;
     overflow: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.3s ease-out;
 }
-
-.nav-text.active .logo-icon {
-    width: 5.5vw;
-    height: 5.5vh;
-}
-
 
 #follow-container {
-    margin-right: 3vw; /* Adjust the right margin as needed */
-    margin-left: 2vw; /* Adjust the left margin as needed */
-    flex-grow: 0; 
+    margin-right: 4vw; /* Adjust the right margin as needed */
+    margin-left: 5vw; /* Adjust the left margin as needed */
+    flex-grow: 0; /* Do not allow the tickets container to grow */
     display: inline-flex; /* Use inline-flex to align the button properly */
     align-items: center; /* Center the button vertically  */
 }
@@ -266,7 +256,7 @@ body, html {
     width: 18vw;
     height: 100vh;
     cursor: pointer;
-    background-color: rgb(199, 71, 72);
+    background-color: #cc3333;
     color: white;
     position: relative;
     display: flex;
@@ -369,8 +359,8 @@ body, html {
 }
 
 .bg-picture {
-    width: 1193px;
-    height: 536.33px;
+    width: 74%;
+    height: 71%;
     overflow: hidden;
     position: absolute;
     top: 50%;
@@ -394,7 +384,7 @@ body, html {
     width: 75vw;
     height: 75vh;
     display: inline-block;
-    margin: auto 0 auto 10vw;
+    margin: auto 0 auto 5vw;
     border: #cc3333 1px solid;
     /* 其他样式 */
 }
@@ -404,7 +394,6 @@ body, html {
     justify-content: space-between;
     padding: 0;
     width: 25vw;
-    height: 75vh;
 }
 
 .schedule-picture {
@@ -691,44 +680,40 @@ body, html {
     color: #333; /* 深色文字 */
   }
   
-  .ticket-left {
+  .left-side {
     position: relative;
-    /* width: 60%; */
+    width: 40%; /* Adjust as needed */
   }
   
-  .ticket-bg{
-    width: 500px;
-    height: 100%;
+  .background-img {
+    width: 100%;
+    height: auto;
   }
   
-  .ticket-button {
+  .ticket-icon {
     position: absolute;
     bottom: 10%; /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
-    background: transparent; /* Gold color */
+    background: #ffd700; /* Gold color */
     color: #333;
-    padding: 0;
+    padding: 10px 20px;
     font-weight: bold;
     font-size: 1.5em; /* Adjust as needed */
     cursor: pointer;
     border-radius: 5px; /* Slightly rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
   }
-
-  .ticket-button-img{
-    height: 100%;
-    width: 100%;
-  }
   
-  .ticket-right {
-    /* width: 60%; */
+  .right-side {
+    width: 60%; /* Adjust as needed */
     padding: 20px;
-    border-left: 15px solid rgb(199, 71, 72); /* Red border on the left */
+    border-left: 15px solid red; /* Red border on the left */
     background-color: #ffffff; /* White background for the right side */
     box-sizing: border-box; /* Includes padding in width */
   }
   
+  /* ...rest of your right-side styles... */
   .footer-container {
     position: relative;
     background-color: #007bff; /* Your desired shade of blue */
@@ -767,7 +752,6 @@ body, html {
     /* Add your content styles here */
   }
 
-  
 /* Nav-Moblie */
 
 /* 基础样式，确保在小屏幕上移动导航栏和切换按钮可见 */
@@ -779,7 +763,7 @@ body, html {
     z-index: 9999;
     background-color: #cc3333;
     color: white;
-    padding: 15px 15px;
+    padding: 15px;
     font-size: 24px;
     cursor: pointer;
     width: 100vw;
@@ -796,6 +780,16 @@ body, html {
     z-index: 999;
     overflow-y: auto;
     margin-top: 20px;
+}
+
+/* 在小屏幕上展示切换按钮 */
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+    .navbar {
+        display: none;
+    }
 }
 
 /* 当.mobile-navbar有.active类时，它会变得可见 */
@@ -829,12 +823,7 @@ body, html {
 }
 
 @media (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-    .navbar {
-        display: none;
-    }
+
     /* Nav End*/
     .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
         display: none;
@@ -867,30 +856,9 @@ body, html {
     }
 
     /* 隐藏指示器 */
-    .main-page{
-        height:100vh;
-        width:100vw;
-        overflow:auto;/*允许内容溢出时出现滚动条*/
-        box-sizing:border-box;/*确保边框和内边距不会增加元素的总宽度或总高度*/
-        
+    .main-page {
+        height: 90vh;
     }
-        
-    .home-page{
-        width:100%;
-        height:85%;
-        position:absolute;
-        top:15%;
-        z-index:0;
-    }
-        
-    .bg-picture{
-        overflow:auto;
-        position:absolute;
-        top:0;
-        left:0;
-        transform:none;
-    }
-        
 
     .module-page {
         width: 100vw; /* 每个模块的宽度调整为视口宽度 */
@@ -912,4 +880,5 @@ body, html {
         margin: 0 20px;
     }
 }
+
   

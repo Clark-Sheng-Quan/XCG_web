@@ -16,68 +16,44 @@ const indicatorVariable = document.querySelectorAll('#indicator-variable');
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // mobile view
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        var toggleButton = document.querySelector('.mobile-nav-toggle');
-        var mobileNav = document.querySelector('.mobile-navbar');
-        var closeNavButton = document.createElement('div');
-    
-        // 创建关闭按钮并添加到移动导航栏
-        closeNavButton.classList.add('mobile-nav-close');
-        closeNavButton.innerHTML = '&times;'; // 使用HTML实体代表一个“关闭”字符
-        mobileNav.appendChild(closeNavButton);
-    
-        // 切换移动导航栏的显示状态
-        toggleButton.addEventListener('click', function() {
-            mobileNav.classList.add('active');
+    // 更新导航栏激活状态的函数
+    window.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        if (event.deltaY > 0 && currentOffset < maxOffset) {
+            // 向下滚动，逐步拉出副页面
+            currentOffset = Math.min(currentOffset + scrollSpeed, maxOffset);
+            currentWhile = Math.max(currentWhile - scrollSpeed, minWhite + minOffset);
+        } else if (event.deltaY < 0 && currentOffset > minOffset) {
+            // 向上滚动，逐步收回副页面
+            currentOffset = Math.max(currentOffset - scrollSpeed, minOffset);
+            currentWhile = Math.min(currentWhile + scrollSpeed, minWhite );
+        }
+        requestAnimationFrame(() => {
+            subPage.style.right = `${currentOffset}vw`;
+            whiteLine.style.left = `${currentWhile}vw`;
+            updateActiveNavItem();
+            updateIndicator()
         });
-    
-        // 点击关闭按钮隐藏移动导航栏
-        closeNavButton.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
-        });
+    });
 
-
-    }else{
-        // Desktop view
-        window.addEventListener('wheel', (event) => {
-            event.preventDefault();
-            if (event.deltaY > 0 && currentOffset < maxOffset) {
-                // 向下滚动，逐步拉出副页面
-                currentOffset = Math.min(currentOffset + scrollSpeed, maxOffset);
-                currentWhile = Math.max(currentWhile - scrollSpeed, minWhite + minOffset);
-            } else if (event.deltaY < 0 && currentOffset > minOffset) {
-                // 向上滚动，逐步收回副页面
-                currentOffset = Math.max(currentOffset - scrollSpeed, minOffset);
-                currentWhile = Math.min(currentWhile + scrollSpeed, minWhite );
-            }
-            requestAnimationFrame(() => {
-                subPage.style.right = `${currentOffset}vw`;
-                whiteLine.style.left = `${currentWhile}vw`;
-                updateActiveNavItem();
-                updateIndicator()
-            });
+    // 为导航项添加点击事件监听器
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            setActive(index);
+            moveToPage(index);
         });
-
-        // 为导航项添加点击事件监听器
-        navItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                setActive(index);
-                moveToPage(index);
-            });
+    });
+    // 为黑圈添加点击事件监听器
+    blackCircles.forEach((circle, index) => {
+        circle.addEventListener('click', () => {
+            setActive(index);
+            moveToPage(index);
         });
-        // 为黑圈添加点击事件监听器
-        blackCircles.forEach((circle, index) => {
-            circle.addEventListener('click', () => {
-                setActive(index);
-                moveToPage(index);
-            });
-        });
-        scrollIndicator.addEventListener('click', () => {
-            setActive(1);
-            moveToPage(1);
-        });
-    }
+    });
+    scrollIndicator.addEventListener('click', () => {
+        setActive(1);
+        moveToPage(1);
+    });
 });
 
 function updateIndicator() {
@@ -100,9 +76,9 @@ function setActive(index) {
     blackCircles.forEach(circle => circle.classList.remove('active'));
     redCircles.forEach(circle => circle.classList.remove('active'));
     // 为点击的元素添加active类
-    if(navItems[index]){navItems[index].classList.add('active');};
-    if(redCircles[index]){redCircles[index].classList.add('active');};
-    if(blackCircles[index]){blackCircles[index].classList.add('active');};
+    navItems[index].classList.add('active');
+    redCircles[index].classList.add('active');
+    if(blackCircles[index]){blackCircles[index].classList.add('active');}
 }
 function updateActiveNavItem() {
     if(currentOffset >= minOffset+moduleIndex[6]){setActive(6)}
@@ -126,7 +102,7 @@ function moveToPage(index) {
     });
 }
 
-// Get all clickable boxes in join us
+// Get all clickable boxes
 const boxes = document.querySelectorAll(".option");
 // Loop through each box and add click event
 boxes.forEach(function(box) {
@@ -144,4 +120,5 @@ window.onclick = function(event) {
     event.target.closest('.modal').style.display = "none";
   }
 };
+
 
