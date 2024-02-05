@@ -1,9 +1,8 @@
 body, html {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-
+    /* width: 100%;
+    height: 100%; */
 }
 
 .navbar {
@@ -227,7 +226,7 @@ body, html {
     font-weight: bold; /* Bold font */
     font-size: 1.3em;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     transition: all 0.3s ease; /* Smooth transition for hover effects */
     text-decoration: none; /* Remove underline from the link */
     display: inline-block; /* Allows us to set padding and other box model properties */
@@ -381,16 +380,18 @@ body, html {
 }
 
 .sub-page {
-    width: 368vw; /* 总宽度足以容纳所有模块 */
+    width: 418vw; /* 总宽度足以容纳所有模块 */
     /* min-width: 6888.950px; */
     height: 100vh;
     position: fixed;
-    right: -350vw; /* 初始时副页面大部分在屏幕右侧外 */
+    right: -400vw; /* 初始时副页面大部分在屏幕右侧外 */
+    /* left:82vw; */
     top: 60px;
     background: #e5e5e5;
     transition: right 1.5s ease;
     display: flex;
-    overflow-x: hidden; /* 隐藏水平滚动条 */ 
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .module-page {
@@ -569,7 +570,7 @@ body, html {
     margin: 5vh auto 5vh; /* 10% from the top and centered */
     padding: 20px;
     width: 40%; /* Narrower width */
-    max-width: 500px; /* Maximum width */
+    max-width: 500px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     animation-name: animatetop;
     animation-duration: 0.3s;
@@ -590,7 +591,7 @@ body, html {
     border-radius: 50%; /* Makes it circular */
     background: #fff; /* Circle background color */
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .close-button:hover,
@@ -754,7 +755,6 @@ body, html {
     background-color: #007bff; /* Your desired shade of blue */
     text-align: center;
     color: white;
-    position: absolute;
     right: 0;
     width: 40vw;
     height: 100%;
@@ -848,7 +848,7 @@ body, html {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1366px) {
     .mobile-nav-toggle {
         display: block;
     }

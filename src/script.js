@@ -1,11 +1,12 @@
-let currentOffset = -350; // 副页面初始偏移量，表示副页面主要内容在屏幕外
+let currentOffset = -400; // 副页面初始偏移量，表示副页面主要内容在屏幕外
 let currentWhile = 82;
 const maxOffset = 0; // 副页面完全展开时的偏移量
-const minOffset = -350; // 副页面完全隐藏时的偏移量
+const minOffset = -400; // 副页面完全隐藏时的偏移量
 const minWhite = 82
 const scrollSpeed = 15
 const moduleIndex = [0, 82, 167, 197, 257, 287, 350]
 // 获取所有元素
+const modules = document.querySelectorAll('.module-page');
 const subPage = document.querySelector('.sub-page');
 const whiteLine = document.querySelector('.white-line');
 const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -17,7 +18,7 @@ const indicatorVariable = document.querySelectorAll('#indicator-variable');
 
 document.addEventListener('DOMContentLoaded', () => {
     // mobile view
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 1366px)").matches) {
         var toggleButton = document.querySelector('.mobile-nav-toggle');
         var mobileNav = document.querySelector('.mobile-navbar');
         var closeNavButton = document.createElement('div');
@@ -40,6 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }else{
         // Desktop view
+        document.querySelector('.main-page').style.minWidth = '1535.04px';
+        modules[0].style.minWidth = '72px';
+        modules[1].style.minWidth = '468px'; 
+        modules[2].style.minWidth = '936px'; 
+        modules[3].style.minWidth = '560px';
+        modules[4].style.minWidth = '1400px'; 
+        document.querySelector('.footer-container').style.minWidth = '748.8px'
         window.addEventListener('wheel', (event) => {
             event.preventDefault();
             if (event.deltaY > 0 && currentOffset < maxOffset) {
