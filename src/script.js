@@ -1,11 +1,5 @@
-let currentOffset = -400; // 副页面初始偏移量，表示副页面主要内容在屏幕外
-let currentWhile = 82;
-const maxOffset = 0; // 副页面完全展开时的偏移量
-const minOffset = -400; // 副页面完全隐藏时的偏移量
-const minWhite = 82
-const scrollSpeed = 15
-const moduleIndex = [0, 82, 167, 197, 257, 287, 350]
-// 获取所有元素
+
+// Element
 const modules = document.querySelectorAll('.module-page');
 const subPage = document.querySelector('.sub-page');
 const whiteLine = document.querySelector('.white-line');
@@ -15,6 +9,16 @@ const blackCircles = document.querySelectorAll('.black-circle');
 const redCircles = document.querySelectorAll('.red-circle');
 const indicatorVariable = document.querySelectorAll('#indicator-variable');
 
+// const widthSub = window.getComputedStyle(subPage).width;
+// console.log(widthSub);
+// const widthInPx = parseFloat(widthSub);
+// const viewportWidthInPx = window.innerWidth;
+// const widthInVw = (widthInPx / viewportWidthInPx) * 100;
+let currentOffset = 82; 
+const maxOffset = 82;
+const minOffset = -270;
+const scrollSpeed = 15
+const moduleIndex = [0, 82, 167, 197, 257, 287, 350]
 
 document.addEventListener('DOMContentLoaded', () => {
     // mobile view
@@ -40,32 +44,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     }else{
+
         // Desktop view
-        document.querySelector('.main-page').style.minWidth = '1535.04px';
+        document.querySelector('.main-page').style.minWidth = '1535px';
         modules[0].style.minWidth = '72px';
         modules[1].style.minWidth = '468px'; 
         modules[2].style.minWidth = '936px'; 
         modules[3].style.minWidth = '560px';
         modules[4].style.minWidth = '1400px'; 
-        document.querySelector('.footer-container').style.minWidth = '748.8px'
+        document.querySelector('.footer-container').style.minWidth = '750px'
         window.addEventListener('wheel', (event) => {
             event.preventDefault();
-            if (event.deltaY > 0 && currentOffset < maxOffset) {
+
+            if (event.deltaY > 0 && currentOffset > minOffset) {
                 // 向下滚动，逐步拉出副页面
-                currentOffset = Math.min(currentOffset + scrollSpeed, maxOffset);
-                currentWhile = Math.max(currentWhile - scrollSpeed, minWhite + minOffset);
-            } else if (event.deltaY < 0 && currentOffset > minOffset) {
-                // 向上滚动，逐步收回副页面
                 currentOffset = Math.max(currentOffset - scrollSpeed, minOffset);
-                currentWhile = Math.min(currentWhile + scrollSpeed, minWhite );
+            } else if (event.deltaY < 0 && currentOffset < maxOffset) {
+                // 向上滚动，逐步收回副页面
+                currentOffset = Math.min(currentOffset + scrollSpeed, maxOffset );
             }
             requestAnimationFrame(() => {
-                subPage.style.right = `${currentOffset}vw`;
-                whiteLine.style.left = `${currentWhile}vw`;
+                subPage.style.left = `${currentOffset}vw`;
+                whiteLine.style.left = `${currentOffset}vw`;
                 updateActiveNavItem();
                 updateIndicator()
             });
-        });
+        },{ passive: false });
 
         // 为导航项添加点击事件监听器
         navItems.forEach((item, index) => {
@@ -89,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateIndicator() {
-    if (currentOffset > minOffset + 10) {
+    if (currentOffset < maxOffset - 10) {
         indicatorVariable.forEach(item => item.style.opacity = '0');
         scrollIndicator.style.width = '10vw';
         whiteLine.style.width = '10vw';
@@ -113,12 +117,12 @@ function setActive(index) {
     if(blackCircles[index]){blackCircles[index].classList.add('active');};
 }
 function updateActiveNavItem() {
-    if(currentOffset >= minOffset+moduleIndex[6]){setActive(6)}
-    else if(currentOffset >= minOffset+moduleIndex[5]){setActive(5)}
-    else if(currentOffset >= minOffset+moduleIndex[4]){setActive(4)}
-    else if(currentOffset >= minOffset+moduleIndex[3]){setActive(3)}
-    else if(currentOffset >= minOffset+moduleIndex[2]){setActive(2)}
-    else if(currentOffset >= minOffset+moduleIndex[1]){setActive(1)}
+    if(currentOffset <= maxOffset-moduleIndex[6]){setActive(6)}
+    else if(currentOffset <= maxOffset-moduleIndex[5]){setActive(5)}
+    else if(currentOffset <= maxOffset-moduleIndex[4]){setActive(4)}
+    else if(currentOffset <= maxOffset-moduleIndex[3]){setActive(3)}
+    else if(currentOffset <= maxOffset-moduleIndex[2]){setActive(2)}
+    else if(currentOffset <= maxOffset-moduleIndex[1]){setActive(1)}
     else{setActive(0)}
 }
 
@@ -126,10 +130,10 @@ function updateActiveNavItem() {
 function moveToPage(index) {
     // 计算新的right值
     currentOffset = minOffset + (moduleIndex[index]); // 每个导航项增加100vw
-    currentWhile = minWhite - (moduleIndex[index])
+    
     requestAnimationFrame(() => {
-        subPage.style.right = `${currentOffset}vw`;;
-        whiteLine.style.left = `${currentWhile}vw`;
+        subPage.style.left = `${currentOffset}vw`;;
+        whiteLine.style.left = `${currentOffset}vw`;
         updateIndicator()
     });
 }

@@ -384,11 +384,10 @@ body, html {
     /* min-width: 6888.950px; */
     height: 100vh;
     position: fixed;
-    right: -400vw; /* 初始时副页面大部分在屏幕右侧外 */
-    /* left:82vw; */
+    left:82vw;
     top: 60px;
     background: #e5e5e5;
-    transition: right 1.5s ease;
+    transition: all 1.5s ease;
     display: flex;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -751,6 +750,7 @@ body, html {
   }
   
   .footer-container {
+    margin-left: 10vw;
     position: relative;
     background-color: #007bff; /* Your desired shade of blue */
     text-align: center;
