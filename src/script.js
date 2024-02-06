@@ -18,79 +18,87 @@ let currentOffset = 82;
 const maxOffset = 82;
 const minOffset = -270;
 const scrollSpeed = 15
-const moduleIndex = [0, 82, 167, 197, 257, 287, 350]
+const moduleIndex = [0, 82, 160, 200, 260, 310]
 
-document.addEventListener('DOMContentLoaded', () => {
-    // mobile view
-    if (window.matchMedia("(max-width: 1366px)").matches) {
-        var toggleButton = document.querySelector('.mobile-nav-toggle');
-        var mobileNav = document.querySelector('.mobile-navbar');
-        var closeNavButton = document.createElement('div');
-    
-        // 创建关闭按钮并添加到移动导航栏
-        closeNavButton.classList.add('mobile-nav-close');
-        closeNavButton.innerHTML = '&times;'; // 使用HTML实体代表一个“关闭”字符
-        mobileNav.appendChild(closeNavButton);
-    
-        // 切换移动导航栏的显示状态
-        toggleButton.addEventListener('click', function() {
-            mobileNav.classList.add('active');
+document.addEventListener('DOMContentLoaded', adjustViewForDevice);
+
+// window.addEventListener('resize', adjustViewForDevice);
+
+function adjustViewForDevice() {
+    // if (window.matchMedia("(max-width: 1366px)").matches) {
+    //     mobileView()
+    // }else{
+        desktopView()
+    // }
+
+}
+
+function mobileView() {
+    var toggleButton = document.querySelector('.mobile-nav-toggle');
+    var mobileNav = document.querySelector('.mobile-navbar');
+    var closeNavButton = document.createElement('div');
+    // subPage.style.left = `0vw`;;
+    // 创建关闭按钮并添加到移动导航栏
+    closeNavButton.classList.add('mobile-nav-close');
+    closeNavButton.innerHTML = '&times;'; // 使用HTML实体代表一个“关闭”字符
+    mobileNav.appendChild(closeNavButton);
+
+    // 切换移动导航栏的显示状态
+    toggleButton.addEventListener('click', function() {
+        mobileNav.classList.add('active');
+    });
+
+    // 点击关闭按钮隐藏移动导航栏
+    closeNavButton.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+    });
+}
+
+function desktopView() {
+    document.querySelector('.main-page').style.minWidth = '1535px';
+    subPage.style.minWidth = '6943.910px';
+    modules[0].style.minWidth = '72px';
+    modules[1].style.minWidth = '468px'; 
+    modules[2].style.minWidth = '936px'; 
+    modules[3].style.minWidth = '560px';
+    modules[4].style.minWidth = '1400px'; 
+    document.querySelector('.footer-container').style.minWidth = '750px'
+    window.addEventListener('wheel', (event) => {
+        event.preventDefault();
+
+        if (event.deltaY > 0 && currentOffset > minOffset) {
+            // 向下滚动，逐步拉出副页面
+            currentOffset = Math.max(currentOffset - scrollSpeed, minOffset);
+        } else if (event.deltaY < 0 && currentOffset < maxOffset) {
+            // 向上滚动，逐步收回副页面
+            currentOffset = Math.min(currentOffset + scrollSpeed, maxOffset );
+        }
+        requestAnimationFrame(() => {
+            subPage.style.left = `${currentOffset}vw`;
+            whiteLine.style.left = `${currentOffset}vw`;
+            updateActiveNavItem();
+            updateIndicator()
         });
-    
-        // 点击关闭按钮隐藏移动导航栏
-        closeNavButton.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
+    },{ passive: false });
+
+    navItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            setActive(index);
+            moveToPage(index);
         });
+    });
 
-
-    }else{
-
-        // Desktop view
-        document.querySelector('.main-page').style.minWidth = '1535px';
-        modules[0].style.minWidth = '72px';
-        modules[1].style.minWidth = '468px'; 
-        modules[2].style.minWidth = '936px'; 
-        modules[3].style.minWidth = '560px';
-        modules[4].style.minWidth = '1400px'; 
-        document.querySelector('.footer-container').style.minWidth = '750px'
-        window.addEventListener('wheel', (event) => {
-            event.preventDefault();
-
-            if (event.deltaY > 0 && currentOffset > minOffset) {
-                // 向下滚动，逐步拉出副页面
-                currentOffset = Math.max(currentOffset - scrollSpeed, minOffset);
-            } else if (event.deltaY < 0 && currentOffset < maxOffset) {
-                // 向上滚动，逐步收回副页面
-                currentOffset = Math.min(currentOffset + scrollSpeed, maxOffset );
-            }
-            requestAnimationFrame(() => {
-                subPage.style.left = `${currentOffset}vw`;
-                whiteLine.style.left = `${currentOffset}vw`;
-                updateActiveNavItem();
-                updateIndicator()
-            });
-        },{ passive: false });
-
-        // 为导航项添加点击事件监听器
-        navItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                setActive(index);
-                moveToPage(index);
-            });
+    blackCircles.forEach((circle, index) => {
+        circle.addEventListener('click', () => {
+            setActive(index);
+            moveToPage(index);
         });
-        // 为黑圈添加点击事件监听器
-        blackCircles.forEach((circle, index) => {
-            circle.addEventListener('click', () => {
-                setActive(index);
-                moveToPage(index);
-            });
-        });
-        scrollIndicator.addEventListener('click', () => {
-            setActive(1);
-            moveToPage(1);
-        });
-    }
-});
+    });
+    scrollIndicator.addEventListener('click', () => {
+        setActive(1);
+        moveToPage(1);
+    });
+}
 
 function updateIndicator() {
     if (currentOffset < maxOffset - 10) {
@@ -117,22 +125,20 @@ function setActive(index) {
     if(blackCircles[index]){blackCircles[index].classList.add('active');};
 }
 function updateActiveNavItem() {
-    if(currentOffset <= maxOffset-moduleIndex[6]){setActive(6)}
-    else if(currentOffset <= maxOffset-moduleIndex[5]){setActive(5)}
-    else if(currentOffset <= maxOffset-moduleIndex[4]){setActive(4)}
-    else if(currentOffset <= maxOffset-moduleIndex[3]){setActive(3)}
-    else if(currentOffset <= maxOffset-moduleIndex[2]){setActive(2)}
-    else if(currentOffset <= maxOffset-moduleIndex[1]){setActive(1)}
-    else{setActive(0)}
+    if(currentOffset >= maxOffset-moduleIndex[0]){setActive(0)}
+    else if(currentOffset >= maxOffset-moduleIndex[1]){setActive(1)}
+    else if(currentOffset >= maxOffset-moduleIndex[2]){setActive(2)}
+    else if(currentOffset >= maxOffset-moduleIndex[3]){setActive(3)}
+    else if(currentOffset >= maxOffset-moduleIndex[4]){setActive(4)}
+    else if(currentOffset >= maxOffset-moduleIndex[6]){setActive(5)}
+    else{setActive(6)}
 }
 
     // 定义函数以根据导航项移动副页面
 function moveToPage(index) {
-    // 计算新的right值
-    currentOffset = minOffset + (moduleIndex[index]); // 每个导航项增加100vw
-    
+    currentOffset = maxOffset - (moduleIndex[index]);
     requestAnimationFrame(() => {
-        subPage.style.left = `${currentOffset}vw`;;
+        subPage.style.left = `${currentOffset}vw`;
         whiteLine.style.left = `${currentOffset}vw`;
         updateIndicator()
     });

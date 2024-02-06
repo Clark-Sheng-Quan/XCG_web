@@ -380,14 +380,14 @@ body, html {
 }
 
 .sub-page {
-    width: 418vw; /* 总宽度足以容纳所有模块 */
+    width: auto; /* 总宽度足以容纳所有模块 */
     /* min-width: 6888.950px; */
+    left: 82vw;
     height: 100vh;
     position: fixed;
-    left:82vw;
     top: 60px;
     background: #e5e5e5;
-    transition: all 1.5s ease;
+    transition: left 1.5s ease;
     display: flex;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -402,6 +402,16 @@ body, html {
     border: #cc3333 1px solid;
     /* 其他样式 */
 }
+
+#module1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    width: 75vw;
+    /* min-width: 468px; */
+    height: 75vh;
+}
+
 
 #module2 {
     display: flex;
@@ -763,34 +773,38 @@ body, html {
     font-weight: bold; /* Bold font */
     font-size: 1.3rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
     text-decoration: none; /* Remove underline from the link */
     display: inline-block; /* Allows us to set padding and other box model properties */
   }
   
-  .footer-container::after {
+  /* .footer-container::after {
     content: '';
     display: block;
     width: 30px;
     height: 100%;
-    background-size: 30px 30px; /* 一个repeat的大小 */
+    background-size: 30px 30px;
     background-repeat: repeat-y;
     background-image: radial-gradient(#fff 10px, transparent 10px);
     position: absolute;
     top: 0;
     left: 10%
-  }
+  } */
   
   .footer-content {
     position: relative; /* Ensures content is above the pseudo-element */
     /* Add your content styles here */
+
   }
 
-  
-/* Nav-Moblie */
+  .footer-picture {
+    width: 40vw;
+    height: 100%;
+  }
 
-/* 基础样式，确保在小屏幕上移动导航栏和切换按钮可见 */
+
+  
 .mobile-nav-toggle {
     display: none;
     position: fixed;
@@ -806,7 +820,6 @@ body, html {
     height: 5vh;
 }
 
-/* 初始状态下，移动导航栏是隐藏的 */
 .mobile-navbar {
     display: none;
     position: fixed;
@@ -818,14 +831,13 @@ body, html {
     margin-top: 20px;
 }
 
-/* 当.mobile-navbar有.active类时，它会变得可见 */
 .mobile-navbar.active {
     display: block;
-    height: 100vh; /* 覆盖整个视口的高度 */
+    height: 100vh;
     overflow-y: auto;
 }
 
-/* 移动导航链接的样式 */
+
 .mobile-nav-items a {
     display: block;
     padding: 15px 20px;
@@ -838,7 +850,7 @@ body, html {
     background-color: #34b7a7;
 }
 
-/* 关闭按钮的样式 */
+
 .mobile-nav-close {
     display: block;
     text-align: right;
@@ -855,44 +867,44 @@ body, html {
     .navbar {
         display: none;
     }
-    /* Nav End*/
+
     .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
         display: none;
     }
 
     .sub-page {
         width: 100vw;
-        /* min-width: none; */
         height: auto;
         position: relative;
-        right: 0;
+        left: 0;
         flex-direction: column;
         overflow-x: visible;
         top: 100vh;
     }
 
     .footer-container {
-        width: 100vw; /* 调整宽度为视口宽度 */
+        width: 100vw; 
         height: 75vh;
-        position: relative; /* 如果需要，可以改为absolute并调整bottom为0 */
+        position: relative; 
         bottom: 0;
         right: 0;
-        margin-top: 20px; /* 根据需要添加适当的间距 */
-        padding: 20px 0; /* 添加一些内边距 */
+
+        margin:20px 0 0;
+        padding: 0 0; 
     }
 
-    /* 调整页脚内容样式 */
+
     .footer-content {
         padding: 10px;
-        /* 根据需要进一步调整样式 */
+
     }
 
-    /* 隐藏指示器 */
+
     .main-page{
         height:100vh;
         width:100vw;
-        overflow:auto;/*允许内容溢出时出现滚动条*/
-        box-sizing:border-box;/*确保边框和内边距不会增加元素的总宽度或总高度*/
+        overflow:auto;
+        box-sizing:border-box;
         
     }
         
@@ -914,11 +926,11 @@ body, html {
         
 
     .module-page {
-        width: 100vw; /* 每个模块的宽度调整为视口宽度 */
-        padding: 20px; /* 添加内边距以防止内容直接触碰到边框 */
-        margin: 10px 0; /* 添加外边距以增加模块之间的空间 */
-        overflow: auto; /* 允许内容溢出时出现滚动条 */
-        box-sizing: border-box; /* 确保边框和内边距不会增加元素的总宽度或总高度 */
+        width: 100vw;
+        padding: 20px;
+        margin: 10px 0;
+        overflow: auto;
+        box-sizing: border-box;
         height:auto;
         min-height: 75vh;
     }
@@ -933,4 +945,5 @@ body, html {
         margin: 0 20px;
     }
 }
+
   
