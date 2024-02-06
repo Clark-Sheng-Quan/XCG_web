@@ -51,7 +51,7 @@ body, html {
 
 .circle {
     position: absolute;
-    top: 55px; /* 位于每个nav-item的底部 */
+    top: 55px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -793,9 +793,7 @@ body, html {
   } */
   
   .footer-content {
-    position: relative; /* Ensures content is above the pseudo-element */
-    /* Add your content styles here */
-
+    position: relative;
   }
 
   .footer-picture {
@@ -893,12 +891,10 @@ body, html {
         padding: 0 0; 
     }
 
-
     .footer-content {
         padding: 10px;
 
     }
-
 
     .main-page{
         height:100vh;
@@ -922,8 +918,7 @@ body, html {
         left:0;
         transform:none;
     }
-        
-
+    
     .module-page {
         width: 100vw;
         padding: 20px;
@@ -937,7 +932,6 @@ body, html {
         height: auto;
         width: 100vw;
     }
-    
     
     #module2 {
         height: auto;
