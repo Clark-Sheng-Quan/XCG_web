@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', adjustViewForDevice);
 // window.addEventListener('resize', adjustViewForDevice);
 
 function adjustViewForDevice() {
-    // if (window.matchMedia("(max-width: 1366px)").matches) {
-    //     mobileView()
-    // }else{
+    if (window.matchMedia("(max-width: 1366px)").matches) {
+        mobileView()
+    }else{
         desktopView()
-    // }
+    }
 
 }
 

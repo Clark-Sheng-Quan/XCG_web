@@ -799,7 +799,7 @@ body, html {
   }
 
   .footer-picture {
-    width: 40vw;
+    width: 100%;
     height: 100%;
   }
 
@@ -905,7 +905,6 @@ body, html {
         width:100vw;
         overflow:auto;
         box-sizing:border-box;
-        
     }
         
     .home-page{
@@ -934,6 +933,16 @@ body, html {
         height:auto;
         min-height: 75vh;
     }
+    #module1 {
+        height: auto;
+        width: 100vw;
+    }
+    
+    
+    #module2 {
+        height: auto;
+        width: 100vw;
+    }
 
     .guests-intro h2 {
         font-size: 2em;
@@ -944,6 +953,14 @@ body, html {
         font-size: 2em;
         margin: 0 20px;
     }
+    .schedule-picture {
+        width: 100%;
+
+    }
+    .footer-picture {
+        width: 100%;
+        height: 100%;
+      }
 }
 
   
