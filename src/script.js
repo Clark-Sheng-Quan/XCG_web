@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', adjustViewForDevice);
 // window.addEventListener('resize', adjustViewForDevice);
 
 function adjustViewForDevice() {
-    if (window.matchMedia("(max-width: 1366px)").matches) {
+    if (window.matchMedia("(max-width: 768px)").matches) {
         mobileView()
     }else{
         desktopView()
