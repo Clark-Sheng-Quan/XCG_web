@@ -360,19 +360,14 @@ body, html {
 
 
 #module2 {
-    display: flex;
-    justify-content: space-between;
     padding: 0;
     width: 25vw;
-    
     height: 75vh;
 }
 
 .schedule-picture {
-    width: 25vw;
-    height: 75vh;
-    overflow: hidden;
-    position: absolute;
+    width: 486px;
+    height: 718.5px;
 }
 
 .guests-module {
@@ -381,7 +376,13 @@ body, html {
     justify-content: space-between;
     padding: 0 30px;
     width: 50vw;
-    
+}
+
+.guest-bg{
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    margin-left: 10vw;
 }
 
 .guests-intro{
@@ -404,6 +405,7 @@ body, html {
     grid-template-columns: repeat(3, 1fr); 
     gap: 0px; 
     margin: auto;
+    z-index: 1;
     
 }
 .guest {
@@ -446,7 +448,7 @@ body, html {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    width: 30vw;
+    width: 25vw;
     
 }
 
@@ -467,6 +469,7 @@ body, html {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-right: 5vw;
 }
 
 .option {
