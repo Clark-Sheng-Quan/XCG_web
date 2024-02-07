@@ -11,12 +11,14 @@ body, html {
     position: relative;
     z-index: 1;   
     transition: all 0.3s ease;
+    
 }
 
 .nav-items {
+    min-width: 895px;
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     padding: 20px 0;
     background: #ffffff;
     box-shadow: 0 1px 5px black;
@@ -180,8 +182,9 @@ body, html {
 }
 
 #logo-container {
-    flex-grow: 0; /* Do not allow the logo container to grow */
-    margin-left: -1.5vw; /* Adjust this value to move the logo container to the left */
+    width: 93.42px;
+    flex-grow: 0; 
+    margin-left: -3vw; /* Adjust this value to move the logo container to the left */
     display: flex; /* Use flex to align the logo container items */
     align-items: center; /* Align items vertically in the center */
     justify-content: center; /* Center the items horizontally */
@@ -189,8 +192,8 @@ body, html {
 
 .logo-icon {
     margin-top: 2px;
-    width: 5vw;
-    height: 5vh;
+    width: 93.42px;
+    height: 43.92px;
     overflow: hidden;
     position: absolute;
     top: 50%;
@@ -200,8 +203,8 @@ body, html {
 }
 
 .nav-text.active .logo-icon {
-    width: 5.5vw;
-    height: 5.5vh;
+    width: 103.8px;
+    height: 48.8px;
 }
 
 
@@ -857,8 +860,8 @@ body, html {
     color: white;
     cursor: pointer;
 }
-
-@media (max-width: 768px) {
+/* 
+@media (max-width: 1366px) {
     .mobile-nav-toggle {
         display: block;
     }
@@ -876,7 +879,7 @@ body, html {
         position: relative;
         left: 0;
         flex-direction: column;
-        overflow-x: visible;
+        overflow-x: hidden;
         top: 100vh;
     }
 
@@ -959,13 +962,15 @@ body, html {
       .ticket-module {
         margin: 0;
         padding: 0;
-        overflow: auto;
-        width: 200vw;
-        height: auto;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        width: auto; 
+        white-space: nowrap; 
       }
       
       .ticket-left {
-        width: 100vw;
+        width:100vw;
         height:auto;
         
       }
@@ -990,6 +995,6 @@ body, html {
         
 
       }
-}
+} */
 
   

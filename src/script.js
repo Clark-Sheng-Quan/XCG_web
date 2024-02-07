@@ -25,8 +25,16 @@ document.addEventListener('DOMContentLoaded', adjustViewForDevice);
 // window.addEventListener('resize', adjustViewForDevice);
 
 function adjustViewForDevice() {
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 1366px").matches) {
         mobileView()
+    
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'src/mobile.css'; // 指定mobile.css的路径
+
+    // 将<link>元素添加到<head>中
+    document.head.appendChild(link);
     }else{
         desktopView()
     }
@@ -34,9 +42,11 @@ function adjustViewForDevice() {
 }
 
 function mobileView() {
+    
     var toggleButton = document.querySelector('.mobile-nav-toggle');
     var mobileNav = document.querySelector('.mobile-navbar');
     var closeNavButton = document.createElement('div');
+    
     // subPage.style.left = `0vw`;;
     // 创建关闭按钮并添加到移动导航栏
     closeNavButton.classList.add('mobile-nav-close');
