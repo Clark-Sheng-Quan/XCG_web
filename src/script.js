@@ -43,24 +43,12 @@ function adjustViewForDevice() {
 
 function mobileView() {
     
-    var toggleButton = document.querySelector('.mobile-nav-toggle');
-    var mobileNav = document.querySelector('.mobile-navbar');
-    var closeNavButton = document.createElement('div');
-    
-    // subPage.style.left = `0vw`;;
-    // 创建关闭按钮并添加到移动导航栏
-    closeNavButton.classList.add('mobile-nav-close');
-    closeNavButton.innerHTML = '&times;'; // 使用HTML实体代表一个“关闭”字符
-    mobileNav.appendChild(closeNavButton);
+    const toggleButton = document.querySelector('.mobile-nav-toggle'); // 找到触发按钮
+    const mobileNav = document.querySelector('.mobile-navbar'); // 找到移动导航栏
 
     // 切换移动导航栏的显示状态
     toggleButton.addEventListener('click', function() {
-        mobileNav.classList.add('active');
-    });
-
-    // 点击关闭按钮隐藏移动导航栏
-    closeNavButton.addEventListener('click', function() {
-        mobileNav.classList.remove('active');
+        mobileNav.classList.toggle('active'); // 如果导航栏已经是激活状态，这将会关闭它，反之亦然
     });
 }
 

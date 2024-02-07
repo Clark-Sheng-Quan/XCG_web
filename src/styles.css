@@ -23,13 +23,13 @@ body, html {
     background: #ffffff;
     box-shadow: 0 1px 5px black;
     margin: 0;
-    position: relative; /* 使得子元素可以相对于此定位 */
+    position: relative; 
     z-index: 4;
 }
 
 .nav-item {
     cursor: pointer;
-    position: relative; /* 为红线和圈提供定位基准 */
+    position: relative; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,7 +91,7 @@ body, html {
 .red-circle {
     border: 1.5px solid rgb(199, 71, 72);
     background-color: #ffffff;
-    top: -5px; /* 使红圈位于红线上方 */
+    top: -5px; 
     transition: all 0.3s ease-out;
 }
 
@@ -105,7 +105,7 @@ body, html {
     height: 50px;
     border: 1px solid rgba(0, 0, 0, 0.8);
     background-color: white;
-    top: 10px; /* 使黑圈位于红圈下方 */
+    top: 10px; 
     cursor: pointer;
     transition: all 0.3s ease-out;
     align-items: center;
@@ -133,41 +133,41 @@ body, html {
 }
 
 .ticket-nav {
-    width: 110px; /* Width of the circle */
-    height: 50px; /* Height of the circle, adjust if needed */
+    width: 110px; 
+    height: 50px; 
     border-radius: 0;
     border: none;
     background-color: transparent;
 }
 
 .ticket-nav img {
-    width: 100%; /* Will take the full width */
-    height: auto; /* Will maintain the aspect ratio */
+    width: 100%; 
+    height: auto; 
     transition: all 0.3s ease-out;
     border-radius: 0;
-    content: url('assets/images/XCGweb_icon_F_b7.png'); /* Path to the active state image */
+    content: url('assets/images/XCGweb_icon_F_b7.png'); 
 }
 
 .ticket-nav:hover {
-    width: 115px; /* Width of the circle */
-    height: 55px; /* Height of the circle, adjust if needed */
+    width: 115px; 
+    height: 55px; 
     border: none;
     box-shadow: none
 }
 
 .ticket-nav:hover img {
-    content: url('assets/images/XCGweb_icon_F-08.png'); /* Path to the active state image */
+    content: url('assets/images/XCGweb_icon_F-08.png'); 
 }
 
 .ticket-nav.active {
-    width: 115px; /* Width of the circle */
-    height: 55px; /* Height of the circle, adjust if needed */
+    width: 115px; 
+    height: 55px; 
     border: none;
     box-shadow: none
 }
 
 .ticket-nav.active img {
-    content: url('assets/images/XCGweb_icon_F-08.png'); /* Path to the active state image */
+    content: url('assets/images/XCGweb_icon_F-08.png'); 
 }
 
 .nav-icon {
@@ -184,10 +184,10 @@ body, html {
 #logo-container {
     width: 93.42px;
     flex-grow: 0; 
-    margin-left: -3vw; /* Adjust this value to move the logo container to the left */
-    display: flex; /* Use flex to align the logo container items */
-    align-items: center; /* Align items vertically in the center */
-    justify-content: center; /* Center the items horizontally */
+    margin-left: -3vw; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
 .logo-icon {
@@ -208,63 +208,6 @@ body, html {
 }
 
 
-#follow-container {
-    margin-right: 3vw; /* Adjust the right margin as needed */
-    margin-left: 2vw; /* Adjust the left margin as needed */
-    flex-grow: 0; 
-    display: inline-flex; /* Use inline-flex to align the button properly */
-    align-items: center; /* Center the button vertically  */
-}
-
-.follow-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 8vw;
-    height: 3vh;
-    transform: translate(-50%, -50%);
-    background-color: #ffbf00; /* The color of the button background */
-    color: white; /* The color of the text */
-    padding: 10px 30px; /* Adjust the padding to control the size of the button */
-    font-weight: bold; /* Bold font */
-    font-size: 1.3em;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    text-decoration: none; /* Remove underline from the link */
-    display: inline-block; /* Allows us to set padding and other box model properties */
-    /* Remove margin if it's causing layout shifts */
-}
-
-
-.follow-button.active {
-    font-size: 1.5em;
-    background-color:  #FFA500;/* Lighter orange color on hover 
-    ; /* Larger shadow effect on hover */
-    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
-}
-
-.follow-button:hover {
-    background-color:  #FFA500;/* Lighter orange color on hover 
-    ; /* Larger shadow effect on hover */
-    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
-    cursor: pointer; /* Change mouse to pointer on hover */
-}
-
-.follow-button:before,
-.follow-button:after {
-  content: '';
-  display: block;
-  width: 3px;
-  height: 100%;
-  background-size: 3px 3px; /* 一个repeat的大小 */
-  background-repeat: repeat-y;
-  background-image: radial-gradient(#fff 1px, transparent 1px);
-  position: absolute;
-  top: 0;
-  left: 20px;
-}
-
 .scroll-indicator {
     width: 18vw;
     height: 100vh;
@@ -275,7 +218,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px; /* Add padding to ensure content doesn't touch the edges */
+    padding: 40px; 
     box-sizing: border-box;
     transition: width 0.3s ease;
 }
@@ -311,23 +254,23 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10%; /* Adjust based on your design */
+    height: 10%; 
     width: 100%;
     position: relative;
     
 }
 
 .long-arrow {
-    font-size: 4vw; /* 调整箭头的大小 */
+    font-size: 4vw; 
     color: white;
-    position: absolute; /* 绝对定位允许你精准控制箭头的位置 */
-    top: 15%; /* 50% 会把元素的顶部置于容器中心 */
-    left: 50%; /* 50% 会把元素的左边置于容器中心 */
-    transform: translate(-50%, -50%) scaleX(3); /* 使用translate调整精准位置并拉伸箭头 */
+    position: absolute; 
+    top: 15%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scaleX(3); 
 }
 
 .indicator-text {
-    font-size: 4vw; /* Adjust as needed */
+    font-size: 4vw; 
     color: white;
     margin-top: 20vh;
     margin-left: 1vw;
@@ -335,8 +278,8 @@ body, html {
 }
 
 .indicator-icon {
-    width: 9vw; /* Adjust as needed */
-    height: 9vw; /* Adjust as needed */
+    width: 9vw; 
+    height: 9vw; 
     border-radius: 50%;
     display: inline-block;
     position: absolute;
@@ -358,17 +301,17 @@ body, html {
     top: 60px;
     background-color: #e5e5e5;
     z-index: 0;
-    /* min-width: 1535.04px; */
+    
 }
-/* w：1272，h：611 */
+
 
 .home-page {
     width: 80vw;
     height: 75vh;
     position: absolute;
     top: 10%;
-    /* bottom: 12.5%; */
-    /* left: 12.5%; */
+    
+    
     z-index: 0;
 }
 
@@ -383,8 +326,8 @@ body, html {
 }
 
 .sub-page {
-    width: auto; /* 总宽度足以容纳所有模块 */
-    /* min-width: 6888.950px; */
+    width: auto; 
+    
     left: 82vw;
     height: 100vh;
     position: fixed;
@@ -403,7 +346,7 @@ body, html {
     display: inline-block;
     margin: auto 0 auto 10vw;
     border: #cc3333 1px solid;
-    /* 其他样式 */
+    
 }
 
 #module1 {
@@ -411,7 +354,7 @@ body, html {
     justify-content: space-between;
     padding: 0;
     width: 75vw;
-    /* min-width: 468px; */
+    
     height: 75vh;
 }
 
@@ -421,7 +364,7 @@ body, html {
     justify-content: space-between;
     padding: 0;
     width: 25vw;
-    /* min-width: 468px; */
+    
     height: 75vh;
 }
 
@@ -438,7 +381,7 @@ body, html {
     justify-content: space-between;
     padding: 0 30px;
     width: 50vw;
-    /* min-width: 936px; */
+    
 }
 
 .guests-intro{
@@ -456,37 +399,37 @@ body, html {
 
 .guests-content {
     height: 100%;
-    width: 100%; /* Adjust width as needed */
+    width: 100%; 
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    gap: 0px; /* Space between grid items */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0px; 
     margin: auto;
     
 }
 .guest {
     padding: 30px 20px 0 20px;
-    text-align: center; /* Center the text */
+    text-align: center; 
     height: 150px;
     width: 150px;
 }
 
 .guest-container {
-    width: 100%; /* Full width of the card */
-    height: 100%; /* Set a fixed height for the image */
-    overflow: hidden; /* Hide the overflow to maintain aspect ratio */
-    background: #fff; /* White background for the guest cards */
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+    background: #fff; 
     margin-bottom: 10px;
 }
   
 .guest-container img {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    object-fit: cover; /* Cover the container without losing aspect ratio */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
     
 }
 
 .guest h3 {
-    font-size: 1em; /* Adjust the size as needed */
+    font-size: 1em; 
     padding-top: 2px;
     margin-top: 0;
 }
@@ -494,7 +437,7 @@ body, html {
 .guest p {
     padding-top: 0;
     margin-top: 0;
-    font-size: 0.8em; /* Adjust the size as needed */
+    font-size: 0.8em; 
 }
   
 
@@ -504,7 +447,7 @@ body, html {
     justify-content: space-between;
     padding: 0 20px;
     width: 30vw;
-    /* min-width: 561.6px; */
+    
 }
 
 .join-us-intro {
@@ -527,8 +470,8 @@ body, html {
 }
 
 .option {
-    width: 270px; /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */
+    width: 270px; 
+    height: 200px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -541,12 +484,12 @@ body, html {
     text-align: center;
     font-size: 2.5em;
     z-index: 3;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
 }
 
 .option img {
-    width: 270px; /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */    
+    width: 270px; 
+    height: 200px;     
     border-radius: 5%;
     z-index: 2;
     position: absolute;
@@ -564,24 +507,24 @@ body, html {
     border-radius: 5%;
 } */
 
-/* Modal Styles */
+
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
-    z-index: 1000; /* Above everything else */
+    z-index: 10; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0,0,0,0.5); /* Black with opacity */
-    /* opacity: 0.7; */
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.5); 
+    
 }
 
 .modal-content {
     background-color: #e5e5e5;;
-    margin: 5vh auto 5vh; /* 10% from the top and centered */
+    margin: 5vh auto 5vh; 
     padding: 20px;
-    width: 40%; /* Narrower width */
+    width: 40%; 
     max-width: 500px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     animation-name: animatetop;
@@ -595,13 +538,13 @@ body, html {
     color: #aaa;
     font-size: 35px;
     font-weight: bold;
-    width: 35px; /* Diameter of the circle */
+    width: 35px; 
     height: 35px;
-    line-height: 30px; /* Same as height to vertically center the 'X' */
+    line-height: 30px; 
     text-align: center; 
     justify-content: center;
-    border-radius: 50%; /* Makes it circular */
-    background: #fff; /* Circle background color */
+    border-radius: 50%; 
+    background: #fff; 
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -609,24 +552,18 @@ body, html {
 .close-button:hover,
 .close-button:focus {
     color: black;
-    background: #e5e5e5; /* Light gray background on hover */
+    background: #e5e5e5; 
     text-decoration: none;
 }
 
 .modal-section h2 {
-    font-family: "等线", sans-serif;/* Assuming 等线 is available */
+    font-family: "等线", sans-serif;
     color: #333;
-    font-size: 4em; /* Large text for the modal title */
+    font-size: 4em; 
     margin: 20px;
 }
 
-.join-us {
-    font-size: 1.5em; /* Adjust size to make it stand out */
-    font-weight: bold; /* Extra bold */
-    margin-right: 40%;
-}
 
-/* Form styles */
 .modal-form{
     display: flex;
     flex-direction: column;
@@ -639,7 +576,7 @@ body, html {
 .modal-form p,
 .modal-form input,
 .modal-form textarea {
-    font-family: "Helvetica", Arial, sans-serif; /* Use Helvetica for other text */
+    font-family: "Helvetica", Arial, sans-serif; 
 }
 
 .modal-form input,
@@ -647,35 +584,35 @@ body, html {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ddd;
-    width: calc(100% - 20px); /* Full width minus padding */
+    width: calc(100% - 20px); 
     border: 1px solid #ddd;
 }
   
 .form-header {
-    display: flex; /* Use flexbox to layout the title and description */
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between title and description */
-    margin: 0 20px; /* Add margin for spacing */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin: 0 20px; 
   }
 
 .form-header h3 {
     color: #333;
     font-size: 1.5em;
     font-weight: bold;
-    margin-right: 20px; /* Add margin to separate title from description */
+    margin-right: 20px; 
     white-space: nowrap
 }
 
 .form-header .modal-description {
     color: #333;
-    font-size: 1em; /* Adjust as needed */
-    margin-left: 20px; /* Add margin to separate description from title */
-    flex-grow: 1; /* Let the description take up remaining space */
-    text-align: left; /* Align the text to the right */
+    font-size: 1em; 
+    margin-left: 20px; 
+    flex-grow: 1; 
+    text-align: left; 
   }
 
 .modal-form textarea {
-    height: 100px; /* Larger textarea */
+    height: 100px; 
 }
 
 .modal-footer {
@@ -685,9 +622,9 @@ body, html {
     padding: 10px 0;
   }
 
-/* Button and privacy styles */
+
 .modal-footer button {
-    /* padding: 10px 20px; */
+    
     background-color: #ffbf00;
     color: #000;
     border: none;
@@ -719,14 +656,14 @@ body, html {
 
 .ticket-module {
     display: flex;
-    background-color: #f5f5f5; /* 浅色背景 */
-    color: #333; /* 深色文字 */
-    /* min-width: 1404px; */
+    background-color: #f5f5f5; 
+    color: #333; 
+    
   }
   
   .ticket-left {
     position: relative;
-    /* width: 60%; */
+    
   }
   
   .ticket-bg{
@@ -736,17 +673,17 @@ body, html {
   
   .ticket-button {
     position: absolute;
-    bottom: 20%; /* Adjust as needed */
+    bottom: 20%; 
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    background: transparent; /* Gold color */
+    transform: translateX(-50%); 
+    background: transparent; 
     color: #333;
     padding: 0;
     font-weight: bold;
-    font-size: 1.5em; /* Adjust as needed */
+    font-size: 1.5em; 
     cursor: pointer;
-    border-radius: 5px; /* Slightly rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
   }
 
   .ticket-button-img{
@@ -755,31 +692,31 @@ body, html {
   }
   
   .ticket-right {
-    /* width: 60%; */
+    
     padding: 20px;
-    border-left: 15px solid rgb(199, 71, 72); /* Red border on the left */
-    background-color: #ffffff; /* White background for the right side */
-    box-sizing: border-box; /* Includes padding in width */
+    border-left: 15px solid rgb(199, 71, 72); 
+    background-color: #ffffff; 
+    box-sizing: border-box; 
   }
   
   .footer-container {
     margin-left: 10vw;
     position: relative;
-    background-color: #007bff; /* Your desired shade of blue */
+    background-color: #007bff; 
     text-align: center;
     color: white;
     right: 0;
     width: 40vw;
     height: 100%;
-    background-color: #ffbf00; /* The color of the button background */
-    color: white; /* The color of the text */
-    font-weight: bold; /* Bold font */
+    background-color: #ffbf00; 
+    color: white; 
+    font-weight: bold; 
     font-size: 1.3rem;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-    text-decoration: none; /* Remove underline from the link */
-    display: inline-block; /* Allows us to set padding and other box model properties */
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    text-decoration: none; 
+    display: inline-block; 
   }
   
   /* .footer-container::after {
@@ -811,7 +748,7 @@ body, html {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 9;
     background-color: #cc3333;
     color: white;
     padding: 15px 15px;
@@ -827,7 +764,7 @@ body, html {
     top: 5vh;
     width: 100%;
     background-color: gray;
-    z-index: 999;
+    z-index: 8;
     overflow-y: auto;
     margin-top: 20px;
 }
@@ -860,141 +797,6 @@ body, html {
     color: white;
     cursor: pointer;
 }
-/* 
-@media (max-width: 1366px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-    .navbar {
-        display: none;
-    }
 
-    .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
-        display: none;
-    }
-
-    .sub-page {
-        width: 100vw;
-        height: auto;
-        position: relative;
-        left: 0;
-        flex-direction: column;
-        overflow-x: hidden;
-        top: 100vh;
-    }
-
-    .footer-container {
-        width: 100vw; 
-        height: 75vh;
-        position: relative; 
-        bottom: 0;
-        right: 0;
-
-        margin:20px 0 0;
-        padding: 0 0; 
-    }
-
-    .footer-content {
-        padding: 10px;
-
-    }
-
-    .main-page{
-        height:100vh;
-        width:100vw;
-        overflow:auto;
-        box-sizing:border-box;
-    }
-        
-    .home-page{
-        width:100%;
-        height:85%;
-        position:absolute;
-        top:15%;
-        z-index:0;
-    }
-        
-    .bg-picture{
-        overflow:auto;
-        position:absolute;
-        top:0;
-        left:0;
-        transform:none;
-    }
-    
-    .module-page {
-        width: 100vw;
-        padding: 20px;
-        margin: 10px 0;
-        overflow: auto;
-        box-sizing: border-box;
-        height:auto;
-        min-height: 75vh;
-    }
-    #module1 {
-        height: auto;
-        width: 100vw;
-    }
-    
-    #module2 {
-        height: auto;
-        width: 100vw;
-    }
-
-    .guests-intro h2 {
-        font-size: 2em;
-        margin: 0 20px;
-    }
-
-    .join-us-intro h2 {
-        font-size: 2em;
-        margin: 0 20px;
-    }
-    .schedule-picture {
-        width: 100%;
-
-    }
-    .footer-picture {
-        width: 100%;
-        height: 100%;
-      }
-
-      .ticket-module {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        width: auto; 
-        white-space: nowrap; 
-      }
-      
-      .ticket-left {
-        width:100vw;
-        height:auto;
-        
-      }
-      
-      .ticket-bg{
-        width: 100vw;
-        height: calc(600px * (100vw / 400px));
-        
-      }
-      
-      .ticket-button {
-        all: none;  
-      }
-    
-      .ticket-button-img{
-        height: 120px; 
-        width: 330px;
-      }
-      
-      .ticket-right {
-        width: 100vw;
-        
-
-      }
-} */
 
   
