@@ -63,11 +63,11 @@
     .module-page {
         width: 100vw;
         padding: 20px;
-        margin: 10px 0;
+        margin: 30px 0;
         overflow: auto;
         box-sizing: border-box;
         height:auto;
-        min-height: 75vh;
+        min-height: 0;
     }
     #module1 {
         height: auto;
@@ -79,10 +79,10 @@
         width: 100vw;
     }
   
-  .schedule-picture {
+    .schedule-picture {
       width: 100vw;
-      height: calc(600px * (100vw / 400px));
-  }
+      height: calc(1.47 * 100vw);
+    }
 
     .guests-intro h2 {
         font-size: 2em;
@@ -91,119 +91,152 @@
 
     .join-us-intro h2 {
         font-size: 2em;
-        margin: 0 20px;
+        margin: 0;
+    }
+
+    .join-us-module {
+      flex-direction: row; /* 改为横向布局 */
+      justify-content: space-around; /* 分散对齐以填满空间 */
+      flex-wrap: wrap; /* 允许内容换行 */
+      padding: 10px 0; /* 根据需要调整 */
+      width: 100vw;
+      height: auto;
+    }
+
+    .join-us-content {
+      flex-direction: row; /* 确保子项横向排列 */
+      justify-content: space-around; /* 分散对齐以填满空间 */
+      gap: 3vw;
+      flex-wrap: nowrap; /* 允许内容在必要时换行 */
+      width: auto;
+      margin: 0;
+    }
+  
+    .join-us-content .option {
+      width: 30vw; /* 每个选项占据大约三分之一的宽度 */
+      margin: 5px 0 /* 添加一些垂直间距 */
+      /* 根据需要调整内边距或其他样式 */
+    }
+  
+    /* 可选：调整图片和文字的大小来更好地适应小屏幕 */
+    .join-us-content .option img {
+      max-width: 100%; /* 确保图片不会超过其容器的宽度 */
+      height: auto; /* 保持图片的纵横比 */
+    }
+  
+    .join-us-content .option h3 {
+      font-size: smaller; /* 减小标题的字号 */
     }
 
     .footer-picture {
         width: 100%;
         height: 100%;
-      }
+    }
 
-      .ticket-module {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        overflow-y: hidden;
-        width: auto; 
-        white-space: nowrap; 
-      }
-      
-      .ticket-left {
-        width:100vw;
-        height:auto;
-        
-      }
-      
-      .ticket-bg{
-        width: 100vw;
-        height: calc(600px * 100vw / 400px);
-        
-      }
-      
-      .ticket-button {
-        all: none;  
-      }
+    .ticket-module {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: auto; 
+      height: auto;
+      white-space: nowrap; 
+      box-sizing: border-box;
+      min-height: 0;
+    }
     
-      .ticket-button-img{
-        height: 120px; 
-        width: 330px;
-      }
+    .ticket-left {
+      width:100vw;
+      height:auto;
       
-      .ticket-right {
-        width: 100vw;
-      }
+    }
+    
+    .ticket-bg{
+      width: 100vw;
+      height: calc(1.5 * 100vw);;
+      box-sizing: border-box;
+    }
+    
+    .ticket-button {
+      all: none;  
+    }
+  
+    .ticket-button-img{
+      height: 120px; 
+      width: 330px;
+    }
+    
+    .ticket-right {
+      width: 100vw;
+      height: calc(1.5 * 100vw);
+    }
 
 
-      .modal {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 10;
-        width: 100%; /* 模态框宽度为屏幕宽度的90% */
-        height: 100%; /* 模态框高度为屏幕高度的90% */
-        background-color: rgba(0,0,0,0.5);
-        overflow-y: hidden; /* 允许内容超出时滚动 */
-        box-sizing: border-box; /* 边框和内边距包含在宽度和高度内 */
-      }
-    
-      .modal-content {
-        margin: 15px;
-        background-color: #e5e5e5;
-        padding: 15px;
-        width: calc(100vw - 60px); /* 模态框宽度为屏幕宽度的90% */
-        height: 100vh; /* 模态框高度为屏幕高度的90% */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        overflow: hidden; /* 允许Y轴滚动 */
-        position: relative; /* 用于定位关闭按钮 */
-      }
-    
-      .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 30px;
-        color: #aaa;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        border-radius: 50%;
-        background: #fff;
-        cursor: pointer;
-      }
-    
-      .modal-form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px; /* 间隔增加 */
-      }
-    
-      .modal-form input, .modal-form textarea {
-        margin: 5px 0; /* 减少边距 */
-        padding: 8px; /* 调整填充 */
-      }
-    
-      .modal-footer {
-        display: flex;
-        flex-direction: column; /* 按钮和文本垂直堆叠 */
-        gap: 10px; /* 增加间隔 */
-      }
-    
-      .modal-footer button, .modal-footer p {
-        text-align: center; /* 文本居中 */
-      }
-    
-      button {
-        padding: 10px 20px; /* 调整按钮填充 */
-        width: auto; /* 按钮宽度自适应 */
-      }
+    .modal {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      z-index: 10;
+      width: 100vw; /* 模态框宽度为屏幕宽度的90% */
+      height: 100vh; /* 模态框高度为屏幕高度的90% */
+      background-color: rgba(0,0,0,0.5);
+      overflow-y: hidden; /* 允许内容超出时滚动 */
+      box-sizing: border-box; /* 边框和内边距包含在宽度和高度内 */
+    }
+  
+    .modal-content {
+      margin: 15px;
+      background-color: #e5e5e5;
+      padding: 15px;
+      width: calc(100vw - 60px); /* 模态框宽度为屏幕宽度的90% */
+      height: calc(100vh - 60px); /* 模态框高度为屏幕高度的90% */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden; /* 允许Y轴滚动 */
+      position: relative; /* 用于定位关闭按钮 */
+    }
+  
+    .close-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
 
-  .modal-footer button {
-    padding: 10px 20px; /* 调整按钮填充 */
-    width: auto; /* 按钮宽度自适应 */
-  }
+    }
+    .modal-section h2 {
+      font-size: 3rem; 
+      margin: 20px;
+    }
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+    .form-header h3 {
+      display: none;
+    } 
+    .modal-form input, .modal-form textarea {
+      margin: 10px 0 0; /* 减少边距 */
+      padding: 8px; /* 调整填充 */
+    }
+  
+    .modal-footer {
+      position: relative;
+      display: flex;
+      flex-direction: column; /* 按钮和文本垂直堆叠 */
+      left: 50%; /* 左偏移量设置为50% */
+      transform: translateX(-50%); /* 使用transform来确保其水平居中 */
+      }
+  
+    .modal-footer button, .modal-footer p {
+      text-align: center; /* 文本居中 */
+      margin-bottom: 5px;
+    }
+  
+
+    .modal-footer button {
+      padding: 10px 20px; /* 调整按钮填充 */
+      width: auto; /* 按钮宽度自适应 */
+    }
 
 }

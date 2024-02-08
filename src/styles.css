@@ -473,7 +473,7 @@ body, html {
 }
 
 .option {
-    width: 270px; 
+    width: 370px; 
     height: 200px; 
     display: flex;
     align-items: center;
@@ -666,7 +666,6 @@ body, html {
   
   .ticket-left {
     position: relative;
-    
   }
   
   .ticket-bg{
@@ -695,7 +694,7 @@ body, html {
   }
   
   .ticket-right {
-    
+    position: relative;
     padding: 20px;
     border-left: 15px solid rgb(199, 71, 72); 
     background-color: #ffffff; 
