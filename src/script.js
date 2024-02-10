@@ -149,7 +149,7 @@ boxes.forEach(function(box) {
   box.onclick = function() {
     var modalId = box.getAttribute("data-modal-target");
     var modal = document.querySelector(modalId);
-    modal.style.display = "block";
+    modal.style.display = "flex";
   };
 });
 // Close modal when clicking on close button or outside of the modal

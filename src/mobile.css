@@ -191,7 +191,6 @@
       background-color: #e5e5e5;
       padding: 15px;
       width: calc(100vw - 60px); /* 模态框宽度为屏幕宽度的90% */
-      height: calc(100vh - 60px); /* 模态框高度为屏幕高度的90% */
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       overflow: hidden; /* 允许Y轴滚动 */
       position: relative; /* 用于定位关闭按钮 */
@@ -208,6 +207,7 @@
       margin: 20px;
     }
     .modal-form {
+      margin-top: 10vh;
       display: flex;
       flex-direction: column;
       margin-bottom: 0;
@@ -215,10 +215,6 @@
     .form-header h3 {
       display: none;
     } 
-    .modal-form input, .modal-form textarea {
-      margin: 10px 0 0; /* 减少边距 */
-      padding: 8px; /* 调整填充 */
-    }
   
     .modal-footer {
       position: relative;
@@ -226,15 +222,15 @@
       flex-direction: column; /* 按钮和文本垂直堆叠 */
       left: 50%; /* 左偏移量设置为50% */
       transform: translateX(-50%); /* 使用transform来确保其水平居中 */
+      margin-top: 10vh;
       }
   
-    .modal-footer button, .modal-footer p {
+    .modal-footer a, .modal-footer p1,.modal-footer p {
       text-align: center; /* 文本居中 */
       margin-bottom: 5px;
     }
   
-
-    .modal-footer button {
+    .modal-footer a, .modal-footer p1 {
       padding: 10px 20px; /* 调整按钮填充 */
       width: auto; /* 按钮宽度自适应 */
     }
