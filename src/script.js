@@ -27,13 +27,10 @@ document.addEventListener('DOMContentLoaded', adjustViewForDevice);
 function adjustViewForDevice() {
     if (window.matchMedia("(max-width: 1366px").matches) {
         mobileView()
-    
         var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
         link.href = 'src/mobile.css'; // 指定mobile.css的路径
-
-    // 将<link>元素添加到<head>中
     document.head.appendChild(link);
     }else{
         desktopView()
@@ -49,6 +46,28 @@ function mobileView() {
     // 切换移动导航栏的显示状态
     toggleButton.addEventListener('click', function() {
         mobileNav.classList.toggle('active'); // 如果导航栏已经是激活状态，这将会关闭它，反之亦然
+    });
+
+    const navLinks = document.querySelectorAll('.mobile-nav-items a'); // 假设你的移动导航项在这个容器内
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // 阻止链接的默认动作
+
+            // 获取链接的href属性，并移除前缀'#'以得到对应模块的ID
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            // 使用scrollIntoView方法平滑滚动到目标元素
+            if (targetElement) {
+                if (targetId === 'module0') {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                mobileNav.classList.toggle('active');
+            }
+        });
     });
 }
 

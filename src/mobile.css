@@ -1,13 +1,59 @@
 
 @media (max-width: 1366px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-    .navbar {
-        display: none;
-    }
 
-    .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
+    .mobile-nav-toggle {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      background-color: #cc3333;
+      color: white;
+      padding: 15px 15px;
+      font-size: 24px;
+      cursor: pointer;
+      width: 100vw;
+      height: 5vh;
+    }
+  
+    .mobile-navbar {
+      display: none;
+      position: fixed;
+      top: 5vh;
+      width: 100%;
+      background-color: gray;
+      z-index: 8;
+      overflow-y: auto;
+      margin-top: 20px;
+    }
+  
+    .mobile-navbar.active {
+      display: block;
+      height: 100vh;
+    }
+    
+    .mobile-nav-items{
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 水平居中对齐项目 */
+    }
+  
+    .mobile-nav-items a {
+      width: 100;
+      display: block;
+      padding: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+  
+    .mobile-nav-items a:hover {
+      background-color: #34b7a7;
+    }
+    
+    .navbar, .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
         display: none;
     }
 
@@ -19,21 +65,6 @@
         flex-direction: column;
         overflow-x: hidden;
         transition:  none;
-    }
-
-    .footer-container {
-        width: 100vw; 
-        height: 75vh;
-        position: relative; 
-        bottom: 0;
-        right: 0;
-        margin:20px 0 0;
-        padding: 0 0; 
-    }
-
-    .footer-content {
-        padding: 10px;
-
     }
 
     .main-page{
@@ -84,14 +115,57 @@
       height: calc(1.47 * 100vw);
     }
 
+
+    .guests-module {
+      flex-direction: row; /* 改为横向布局 */
+      justify-content: space-around; /* 分散对齐以填满空间 */
+      flex-wrap: wrap; /* 允许内容换行 */
+      padding: 10px 0; /* 根据需要调整 */
+      width: 100vw;
+      height: auto;
+    }
     .guests-intro h2 {
-        font-size: 2em;
-        margin: 0 20px;
+      font-size: 2em;
+      margin: 0 20px;
     }
 
-    .join-us-intro h2 {
-        font-size: 2em;
-        margin: 0;
+    .guest-bg{
+      height: 100vw;
+      width: 100vw;
+    }
+
+    .guests-intro h2 {
+    font-size: 2em;
+    margin: 0 20px;
+    }
+
+    .guest-grid {
+      padding: 5px 0;
+      text-align: center; 
+      width: auto;
+      height: auto;
+      margin: auto;
+    
+    }
+
+    .guests-content {
+      gap: 0; 
+      margin: 8vh auto;
+    }
+
+    .guest-container {
+    width: calc(33vw - 10px);
+    height: calc(33vw + 5px); 
+    }
+  
+    .guest-container img {
+      width: calc(33vw - 25px);
+      height: calc(33vw - 25px);
+      margin: 5px 5px 0;
+    }
+
+    .guest-container h3 {
+      font-size: 0.7em; 
     }
 
     .join-us-module {
@@ -103,6 +177,10 @@
       height: auto;
     }
 
+    .join-us-intro h2 {
+      font-size: 2em;
+    }
+    
     .join-us-content {
       flex-direction: row; /* 确保子项横向排列 */
       justify-content: space-around; /* 分散对齐以填满空间 */
@@ -203,7 +281,7 @@
 
     }
     .modal-section h2 {
-      font-size: 3rem; 
+      font-size: 3em; 
       margin: 20px;
     }
     .modal-form {
@@ -235,4 +313,18 @@
       width: auto; /* 按钮宽度自适应 */
     }
 
+    .footer-container {
+      width: 100vw; 
+      height: 75vh;
+      position: relative; 
+      bottom: 0;
+      right: 0;
+      margin:20px 0 0;
+      padding: 0 0; 
+    }
+
+    .footer-content {
+        padding: 10px;
+
+    }
 }

@@ -349,7 +349,7 @@ body, html {
     
 }
 
-#module1 {
+.map-module {
     display: flex;
     justify-content: space-between;
     padding: 0;
@@ -363,7 +363,7 @@ body, html {
     width: 75vw;
 }
 
-#module2 {
+.schedule-module {
     padding: 0;
     width: 25vw;
     height: 75vh;
@@ -393,6 +393,7 @@ body, html {
 .guests-intro{
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 .guests-intro h2 {
@@ -445,7 +446,6 @@ body, html {
     overflow: hidden; 
     background: red; 
     border-radius: 5%;
-    
 }
   
 .guest-container img {
@@ -463,10 +463,6 @@ body, html {
     color: black;
     text-decoration: none;
 }
-
-
-  
-
 
 .join-us-module {
     display: flex;
@@ -720,9 +716,7 @@ body, html {
     text-decoration: none; 
     display: inline-block; 
   }
-  
 
-  
   .footer-content {
     position: relative;
   }
@@ -732,61 +726,8 @@ body, html {
     height: 100%;
   }
 
-
-  
-.mobile-nav-toggle {
+  .mobile-nav-toggle {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    background-color: #cc3333;
-    color: white;
-    padding: 15px 15px;
-    font-size: 24px;
-    cursor: pointer;
-    width: 100vw;
-    height: 5vh;
-}
-
-.mobile-navbar {
-    display: none;
-    position: fixed;
-    top: 5vh;
-    width: 100%;
-    background-color: gray;
-    z-index: 8;
-    overflow-y: auto;
-    margin-top: 20px;
-}
-
-.mobile-navbar.active {
-    display: block;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-
-.mobile-nav-items a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.mobile-nav-items a:hover {
-    background-color: #34b7a7;
-}
-
-
-.mobile-nav-close {
-    display: block;
-    text-align: right;
-    padding: 15px 20px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
 }
 
 
