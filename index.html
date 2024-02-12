@@ -65,7 +65,14 @@
         </div>
         <!-- 移动设备专用导航栏 -->
         <!-- 移动设备菜单切换按钮 -->
-        <div class="mobile-nav-toggle">☰</div>
+        <div class="mobile-nav-toggle">
+            <div class="menu-icon">☰</div>
+            <img src="src/assets/images/logo_center.png" alt="Logo" class="center-icon">
+            <a href="https://www.eventbookings.com/b/event/xcg-convention" class="mobile-ticket">
+                <img src="src/assets/images/XCGweb_icon_F_b7.png" alt="Tickets" class="tickets-icon">
+            </a>
+            <div class="tickets-icon-placeholder">☰</div>
+        </div>
         <div class="mobile-navbar">
             <ul class="mobile-nav-items">
                 <li><a href="#module0">HOME</a></li>
@@ -77,13 +84,14 @@
                 <!-- 更多导航项 -->
             </ul>
         </div>
-
+        <!-- 主页面内容 -->
         <div class="main-page" id="module0">
-            <!-- 主页面内容 -->
+            
             <div class="home-page"><img src="src/assets/images/XCGweb_icon_F-13.png" alt="Icon" class="bg-picture"></div>
         </div>
+         <!-- Subpage 页面内容 -->
         <div class="sub-page">
-            <!-- Subpage 页面内容 -->
+           
             <div class="scroll-indicator">
                 <div class="sawtooth-border" id="indicator-variable"></div>
                 <div class="arrow-container" id="indicator-variable"><span class="long-arrow">→</span></div>
@@ -204,16 +212,12 @@
 
             <!-- Place this at the end of your sub-page content -->
             <div class="footer-container">
-                <img src="src/assets/images/footer.png" alt="Icon" class="footer-picture">
+                <img src="src/assets/images/footer-bg.jpg" alt="Icon" class="footer-picture">
                 <!-- <div class="footer-content">
                     
                 </div> -->
             </div>
-  
-            <!-- Footer Module -->
 
-
-            <!-- end modules here -->
         </div>
         <div class="modal-section">
             <!-- 3 modals -->
@@ -285,8 +289,14 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div id="loading-animation" class="loading-overlay">
+            <div class="loading-message">
+                Redirecting to external site...
+            </div>
+        </div>
         <script src="src/script.js"></script>
+    
     </div>
 </body>
 </html>

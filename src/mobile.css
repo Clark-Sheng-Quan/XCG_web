@@ -1,20 +1,61 @@
 
 @media (max-width: 1366px) {
 
-    .mobile-nav-toggle {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9;
-      background-color: #cc3333;
+  .mobile-nav-toggle {
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 分散对齐子元素 */
+    align-items: center; /* 垂直居中子元素 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: linear-gradient(to right, red, orange); /* 渐变背景 */
+    padding: 15px 0;
+    width: 100vw;
+    height: 5vh;
+  }
+
+  .mobile-nav-toggle .menu-icon {
+      /* 设置图标的样式 */
+      width: 5vw; /* 或根据实际情况调整 */
+      height: auto;
+      font-size: 2rem;
       color: white;
-      padding: 15px 15px;
-      font-size: 24px;
+      margin-left: 10px;
+      
+  }
+
+  .mobile-nav-toggle .center-icon {
+      /* 设置中间图标的样式 */
+      width: 13vw; /* 或根据实际情况调整 */
+      height: auto;
+      margin: 0 auto;
+  }
+
+  .mobile-ticket {
+    height: 100%;
+    width: 20%;
+    right: 0;
+    position: absolute;
+  }
+  
+  .mobile-nav-toggle .tickets-icon {
+      /* 设置右边图片的样式 */
+      width: auto;
+      height: 4vh;
       cursor: pointer;
-      width: 100vw;
-      height: 5vh;
-    }
+      /* margin-right: 5px; */
+      top: 25%;
+      right: 5px;
+      position: absolute;
+  }
+
+  .mobile-nav-toggle .tickets-icon-placeholder {
+    width: 5vw; /* 占位元素宽度与左侧菜单图标相同 */
+    height: auto;
+    font-size: 2rem;
+    visibility: hidden;
+  }
   
     .mobile-navbar {
       display: none;
@@ -105,9 +146,10 @@
         width: 100vw;
     }
     
-    #module2 {
+    .schedule-module {
         height: auto;
         width: 100vw;
+        padding: 0;
     }
   
     .schedule-picture {
@@ -130,6 +172,7 @@
     }
 
     .guest-bg{
+      left: 0;
       height: 100vw;
       width: 100vw;
     }

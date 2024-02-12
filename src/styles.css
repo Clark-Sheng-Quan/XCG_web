@@ -327,7 +327,6 @@ body, html {
 
 .sub-page {
     width: auto; 
-    
     left: 82vw;
     height: 100vh;
     position: fixed;
@@ -340,6 +339,7 @@ body, html {
 }
 
 .module-page {
+    
     width: 75vw;
     min-height: 718.5px;;
     height: 75vh;
@@ -370,8 +370,8 @@ body, html {
 }
 
 .schedule-picture {
-    width: 486px;
-    height: 718.5px;
+    width: auto;
+    height: 100%;
 }
 
 .guests-module {
@@ -384,8 +384,8 @@ body, html {
 
 .guest-bg{
     position: absolute;
+    width: auto;
     height: 800px;
-    width: 800px;
     margin-left: 10vw;
     z-index: 1;
 }
@@ -665,13 +665,13 @@ body, html {
   }
   
   .ticket-bg{
-    width: 500px;
+    width: auto;
     height: 100%;
   }
   
   .ticket-button {
     position: absolute;
-    bottom: 20%; 
+    bottom: 12%; 
     left: 50%;
     transform: translateX(-50%); 
     background: transparent; 
@@ -685,8 +685,8 @@ body, html {
   }
 
   .ticket-button-img{
-    height: 120px; 
-    width: 330px;
+    height: 165px; 
+    width: auto;
   }
   
   .ticket-right {
@@ -730,5 +730,24 @@ body, html {
     display: none;
 }
 
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* 半透明背景 */
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 确保它位于页面内容的上方 */
+}
+
+.loading-message {
+    color: white;
+    font-size: 1.5em;
+    /* 这里可以添加动画效果，例如旋转的图标等 */
+}
 
   

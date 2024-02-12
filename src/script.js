@@ -69,6 +69,11 @@ function mobileView() {
             }
         });
     });
+
+    const mobileTicket = document.querySelector('.mobile-ticket');
+    mobileTicket.addEventListener('click', function() {
+        mobileNav.classList.toggle('active'); // 如果导航栏已经是激活状态，这将会关闭它，反之亦然
+    });
 }
 
 function desktopView() {
@@ -180,3 +185,10 @@ window.onclick = function(event) {
   }
 };
 
+document.querySelector('.mobile-ticket').addEventListener('click', function(event) {
+    event.preventDefault();
+    const destinationUrl = this.href;
+    document.getElementById('loading-animation').style.display = 'flex';
+    window.location.href = destinationUrl;
+
+});
