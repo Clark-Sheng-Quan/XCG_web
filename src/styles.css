@@ -5,9 +5,13 @@ body, html {
     height: 100%; */
 }
 
+.container {
+    width: auto;
+}
+
 .navbar {
     width: 100%;    
-    height: 25%;
+    
     position: relative;
     z-index: 1;   
     transition: all 0.3s ease;
@@ -193,7 +197,7 @@ body, html {
 .logo-icon {
     margin-top: 2px;
     width: 93.42px;
-    height: 43.92px;
+    height: auto;
     overflow: hidden;
     position: absolute;
     top: 50%;
@@ -204,9 +208,15 @@ body, html {
 
 .nav-text.active .logo-icon {
     width: 103.8px;
-    height: 48.8px;
+    height: auto;
 }
 
+#follow-container {
+    margin-right: 4vw; /* Adjust the right margin as needed */
+    flex-grow: 0; /* Do not allow the tickets container to grow */
+    display: inline-flex; /* Use inline-flex to align the button properly */
+    align-items: center; /* Center the button vertically  */
+}
 
 .scroll-indicator {
     width: 18vw;
@@ -241,11 +251,7 @@ body, html {
     background-repeat: repeat-y;
     transform: rotate(180deg);
  }
-/* #cc3333 33.33%, transparent 33.33%, transparent 66.666%, #cc3333 66.666%);
-    transparent 33.33%, #cc3333 33.33%, #cc3333 66.666%, transparent 66.666%);
- #e5e5e5 33.33%, transparent 33.33%, transparent 66.666%, #e5e5e5 66.666%),
- transparent 33.33%, #e5e5e5 33.33%, #e5e5e5 66.666%, transparent 66.666%);
-*/
+
 .sawtooth-border:before {
     left: -10px;
 }  */
@@ -301,17 +307,13 @@ body, html {
     top: 60px;
     background-color: #e5e5e5;
     z-index: 0;
-    
 }
-
 
 .home-page {
     width: 80vw;
     height: 75vh;
     position: absolute;
     top: 10%;
-    
-    
     z-index: 0;
 }
 
@@ -326,7 +328,7 @@ body, html {
 }
 
 .sub-page {
-    width: auto; 
+    width: 7000px; 
     left: 82vw;
     height: 100vh;
     position: fixed;
@@ -339,33 +341,29 @@ body, html {
 }
 
 .module-page {
-    
-    width: 75vw;
-    min-height: 718.5px;;
+    min-height: 718.5px;
     height: 75vh;
     display: inline-block;
-    margin: auto 0 auto 10vw;
-    border: #cc3333 1px solid;
-    
+    margin: auto 0 auto 200px;
+    /* border: #cc3333 1px solid; */
 }
 
 .map-module {
     display: flex;
     justify-content: space-between;
     padding: 0;
-    width: 75vw;
+    width: auto;
     height: 75vh;
 }
 
 .map-picture {
-
     height: 75vh;
-    width: 75vw;
+    width: auto;
 }
 
 .schedule-module {
     padding: 0;
-    width: 25vw;
+    width: auto;
     height: 75vh;
 }
 
@@ -379,14 +377,14 @@ body, html {
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
-    width: 50vw;
+    width: auto;
 }
 
 .guest-bg{
     position: absolute;
     width: auto;
     height: 800px;
-    margin-left: 10vw;
+    margin-left: 2.5%;
     z-index: 1;
 }
 
@@ -399,9 +397,10 @@ body, html {
 .guests-intro h2 {
     position: relative;
     font-size: 3em;
+    font-weight: normal;
     color: #333;
     text-align: end;
-    margin: 0 3vw;
+    margin: 0 50px;
 }
 
 .guests-content {
@@ -469,7 +468,7 @@ body, html {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    width: 25vw;
+    width: auto;
     
 }
 
@@ -481,16 +480,16 @@ body, html {
 .join-us-intro h2 {
     position: relative;
     font-size: 3em;
+    font-weight: normal;
     color: #333;
     text-align: end;
-    margin: 0 3vw;
+    margin: 0 50px;
 }
 
 .join-us-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-right: 5vw;
 }
 
 .option {
@@ -591,14 +590,14 @@ body, html {
     font-family: "Helvetica", Arial, sans-serif; 
 }
   
-.form-header {
+.form-top {
     display: flex; 
     align-items: center; 
     justify-content: space-between; 
     margin: 0 20px; 
   }
 
-.form-header h3 {
+.form-top h3 {
     color: #333;
     font-size: 1.5em;
     font-weight: bold;
@@ -606,7 +605,7 @@ body, html {
     white-space: nowrap
 }
 
-.form-header .modal-description {
+.form-top .modal-description {
     color: #333;
     font-size: 1em; 
     margin-left: 20px; 
@@ -614,7 +613,7 @@ body, html {
     text-align: left; 
   }
 
-.modal-footer {
+.modal-bottom {
     margin-top: 15%;
     display: flex;
     flex-direction: column;
@@ -622,8 +621,8 @@ body, html {
     gap: 10px;
   }
 
-.modal-footer a,
-.modal-footer p1 {
+.modal-bottom a,
+.modal-bottom p1 {
     display: inline-block;
     background-color: #ffbf00;
     color: #000;
@@ -636,12 +635,12 @@ body, html {
     text-align: center;
 }
 
-.modal-footer a:hover {
+.modal-bottom a:hover {
     background-color: #e5a00f;
     opacity: 1;
 }
 
-.modal-footer p {
+.modal-bottom p {
     font-size: 0.8rem;
     color: #333;
     font-weight: bold;
@@ -655,9 +654,8 @@ body, html {
 
 .ticket-module {
     display: flex;
-    background-color: #f5f5f5; 
-    color: #333; 
-    
+    width: auto;
+    overflow: hidden;
   }
   
   .ticket-left {
@@ -690,43 +688,154 @@ body, html {
   }
   
   .ticket-right {
-    position: relative;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* Distributes space evenly */
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 可选的阴影 */
+    color: white; /* 文字颜色 */
+    position: relative;
     border-left: 15px solid rgb(199, 71, 72); 
-    background-color: #ffffff; 
+    background-color: #2a2f33; 
     box-sizing: border-box; 
-  }
-  
-  .footer-container {
-    margin-left: 10vw;
-    position: relative;
-    background-color: #007bff; 
-    text-align: center;
-    color: white;
-    right: 0;
-    width: 40vw;
-    height: 100%;
-    background-color: #ffbf00; 
-    color: white; 
-    font-weight: bold; 
-    font-size: 1.3rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s, box-shadow 0.3s; 
-    text-decoration: none; 
-    display: inline-block; 
-  }
+}
 
-  .footer-content {
-    position: relative;
-  }
 
-  .footer-picture {
-    width: 100%;
-    height: 100%;
-  }
+.event-details h1,
+.event-details p,
+.ticket-type h3,
+.ticket-type p {
+    margin: 25px 0;
+}
 
-  .mobile-nav-toggle {
+.event-details p {
+    font-weight: bold;
+}
+
+.ticket-type {
+    background-color: #333b40; /* 修改为所需的颜色 */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.ticket-type h3 {
+    color: #ffc107; /* 标题颜色 */
+    margin-bottom: 5px;
+}
+
+.ticket-type p {
+    margin: 5px 0;
+}
+
+.ticket-type .description {
+    font-style: italic; /* 可选的样式，突出介绍文本 */
+}
+
+
+    .sponsor-container {
+        margin-left: auto;
+        width: auto; /* 或根据你的布局调整宽度 */
+        height: 100%; /* 使模块高度充满剩余空间 */
+        background-color: #fff; /* 或任何你想要的背景颜色 */
+    }
+
+    .sponsor-icons {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* 使图标垂直排列 */
+        justify-content: center; /* 水平居中每个图标 */
+        margin: 10vh 10px;
+    }
+
+    .sponsor-icons img {
+        margin: 2vh 0;
+        height: auto;
+        width: 100px;
+    }
+
+    .footer-container {
+        height: 100vh;
+        width: calc(100vh / 1.72 );
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distributes space evenly */
+        position: relative;
+        background-image: url('assets/images/footer-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        color: white; /* Assuming a light color for text */
+    }
+    
+    .footer-logo {
+        width: 150px;
+        height: auto;
+        margin: 15% 5% 0; /* Add space below the logo */
+    }
+    
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center the social media icons */
+        margin-top: auto; /* Add space above and below the social media links */
+        font-size: 1.5em;
+        
+    }
+    
+    .social-media p{
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Center the social media icons */
+        margin: 5% 0;
+        text-wrap: wrap;
+    }
+
+    .social-item{
+        margin: 0 5%;
+        width: 50px;
+    }
+    
+    .social-item img {
+        width: 50px;
+        height: auto;
+    }
+
+    #wechatQR{
+        width: 200px; 
+        height: auto;
+        text-align:center;   
+    }
+
+    .contact-info {
+        margin: 0 5% 10%;
+        font-size: 1.2em;
+        text-wrap: nowrap;
+    }
+    
+    .small-email {
+        height: auto;
+        width: 30px;
+    }
+
+    .email-style, #copyConfirmation {
+    font-size: inherit; /* This will make it match the size of the surrounding text */
+    color: inherit; /* This will make it match the color of the surrounding text */
+    cursor: pointer; /* Changes the cursor to indicate the element is clickable */
+}
+
+/* Styles for the copied confirmation tooltip */
+    #copyConfirmation {
+        /* Same style properties as the surrounding text */
+        display: none;
+        margin-left: 10px;
+        position: relative; /* Adjust this as needed */
+    }
+
+
+
+.mobile-nav-toggle, .mobile-navbar {
     display: none;
 }
 
@@ -738,7 +847,6 @@ body, html {
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* 半透明背景 */
-    
     justify-content: center;
     align-items: center;
     z-index: 1000; /* 确保它位于页面内容的上方 */

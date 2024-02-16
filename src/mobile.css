@@ -82,7 +82,7 @@
     }
   
     .mobile-nav-items a {
-      width: 100;
+      width: auto;
       display: block;
       padding: 20px;
       color: white;
@@ -133,12 +133,13 @@
     }
     
     .module-page {
+        height: auto;
         width: 100vw;
         padding: 20px;
         margin: 30px 0;
         overflow: auto;
         box-sizing: border-box;
-        height:auto;
+        
         min-height: 0;
     }
     #module1 {
@@ -249,11 +250,6 @@
       font-size: smaller; /* 减小标题的字号 */
     }
 
-    .footer-picture {
-        width: 100%;
-        height: 100%;
-    }
-
     .ticket-module {
       padding: 0;
       display: flex;
@@ -289,10 +285,34 @@
     }
     
     .ticket-right {
-      width: 100vw;
+      width: auto;
       height: calc(1.5 * 100vw);
+      padding: 10px 20px ;
+      
     }
+      
 
+  .event-details p,
+  .ticket-type h3,
+  .ticket-type p {
+      margin: 10px 0;
+      font-size: small;
+  }
+  
+  .event-details h1{
+    margin: 10px 0;
+  }
+
+  .event-details p {
+    text-wrap: wrap;
+  }
+  
+  .ticket-type {
+      background-color: #333b40; /* 修改为所需的颜色 */
+      padding: 10px;
+      margin-top: 10px;
+  }
+  
 
     .modal {
       display: none;
@@ -333,11 +353,11 @@
       flex-direction: column;
       margin-bottom: 0;
     }
-    .form-header h3 {
+    .form-top h3 {
       display: none;
     } 
   
-    .modal-footer {
+    .modal-bottom {
       position: relative;
       display: flex;
       flex-direction: column; /* 按钮和文本垂直堆叠 */
@@ -346,28 +366,75 @@
       margin-top: 10vh;
       }
   
-    .modal-footer a, .modal-footer p1,.modal-footer p {
+    .modal-bottom a, .modal-bottom p1,.modal-bottom p {
       text-align: center; /* 文本居中 */
       margin-bottom: 5px;
     }
   
-    .modal-footer a, .modal-footer p1 {
+    .modal-bottom a, .modal-bottom p1 {
       padding: 10px 20px; /* 调整按钮填充 */
       width: auto; /* 按钮宽度自适应 */
     }
 
+    .sponsor-container {
+      margin: 30px 0 0 0;
+      width: 100%; /* 或根据你的布局调整宽度 */
+      height: auto; /* 使模块高度充满剩余空间 */
+    }
+
+    .sponsor-icons {
+      width: 100%;
+      display: flex;
+      flex-direction: row; /* 使图标垂直排列 */
+      justify-content: start; /* 水平居中每个图标 */
+      margin: 10px 10vw;
+    }
+
+    .sponsor-icons img {
+      margin: 0 2vw;
+      height: 50px;
+      width: auto;
+    }
+
     .footer-container {
-      width: 100vw; 
-      height: 75vh;
-      position: relative; 
-      bottom: 0;
-      right: 0;
-      margin:20px 0 0;
-      padding: 0 0; 
+      height: calc(100vw * 1.72);
+      width: auto;
     }
 
-    .footer-content {
-        padding: 10px;
-
+    .footer-logo {
+      width: 100px;
+      height: auto;
+      margin: 15% 5% 0; /* Add space below the logo */
     }
+    
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center the social media icons */
+      margin: 20px 0; /* Add space above and below the social media links */
+      
+    }
+        
+    .social-media a {
+      margin: 0 5%;
+      width: 35px;
+    }
+    
+    .social-media img {
+      width: 35px;
+      height: auto;
+    }
+
+    #wechatQR{
+      width: 125px
+  }
+    .contact-info {
+      margin: 0 5% 10%;
+      font-size: 0.7em;
+    }
+
+    .small-email {
+      height: auto;
+      width: 20px;
+  }
 }

@@ -190,25 +190,32 @@
                     </a>
                 </div>
                 <div class="ticket-right">
-                    <div class="ticket-info">
-                    <h1>2024 TICKETS</h1>
-                    <p class="price">AUD 39.99 - AUD149.99</p>
-                    <div class="location-info">
-                        <h3>Location</h3>
-                        <p>Burwood Park, Burwood, New South Wales, 2134, Australia</p>
+                    <div class="event-details">
+                        <h1>XCG Convention</h1>
+                        <p class="location">Burwood Park, Burwood, New South Wales, 2134, Australia</p>
+                        <p class="date">Saturday, Mar 30</p>
+                        <p class="time">12:00 PM - 6:00 PM (6h)</p>
                     </div>
-                    <div class="date-info">
-                        <h3>Date & Time</h3>
-                        <p>Start Time - Sat, Mar 30, 2024 12:00 PM (AEDT)</p>
-                        <p>End Time - Sat, Mar 30, 2024 6:00 PM (AEDT)</p>
-                        <p class="calendar">30/3/2024</p>
-                    </div>
-                    <p class="booking">Booking will be ended on March 30 at 6:00 PM</p>
+                    <div class="ticket-types">
+                        <div class="ticket-type">
+                            <h3>General Admission Ticket</h3>
+                            <p>AUD 39.99</p>
+                            <p class="description">Standard entry to the event.</p>
+                        </div>
+                        <div class="ticket-type">
+                            <h3>Family/Group of 4 Tickets</h3>
+                            <p>AUD 149.99</p>
+                            <p class="description">Discounted group rate for families or small groups.</p>
+                        </div>
+                        <div class="ticket-type">
+                            <h3>Collector Ticket</h3>
+                            <p>AUD 3.00</p>
+                            <p class="description">A unique keepsake for collectors and fans.</p>
+                        </div>
                     </div>
                 </div>
                   
             </div>
-
             <div class="sponsor-container">
                 <!-- Sponsorship 图标容器 -->
                 <div class="sponsor-icons">
@@ -222,13 +229,45 @@
 
             <!-- Place this at the end of your sub-page content -->
             <div class="footer-container">
-                <img src="src/assets/images/footer-bg.jpg" alt="Icon" class="footer-picture">
-                <!-- <div class="footer-content">
-                    
-                </div> -->
-            </div>
+                
+                <img src="src/assets/images/XCGweb_foot-13.png" alt="Logo" class="footer-logo">
 
-        </div>
+                <div class="social-media">
+                    <!-- Instagram Link -->
+                    <p>                    
+                        <a href="https://www.instagram.com/xcgsydney" class="ig-link social-item">
+                            <img src="src/assets/images/XCGweb_foot-15.png" alt="Instagram">
+                        </a>
+                        <span>xcgsydney</span>
+                    </p>
+                    <p>                    
+                        <a class="social-item">
+                            <img src="src/assets/images/XCGweb_foot-14.png" alt="WeChat">
+                        </a>
+                        <span>xcgsydney</span>
+                    </p>
+                    <p>
+                        <img src="src/assets/images/XCGweb_foot-17.png" alt="WeChat QR Code" id="wechatQR" class="social-item">
+                    </p>
+                </div>
+
+                <div class="contact-info">
+                    <p>
+                        
+                        BUSINESS COLLABORATION: 
+                    </p>
+                    <p>
+                        <span><img src="src/assets/images/XCGweb_foot-16.png" alt="" class="small-email"></span>
+                        <a href="#" id="emailLink" onclick="copyEmailToClipboard(event)" class="email-style">xcgcon@gmail.com</a>
+                        <span id="copyConfirmation">Copied!</span>
+                    </p>
+                    <p>
+                        © 2024 XCG SYDNEY Inc. All rights reserved.
+                        
+                    </p>
+                </div>
+                
+            </div>
         <div class="modal-section">
             <!-- 3 modals -->
             <div id="sponserModal" class="modal">
@@ -237,11 +276,11 @@
                     <h2>SPONSER</h2>
                     
                     <div class="modal-form">
-                        <div class="form-header">
+                        <div class="form-top">
                             <h3>JOIN US!</h3>
                             <p class="modal-description">Sign up to become a pivotal part of XCG and make impactful connections.</p>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-bottom">
                             <p1>Bussiness Contact: xcgcon@gmail.com</p1>
                             <p>We respect your privacy.</p>
                         </div>
@@ -255,11 +294,11 @@
                         <span class="close-button">&times;</span>
                         <h2>SPONSER</h2>
                         <div class="modal-form">
-                            <div class="form-header">
+                            <div class="form-top">
                                 <h3>JOIN US!</h3>
                                 <p class="modal-description">Get in touch to become a pivotal part of XCG and make impactful connections.</p>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-bottom">
                                 <p1>Bussiness Contact: xcgcon@gmail.com</p1>
                                 <p>We respect your privacy.</p>
                             </div>
@@ -271,11 +310,11 @@
                         <span class="close-button">&times;</span>
                         <h2>EXHIBITOR</h2>
                         <div class="modal-form">
-                            <div class="form-header">
+                            <div class="form-top">
                                 <h3>JOIN US!</h3>
                                 <p class="modal-description">Register here to showcase your cosplay creativity and enthusiasm.</p>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-bottom">
                                 <a href="https://forms.gle/VnBFsVwWHbtdY3Rj7" class="form-link">Apply Now</a>
                                 <p>We respect your privacy.</p>
                             </div>
@@ -287,11 +326,11 @@
                         <span class="close-button">&times;</span>
                         <h2>PERFORMER<br>& BAND</h2>
                         <div class="modal-form">
-                            <div class="form-header">
+                            <div class="form-top">
                                 <h3>JOIN US!</h3>
                                 <p class="modal-description">Apply now to take the main stage at XCG for your vibrant performace.</p>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-bottom">
                                 <a href="https://forms.gle/Lc7Vot3gPJz6Ch8v9" class="form-link">Apply Now</a>
                                 <p>We respect your privacy.</p>
                             </div>

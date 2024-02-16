@@ -9,14 +9,11 @@ const blackCircles = document.querySelectorAll('.black-circle');
 const redCircles = document.querySelectorAll('.red-circle');
 const indicatorVariable = document.querySelectorAll('#indicator-variable');
 
-// const widthSub = window.getComputedStyle(subPage).width;
-// console.log(widthSub);
-// const widthInPx = parseFloat(widthSub);
-// const viewportWidthInPx = window.innerWidth;
-// const widthInVw = (widthInPx / viewportWidthInPx) * 100;
+const ratio = getViewportWidthRatio()
 let currentOffset = 82; 
 const maxOffset = 82;
-const minOffset = -270;
+const minOffset = -264.5 /ratio
+console.log(ratio);
 const scrollSpeed = 15
 const moduleIndex = [0, 82, 160, 200, 260, 310]
 
@@ -25,17 +22,22 @@ document.addEventListener('DOMContentLoaded', adjustViewForDevice);
 // window.addEventListener('resize', adjustViewForDevice);
 
 function adjustViewForDevice() {
-    if (window.matchMedia("(max-width: 1366px").matches) {
-        mobileView()
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'src/mobile.css'; // 指定mobile.css的路径
-    document.head.appendChild(link);
-    }else{
-        desktopView()
-    }
-
+    // if (window.matchMedia("(max-width: 1366px").matches) {
+    //     mobileView()
+    //     redirect('.mobile-ticket')
+    //     var link = document.createElement('link');
+    //     link.rel = 'stylesheet';
+    //     link.type = 'text/css';
+    //     link.href = 'src/mobile.css'; // 指定mobile.css的路径
+    // document.head.appendChild(link);
+    // }else{
+    //     desktopView()
+    // }
+    // redirect('.ticket-button')
+    // redirect('.guest-link')
+    // redirect('.form-link')
+    // redirect('.ig-link')
+    desktopView()
 }
 
 function mobileView() {
@@ -77,14 +79,8 @@ function mobileView() {
 }
 
 function desktopView() {
-    document.querySelector('.main-page').style.minWidth = '1535px';
-    subPage.style.minWidth = '6943.910px';
-    modules[0].style.minWidth = '72px';
-    modules[1].style.minWidth = '468px'; 
-    modules[2].style.minWidth = '936px'; 
-    modules[3].style.minWidth = '560px';
-    modules[4].style.minWidth = '1400px'; 
-    document.querySelector('.footer-container').style.minWidth = '750px'
+
+    
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
 
@@ -166,6 +162,35 @@ function moveToPage(index) {
     });
 }
 
+function redirect(className) {
+    document.querySelector(className).addEventListener('click', function(event) {
+        event.preventDefault();
+        const destinationUrl = this.href;
+        document.getElementById('loading-animation').style.display = 'flex';
+        window.location.href = destinationUrl;
+    });
+}
+function copyEmailToClipboard(event) {
+    event.preventDefault();
+    const email = 'xcgcon@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        // Show the confirmation message
+        const confirmationMessage = document.getElementById('copyConfirmation');
+        confirmationMessage.style.display = 'inline';
+        setTimeout(() => {
+            confirmationMessage.style.display = 'none';
+        }, 2000);
+    }, (err) => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+function getViewportWidthRatio() {
+    var viewportWidth = window.innerWidth;
+    var ratio = viewportWidth / 1920;
+    return ratio;
+}
+
 // Get all clickable boxes in join us
 const boxes = document.querySelectorAll(".option");
 // Loop through each box and add click event
@@ -185,10 +210,3 @@ window.onclick = function(event) {
   }
 };
 
-document.querySelector('.mobile-ticket').addEventListener('click', function(event) {
-    event.preventDefault();
-    const destinationUrl = this.href;
-    document.getElementById('loading-animation').style.display = 'flex';
-    window.location.href = destinationUrl;
-
-});
