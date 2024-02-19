@@ -22,22 +22,22 @@ document.addEventListener('DOMContentLoaded', adjustViewForDevice);
 // window.addEventListener('resize', adjustViewForDevice);
 
 function adjustViewForDevice() {
-    // if (window.matchMedia("(max-width: 1366px").matches) {
-    //     mobileView()
-    //     redirect('.mobile-ticket')
-    //     var link = document.createElement('link');
-    //     link.rel = 'stylesheet';
-    //     link.type = 'text/css';
-    //     link.href = 'src/mobile.css'; // 指定mobile.css的路径
-    // document.head.appendChild(link);
-    // }else{
-    //     desktopView()
-    // }
-    // redirect('.ticket-button')
-    // redirect('.guest-link')
-    // redirect('.form-link')
-    // redirect('.ig-link')
-    desktopView()
+    if (window.matchMedia("(max-width: 1366px").matches) {
+        mobileView()
+        redirect('.mobile-ticket')
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'src/mobile.css'; // 指定mobile.css的路径
+    document.head.appendChild(link);
+    }else{
+        desktopView()
+    }
+    redirect('.ticket-button')
+    redirect('.guest-link')
+    redirect('.form-link')
+    redirect('.ig-link')
+    // desktopView()
 }
 
 function mobileView() {
