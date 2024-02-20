@@ -328,7 +328,7 @@ body, html {
 }
 
 .sub-page {
-    width: 7000px; 
+    width: auto; 
     left: 82vw;
     height: 100vh;
     position: fixed;
@@ -747,9 +747,8 @@ body, html {
     font-style: italic; /* 可选的样式，突出介绍文本 */
 }
 
-
     .sponsor-container {
-        margin-left: auto;
+        margin-left: 200px;
         width: auto; /* 或根据你的布局调整宽度 */
         height: 100%; /* 使模块高度充满剩余空间 */
         background-color: #fff; /* 或任何你想要的背景颜色 */
@@ -781,6 +780,7 @@ body, html {
         background-position: center;
         overflow: hidden;
         color: white; /* Assuming a light color for text */
+        
     }
     
     .footer-logo {

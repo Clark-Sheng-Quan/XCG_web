@@ -9,39 +9,33 @@ const blackCircles = document.querySelectorAll('.black-circle');
 const redCircles = document.querySelectorAll('.red-circle');
 const indicatorVariable = document.querySelectorAll('#indicator-variable');
 
-const ratio = getViewportWidthRatio()
-let currentOffset = 82; 
-const maxOffset = 82;
-const minOffset = -264.5 /ratio
-console.log(ratio);
-const scrollSpeed = 15
-const moduleIndex = [0, 82, 160, 200, 260, 310]
+var currentOffset = 82; 
+var maxOffset = 82;
+var minOffset = -240
+var scrollSpeed = 15
+var moduleIndex = [0, 82, 155, 200, 250, 290]
+
 
 document.addEventListener('DOMContentLoaded', adjustViewForDevice);
 
-// window.addEventListener('resize', adjustViewForDevice);
+window.addEventListener('resize', adjustViewForDevice);
 
 function adjustViewForDevice() {
+
     if (window.matchMedia("(max-width: 1366px").matches) {
         mobileView()
-        redirect('.mobile-ticket')
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'src/mobile.css'; // 指定mobile.css的路径
-    document.head.appendChild(link);
     }else{
         desktopView()
     }
-    redirect('.ticket-button')
-    redirect('.guest-link')
-    redirect('.form-link')
-    redirect('.ig-link')
-    // desktopView()
 }
 
 function mobileView() {
-    
+    redirect('.mobile-ticket')
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'src/mobile.css'; // 指定mobile.css的路径
+    document.head.appendChild(link);
     const toggleButton = document.querySelector('.mobile-nav-toggle'); // 找到触发按钮
     const mobileNav = document.querySelector('.mobile-navbar'); // 找到移动导航栏
 
@@ -80,7 +74,11 @@ function mobileView() {
 
 function desktopView() {
 
-    
+    minOffset = getViewportWidthRatio()
+    redirect('.ticket-button')
+    redirect('.guest-link')
+    redirect('.form-link')
+    redirect('.ig-link')
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
 
@@ -148,7 +146,7 @@ function updateActiveNavItem() {
     else if(currentOffset >= maxOffset-moduleIndex[2]){setActive(2)}
     else if(currentOffset >= maxOffset-moduleIndex[3]){setActive(3)}
     else if(currentOffset >= maxOffset-moduleIndex[4]){setActive(4)}
-    else if(currentOffset >= maxOffset-moduleIndex[6]){setActive(5)}
+    else if(currentOffset >= maxOffset-moduleIndex[5]){setActive(5)}
     else{setActive(6)}
 }
 
@@ -187,8 +185,12 @@ function copyEmailToClipboard(event) {
 
 function getViewportWidthRatio() {
     var viewportWidth = window.innerWidth;
-    var ratio = viewportWidth / 1920;
-    return ratio;
+    const computedStyle = getComputedStyle(subPage);
+    const width = computedStyle.width;
+    const widthValue = parseFloat(width);
+    var Offset = (widthValue - viewportWidth * 1.08) / viewportWidth * -100;
+    console.log(widthValue / viewportWidth * 100);
+    return Offset;
 }
 
 // Get all clickable boxes in join us
