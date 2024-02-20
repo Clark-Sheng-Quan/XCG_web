@@ -877,4 +877,445 @@ body, html {
     /* 这里可以添加动画效果，例如旋转的图标等 */
 }
 
+
+@media (max-width: 1366px) {
+
+    .mobile-nav-toggle {
+      display: flex; /* 使用flex布局 */
+      justify-content: space-between; /* 分散对齐子元素 */
+      align-items: center; /* 垂直居中子元素 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      background: linear-gradient(to right, red, orange); /* 渐变背景 */
+      padding: 15px 0;
+      width: 100vw;
+      height: 5vh;
+    }
   
+    .mobile-nav-toggle .menu-icon {
+        /* 设置图标的样式 */
+        width: 5vw; /* 或根据实际情况调整 */
+        height: auto;
+        font-size: 2rem;
+        color: white;
+        margin-left: 10px;
+        
+    }
+  
+    .mobile-nav-toggle .center-icon {
+        /* 设置中间图标的样式 */
+        width: 13vw; /* 或根据实际情况调整 */
+        height: auto;
+        margin: 0 auto;
+    }
+  
+    .mobile-ticket {
+      height: 100%;
+      width: 20%;
+      right: 0;
+      position: absolute;
+    }
+    
+    .mobile-nav-toggle .tickets-icon {
+        /* 设置右边图片的样式 */
+        width: auto;
+        height: 4vh;
+        cursor: pointer;
+        /* margin-right: 5px; */
+        top: 25%;
+        right: 5px;
+        position: absolute;
+    }
+  
+    .mobile-nav-toggle .tickets-icon-placeholder {
+      width: 5vw; /* 占位元素宽度与左侧菜单图标相同 */
+      height: auto;
+      font-size: 2rem;
+      visibility: hidden;
+    }
+    
+      .mobile-navbar {
+        display: none;
+        position: fixed;
+        top: 5vh;
+        width: 100%;
+        background-color: gray;
+        z-index: 8;
+        overflow-y: auto;
+        margin-top: 20px;
+      }
+    
+      .mobile-navbar.active {
+        display: block;
+        height: 100vh;
+      }
+      
+      .mobile-nav-items{
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 水平居中对齐项目 */
+      }
+    
+      .mobile-nav-items a {
+        width: auto;
+        display: block;
+        padding: 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+    
+      .mobile-nav-items a:hover {
+        background-color: #34b7a7;
+      }
+      
+      .navbar, .scroll-indicator, .indicator-icon, .sawtooth-border, .arrow-container {
+          display: none;
+      }
+  
+      .sub-page {
+          width: 100vw;
+          height: auto;
+          position: relative;
+          left: 0;
+          flex-direction: column;
+          overflow-x: hidden;
+          transition:  none;
+      }
+  
+      .main-page{
+          height:100vh;
+          width:100vw;
+          overflow:auto;
+          box-sizing:border-box;
+          position: relative;
+      }
+          
+      .home-page{
+          width:100%;
+          height:85%;
+          position:absolute;
+          top:15%;
+          z-index:0;
+      }
+          
+      .bg-picture{
+          height: 80vh;
+          width: auto;
+          overflow:auto;
+          position:absolute;
+          top:0;
+          left:0;
+          transform:none;
+      }
+      
+      .module-page {
+          height: auto;
+          width: 100vw;
+          padding: 20px;
+          margin: 30px 0;
+          overflow: auto;
+          box-sizing: border-box;
+          
+          min-height: 0;
+      }
+      #module1 {
+          height: auto;
+          width: 100vw;
+      }
+      
+      .schedule-module {
+          height: auto;
+          width: 100vw;
+          padding: 0;
+      }
+    
+      .schedule-picture {
+        width: 100vw;
+        height: calc(1.47 * 100vw);
+      }
+  
+  
+      .guests-module {
+        flex-direction: row; /* 改为横向布局 */
+        justify-content: space-around; /* 分散对齐以填满空间 */
+        flex-wrap: wrap; /* 允许内容换行 */
+        padding: 0; /* 根据需要调整 */
+        width: 100vw;
+        height: auto;
+      }
+      .guests-intro h2 {
+        font-size: 2em;
+        margin: 0 20px;
+      }
+  
+      .guest-bg{
+        left: 0;
+        height: 100vw;
+        width: 100vw;
+      }
+  
+      .guests-intro h2 {
+        font-size: 2em;
+        margin: 0 20px;
+      }
+  
+      .guest-grid {
+        padding: 20px 0;
+        text-align: center; 
+        width: auto;
+        height: auto;
+        margin: auto;
+      
+      }
+  
+      .guests-content {
+        gap: 0; 
+        margin: 8vh auto;
+      }
+  
+      .guest-container {
+      width: calc(33vw - 10px);
+      height: calc(33vw + 5px); 
+      }
+    
+      .guest-container img {
+        width: calc(33vw - 25px);
+        height: calc(33vw - 25px);
+        margin: 5px 5px 0;
+      }
+  
+      .guest-container h3 {
+        font-size: 0.7em; 
+      }
+  
+      .join-us-module {
+        flex-direction: row; /* 改为横向布局 */
+        justify-content: space-around; /* 分散对齐以填满空间 */
+        flex-wrap: wrap; /* 允许内容换行 */
+        padding: 10px 0; /* 根据需要调整 */
+        width: 100vw;
+        height: auto;
+      }
+  
+      .join-us-intro h2 {
+        font-size: 2em;
+      }
+      
+      .join-us-content {
+        flex-direction: row; /* 确保子项横向排列 */
+        justify-content: space-around; /* 分散对齐以填满空间 */
+        gap: 3vw;
+        flex-wrap: nowrap; /* 允许内容在必要时换行 */
+        width: auto;
+        margin: 0;
+      }
+    
+      .join-us-content .option {
+        width: 30vw; /* 每个选项占据大约三分之一的宽度 */
+        margin: 5px 0 /* 添加一些垂直间距 */
+        /* 根据需要调整内边距或其他样式 */
+      }
+    
+      /* 可选：调整图片和文字的大小来更好地适应小屏幕 */
+      .join-us-content .option img {
+        max-width: 100%; /* 确保图片不会超过其容器的宽度 */
+        height: auto; /* 保持图片的纵横比 */
+      }
+    
+      .join-us-content .option h3 {
+        font-size: smaller; /* 减小标题的字号 */
+      }
+  
+      .ticket-module {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: auto; 
+        height: auto;
+        white-space: nowrap; 
+        box-sizing: border-box;
+        min-height: 0;
+      }
+      
+      .ticket-left {
+        width:100vw;
+        height:auto;
+        
+      }
+      
+      .ticket-bg{
+        width: 100vw;
+        height: calc(1.5 * 100vw);;
+        box-sizing: border-box;
+      }
+      
+      .ticket-button {
+        all: none;  
+      }
+    
+      .ticket-button-img{
+        height: 120px; 
+        width: 330px;
+      }
+      
+      .ticket-right {
+        width: auto;
+        height: calc(1.5 * 100vw);
+        padding: 10px 20px ;
+        
+      }
+        
+  
+    .event-details p,
+    .ticket-type h3,
+    .ticket-type p {
+        margin: 10px 0;
+        font-size: small;
+    }
+    
+    .event-details h1{
+      margin: 10px 0;
+    }
+  
+    .event-details p {
+      text-wrap: wrap;
+    }
+    
+    .ticket-type {
+        background-color: #333b40; /* 修改为所需的颜色 */
+        padding: 10px;
+        margin-top: 10px;
+    }
+    
+  
+      .modal {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 10;
+        width: 100vw; /* 模态框宽度为屏幕宽度的90% */
+        height: 100vh; /* 模态框高度为屏幕高度的90% */
+        background-color: rgba(0,0,0,0.5);
+        overflow-y: hidden; /* 允许内容超出时滚动 */
+        box-sizing: border-box; /* 边框和内边距包含在宽度和高度内 */
+      }
+    
+      .modal-content {
+        margin: 15px;
+        background-color: #e5e5e5;
+        padding: 15px;
+        width: calc(100vw - 60px); /* 模态框宽度为屏幕宽度的90% */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        overflow: hidden; /* 允许Y轴滚动 */
+        position: relative; /* 用于定位关闭按钮 */
+      }
+    
+      .close-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+  
+      }
+      .modal-section h2 {
+        font-size: 3em; 
+        margin: 20px;
+      }
+      .modal-form {
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+      .form-top h3 {
+        display: none;
+      } 
+    
+      .modal-bottom {
+        position: relative;
+        display: flex;
+        flex-direction: column; /* 按钮和文本垂直堆叠 */
+        left: 50%; /* 左偏移量设置为50% */
+        transform: translateX(-50%); /* 使用transform来确保其水平居中 */
+        margin-top: 10vh;
+        }
+    
+      .modal-bottom a, .modal-bottom p1,.modal-bottom p {
+        text-align: center; /* 文本居中 */
+        margin-bottom: 5px;
+      }
+    
+      .modal-bottom a, .modal-bottom p1 {
+        padding: 10px 20px; /* 调整按钮填充 */
+        width: auto; /* 按钮宽度自适应 */
+      }
+  
+      .sponsor-container {
+        margin: 30px 0 0 0;
+        width: 100%; /* 或根据你的布局调整宽度 */
+        height: auto; /* 使模块高度充满剩余空间 */
+      }
+  
+      .sponsor-icons {
+        width: 100%;
+        display: flex;
+        flex-direction: row; /* 使图标垂直排列 */
+        justify-content: start; /* 水平居中每个图标 */
+        margin: 10px 10vw;
+      }
+  
+      .sponsor-icons img {
+        margin: 0 2vw;
+        height: 50px;
+        width: auto;
+      }
+  
+      .footer-container {
+        height: calc(100vw * 1.72);
+        width: auto;
+      }
+  
+      .footer-logo {
+        width: 100px;
+        height: auto;
+        margin: 15% 5% 0; /* Add space below the logo */
+      }
+      
+      .social-media {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center the social media icons */
+        margin: 20px 0; /* Add space above and below the social media links */
+        
+      }
+          
+      .social-media a {
+        margin: 0 5%;
+        width: 35px;
+      }
+      
+      .social-media img {
+        width: 35px;
+        height: auto;
+      }
+  
+      #wechatQR{
+        width: 125px
+    }
+      .contact-info {
+        margin: 0 5% 10%;
+        font-size: 0.7em;
+      }
+  
+      .small-email {
+        height: auto;
+        width: 20px;
+    }
+  }

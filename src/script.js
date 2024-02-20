@@ -16,34 +16,33 @@ var scrollSpeed = 15
 var moduleIndex = [0, 82, 155, 200, 250, 290]
 
 
-document.addEventListener('DOMContentLoaded', adjustViewForDevice);
-
+window.addEventListener('load', adjustViewForDevice);
 window.addEventListener('resize', adjustViewForDevice);
 
 function adjustViewForDevice() {
-
-    if (window.matchMedia("(max-width: 1366px").matches) {
-        mobileView()
-    }else{
-        desktopView()
-    }
-    redirect('.ticket-button')
-    redirect('.guest-link')
-    redirect('.form-link')
-    redirect('.ig-link')
+    requestAnimationFrame(() => {
+        if (window.matchMedia("(max-width: 1366px").matches) {
+            mobileView();
+        } else {
+            desktopView();
+            var ratios = getViewportWidthRatio();
+            minOffset = ratios[0];
+            moduleIndex[2] *= ratios[1];
+            moduleIndex[3] *= ratios[1];
+            moduleIndex[4] *= ratios[1];
+            moduleIndex[5] *= ratios[1];
+        }
+        redirect('.ticket-button');
+        redirect('.guest-link');
+        redirect('.form-link');
+        redirect('.ig-link');
+    });
 }
 
 function mobileView() {
     redirect('.mobile-ticket')
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = 'src/mobile.css'; // 指定mobile.css的路径
-    document.head.appendChild(link);
     const toggleButton = document.querySelector('.mobile-nav-toggle'); // 找到触发按钮
     const mobileNav = document.querySelector('.mobile-navbar'); // 找到移动导航栏
-
-    // 切换移动导航栏的显示状态
     toggleButton.addEventListener('click', function() {
         mobileNav.classList.toggle('active'); // 如果导航栏已经是激活状态，这将会关闭它，反之亦然
     });
@@ -77,14 +76,6 @@ function mobileView() {
 }
 
 function desktopView() {
-
-
-    var offset = getViewportWidthRatio()
-    minOffset = offset[0]
-    moduleIndex[2] *= offset[1]
-    moduleIndex[3] *= offset[1]
-    moduleIndex[4] *= offset[1]
-    moduleIndex[5] *= offset[1]
 
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
@@ -168,7 +159,7 @@ function moveToPage(index) {
 }
 
 function redirect(className) {
-    document.querySelectorAll(className).addEventListener('click', function(event) {
+    document.querySelector(className).addEventListener('click', function(event) {
         event.preventDefault();
         const destinationUrl = this.href;
         document.getElementById('loading-animation').style.display = 'flex';
@@ -195,12 +186,14 @@ function getViewportWidthRatio() {
     const computedStyle = getComputedStyle(subPage);
     const width = computedStyle.width;
     const widthValue = parseFloat(width);
+    console.log(widthValue);
     var offset = (widthValue - viewportWidth * 1.08) / viewportWidth * -100;
     const def = 3.3436820083682006
     var ratio = (widthValue - viewportWidth * 0.08) / viewportWidth / def;
-    
     return [offset, ratio]
 }
+
+  
 
 // Get all clickable boxes in join us
 const boxes = document.querySelectorAll(".option");
