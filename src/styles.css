@@ -369,7 +369,7 @@ body, html {
 
 .schedule-picture {
     width: auto;
-    height: 100%;
+    height: 75vh;
 }
 
 .guests-module {
@@ -382,9 +382,9 @@ body, html {
 
 .guest-bg{
     position: absolute;
-    width: auto;
-    height: 700px;
-    margin-left: 3%;
+    width: 45vw;
+    height: auto;
+    margin-left: 2.5%;
     z-index: 1;
 }
 
@@ -397,7 +397,7 @@ body, html {
 .guests-intro h2 {
     position: relative;
     font-size: 3em;
-    font-weight: normal;
+    font-weight: 550;
     color: #333;
     text-align: end;
     margin: 0 50px;
@@ -409,7 +409,7 @@ body, html {
     width: 100%; 
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(2, auto); /* 两行 */
-    gap: 20px; 
+    gap: 3vw; 
     margin: auto;
     z-index: 2;
     justify-content: center; /* Spaces out the items horizontally */
@@ -439,8 +439,10 @@ body, html {
 }
 
 .guest-container {
-    width: 200px;
-    height: 230px; 
+    width: 12vw;
+    height: calc(12vw + 30px); 
+    /* min-width: 200px;
+    min-height: 230px; */
     overflow: hidden; 
     border-radius: 5%;
 }
@@ -462,15 +464,18 @@ body, html {
 }
   
 .guest-container img {
-    width: 180px;
-    height: 180px;
+
+    width: calc(12vw - 20px);
+    height: calc(12vw - 20px); 
+    /* min-width: 180px;
+    min-height: 180px; */
     object-fit: cover; 
     margin: 10px;
     z-index: 2;
 }
 
 .guest-container h3 {
-    font-size: 1em; 
+    font-size: 1.2em; 
     padding-top: 0;
     margin-top: 0;
     color: black;
@@ -494,7 +499,7 @@ body, html {
 .join-us-intro h2 {
     position: relative;
     font-size: 3em;
-    font-weight: normal;
+    font-weight: 550;
     color: #333;
     text-align: end;
     margin: 0 50px;

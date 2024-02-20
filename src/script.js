@@ -74,11 +74,17 @@ function mobileView() {
 
 function desktopView() {
 
-    minOffset = getViewportWidthRatio()
     redirect('.ticket-button')
     redirect('.guest-link')
     redirect('.form-link')
     redirect('.ig-link')
+    var offset = getViewportWidthRatio()
+    minOffset = offset[0]
+    moduleIndex[2] *= offset[1]
+    moduleIndex[3] *= offset[1]
+    moduleIndex[4] *= offset[1]
+    moduleIndex[5] *= offset[1]
+    
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
 
@@ -188,9 +194,11 @@ function getViewportWidthRatio() {
     const computedStyle = getComputedStyle(subPage);
     const width = computedStyle.width;
     const widthValue = parseFloat(width);
-    var Offset = (widthValue - viewportWidth * 1.08) / viewportWidth * -100;
-    console.log(widthValue / viewportWidth * 100);
-    return Offset;
+    var offset = (widthValue - viewportWidth * 1.08) / viewportWidth * -100;
+    const def = 3.3436820083682006
+    var ratio = (widthValue - viewportWidth * 0.08) / viewportWidth / def;
+    
+    return [offset, ratio]
 }
 
 // Get all clickable boxes in join us
