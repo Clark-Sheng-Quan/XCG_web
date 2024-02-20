@@ -512,7 +512,7 @@ body, html {
 }
 
 .option {
-    width: 370px; 
+    width: 270px; 
     height: 200px; 
     display: flex;
     align-items: center;
@@ -906,8 +906,8 @@ body, html {
   
     .mobile-nav-toggle .center-icon {
         /* 设置中间图标的样式 */
-        width: 13vw; /* 或根据实际情况调整 */
-        height: auto;
+        width: auto; /* 或根据实际情况调整 */
+        height: 9vh;
         margin: 0 auto;
     }
   
