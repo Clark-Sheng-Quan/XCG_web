@@ -318,8 +318,8 @@ body, html {
 }
 
 .bg-picture {
-    width: 1193px;
-    height: 536.33px;
+    width: 62vw;
+    height: auto;
     overflow: hidden;
     position: absolute;
     top: 50%;

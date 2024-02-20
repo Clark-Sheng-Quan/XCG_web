@@ -27,6 +27,10 @@ function adjustViewForDevice() {
     }else{
         desktopView()
     }
+    redirect('.ticket-button')
+    redirect('.guest-link')
+    redirect('.form-link')
+    redirect('.ig-link')
 }
 
 function mobileView() {
@@ -68,23 +72,20 @@ function mobileView() {
 
     const mobileTicket = document.querySelector('.mobile-ticket');
     mobileTicket.addEventListener('click', function() {
-        mobileNav.classList.toggle('active'); // 如果导航栏已经是激活状态，这将会关闭它，反之亦然
+        mobileNav.classList.toggle('active');
     });
 }
 
 function desktopView() {
 
-    redirect('.ticket-button')
-    redirect('.guest-link')
-    redirect('.form-link')
-    redirect('.ig-link')
+
     var offset = getViewportWidthRatio()
     minOffset = offset[0]
     moduleIndex[2] *= offset[1]
     moduleIndex[3] *= offset[1]
     moduleIndex[4] *= offset[1]
     moduleIndex[5] *= offset[1]
-    
+
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
 
@@ -167,7 +168,7 @@ function moveToPage(index) {
 }
 
 function redirect(className) {
-    document.querySelector(className).addEventListener('click', function(event) {
+    document.querySelectorAll(className).addEventListener('click', function(event) {
         event.preventDefault();
         const destinationUrl = this.href;
         document.getElementById('loading-animation').style.display = 'flex';

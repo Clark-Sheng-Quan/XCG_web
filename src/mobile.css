@@ -125,6 +125,8 @@
     }
         
     .bg-picture{
+        height: 80vh;
+        width: auto;
         overflow:auto;
         position:absolute;
         top:0;
