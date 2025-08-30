@@ -1,29 +1,31 @@
-# XCG_web
+# 🎭 XCG Comic-Con Website
 
-https://clark-sheng-quan.github.io/XCG_web/
+🔗 Live Website: [View Portfolio](https://clark-sheng-quan.github.io/XCG_web/)  
 
-## Recommended IDE Setup
+This repository contains the official **XCG Comic-Con Website**, originally developed as the event’s homepage.  
+It provided event information, navigation, and links for ticket purchases.  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+⚠️ **Note:** The event was **cancelled**, and this website now only serves as an **archive** of the project.  
+Please **do not attempt to contact or harass any individuals** whose information may appear on the site.  
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 🚀 Features
+- 📰 Event introduction and announcements  
+- 📍 Venue details & navigation guide  
+- 🎟️ Ticket purchase redirection (now disabled due to cancellation)  
+- 📸 Media assets and promotional visuals  
 
-## Project Setup
+---
 
-```sh
-npm install
-```
+## 🛠️ Tech Stack
+- **Framework:** Vue.js  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Deployment:** Static hosting (e.g. GitHub Pages)  
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-npm run dev
-```
+## 📂 Project Structure
 
-### Compile and Minify for Production
-
-```sh
 npm run build
 ```
