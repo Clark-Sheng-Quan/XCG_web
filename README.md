@@ -1,6 +1,6 @@
 # 🎭 XCG Comic-Con Website
 
-🔗 Live Website: [View Portfolio](https://clark-sheng-quan.github.io/XCG_web/)  
+🔗 Live Website: [View XCG](https://clark-sheng-quan.github.io/XCG_web/)  
 
 This repository contains the official **XCG Comic-Con Website**, originally developed as the event’s homepage.  
 It provided event information, navigation, and links for ticket purchases.  
